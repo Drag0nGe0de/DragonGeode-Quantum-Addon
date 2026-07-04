@@ -3,11 +3,8 @@
 
 scoreboard objectives add gui_page dummy
 
-# Place the GUI barrel facing east at -715 31 90
-execute in overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace
-
-# Give the barrel a title
-execute in overworld run data merge block -715 31 90 {CustomName:'{"text":"Settings","italic":false}'}
-
-# Fill the barrel with the main page
-function gui:pages/main
+# Set gui_page to 0 ("needs setup"). The actual barrel placement and fill
+# happen in gui:setup, which tick calls the first time a player is within
+# 4 blocks of the barrel. This guarantees the chunk is loaded before any
+# block command runs.
+scoreboard players set .gui gui_page 0
