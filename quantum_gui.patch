@@ -1,0 +1,222 @@
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/init.mcfunction	2026-07-03 16:57:16.684850058 +0000
+@@ -0,0 +1,13 @@
++# GUI System — Initialisation
++# Called once on datapack load via minecraft:load tag
++
++scoreboard objectives add gui_page dummy
++
++# Place the GUI barrel facing east at -715 31 90
++execute in overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace
++
++# Give the barrel a title
++execute in overworld run data merge block -715 31 90 {CustomName:'{"text":"Settings","italic":false}'}
++
++# Fill the barrel with the main page
++function gui:pages/main
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/tick.mcfunction	2026-07-03 16:57:21.500849948 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Tick
++# Runs every game tick via minecraft:tick tag.
++# Selects any player within 4 blocks of the barrel and checks for picked-up GUI items.
++execute in overworld positioned -715.5 31.5 90.5 as @a[distance=..4] run function gui:detect_clicks
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/detect_clicks.mcfunction	2026-07-03 16:57:31.280849724 +0000
+@@ -0,0 +1,18 @@
++# GUI System — Click Detection
++# Runs as each nearby player. Checks whether they have a GUI item in their
++# inventory (meaning they just clicked/shift-clicked it out of the barrel).
++
++# ── Main-page buttons ────────────────────────────────────────────────────────
++execute if items entity @s inventory.* minecraft:iron_sword[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
++execute if items entity @s inventory.* minecraft:grass_block[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:click/terrain
++execute if items entity @s inventory.* minecraft:command_block[minecraft:custom_data~{gui_btn:"npc_settings"}] run function gui:click/npc_settings
++execute if items entity @s inventory.* minecraft:gold_ingot[minecraft:custom_data~{gui_btn:"statistics"}] run function gui:click/statistics
++execute if items entity @s inventory.* minecraft:emerald_block[minecraft:custom_data~{gui_btn:"debug"}] run function gui:click/debug
++
++# ── Sub-page back button ─────────────────────────────────────────────────────
++execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{gui_btn:"back"}] run function gui:click/back
++
++# ── Filler cleanup ───────────────────────────────────────────────────────────
++# If a player accidentally takes a filler, remove it and refresh the barrel.
++execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:return_filler
++execute if items entity @s inventory.* minecraft:red_stained_glass[minecraft:custom_data~{gui_btn:"filler"}] run function gui:return_filler
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/return_filler.mcfunction	2026-07-03 16:57:37.072849592 +0000
+@@ -0,0 +1,11 @@
++# GUI System — Filler Return
++# Clears any accidentally-taken filler items and refreshes the barrel page.
++clear @s minecraft:gray_stained_glass_pane[minecraft:custom_data={gui_btn:"filler"}]
++clear @s minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"filler"}]
++
++# Refresh whichever page is currently shown
++execute if score .gui gui_page matches 1 run function gui:pages/main
++execute if score .gui gui_page matches 2 run function gui:pages/wip
++
++# Safety: if state is unknown, fall back to main
++execute unless score .gui gui_page matches 1..2 run function gui:pages/main
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/pages/main.mcfunction	2026-07-03 16:58:01.092849042 +0000
+@@ -0,0 +1,44 @@
++# GUI System — Main Page
++# Barrel layout (3 rows × 9 cols, slots 0-26):
++#
++#  [F][F][F][F][F][F][F][F][F]   ← Row 1 (slots  0-8 ) – all fillers
++#  [F][F][⚔][🌿][⚙][💰][🟩][F][F]   ← Row 2 (slots  9-17) – 5 centred buttons
++#  [F][F][F][F][F][F][F][F][F]   ← Row 3 (slots 18-26) – all fillers
++#
++# F = gray stained glass pane filler
++# Buttons: Gamemode(11) Terrain(12) NPC Settings(13) Statistics(14) Debug(15)
++
++scoreboard players set .gui gui_page 1
++
++# ── Row 1 ─────────────────────────────────────────────────────────────────────
++execute in overworld run item replace block -715 31 90 container.0  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.1  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.2  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.3  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.4  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.5  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.6  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.7  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.8  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++
++# ── Row 2 – buttons in slots 11-15, padding on each side ─────────────────────
++execute in overworld run item replace block -715 31 90 container.9  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.10 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.11 with minecraft:iron_sword[minecraft:item_name={"text":"Gamemode","italic":false},minecraft:custom_data={gui_btn:"gamemode"}] 1
++execute in overworld run item replace block -715 31 90 container.12 with minecraft:grass_block[minecraft:item_name={"text":"Terrain","italic":false},minecraft:custom_data={gui_btn:"terrain"}] 1
++execute in overworld run item replace block -715 31 90 container.13 with minecraft:command_block[minecraft:item_name={"text":"NPC Settings","italic":false},minecraft:custom_data={gui_btn:"npc_settings"}] 1
++execute in overworld run item replace block -715 31 90 container.14 with minecraft:gold_ingot[minecraft:item_name={"text":"Statistics","italic":false},minecraft:custom_data={gui_btn:"statistics"}] 1
++execute in overworld run item replace block -715 31 90 container.15 with minecraft:emerald_block[minecraft:item_name={"text":"Debug","italic":false},minecraft:custom_data={gui_btn:"debug"}] 1
++execute in overworld run item replace block -715 31 90 container.16 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.17 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++
++# ── Row 3 ─────────────────────────────────────────────────────────────────────
++execute in overworld run item replace block -715 31 90 container.18 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.19 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.20 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.21 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.22 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.23 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.24 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.25 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.26 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/pages/wip.mcfunction	2026-07-04 02:37:18.145656679 +0000
+@@ -0,0 +1,44 @@
++# GUI System — WIP Sub-page
++# Barrel layout:
++#
++#  [F][F][F][F][F][F][F][F][F]   ← Row 1 (slots  0-8 ) – all fillers
++#  [F][F][F][F][R][F][F][F][F]   ← Row 2 (slots  9-17) – WIP glass in centre (slot 13)
++#  [B][F][F][F][F][F][F][F][F]   ← Row 3 (slots 18-26) – Back feather (slot 18)
++#
++# R = red stained glass  "Currently in development!"
++# B = feather            "Back"
++
++scoreboard players set .gui gui_page 2
++
++# ── Row 1 ─────────────────────────────────────────────────────────────────────
++execute in overworld run item replace block -715 31 90 container.0  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.1  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.2  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.3  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.4  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.5  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.6  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.7  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.8  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++
++# ── Row 2 – WIP message in centre (slot 13) ───────────────────────────────────
++execute in overworld run item replace block -715 31 90 container.9  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.10 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.11 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.12 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.13 with minecraft:red_stained_glass[minecraft:item_name={"text":"Currently in development!","color":"red","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.14 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.15 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.16 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.17 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++
++# ── Row 3 – Back feather (slot 18), rest fillers ─────────────────────────────
++execute in overworld run item replace block -715 31 90 container.18 with minecraft:feather[minecraft:item_name={"text":"Back","italic":false},minecraft:custom_data={gui_btn:"back"}] 1
++execute in overworld run item replace block -715 31 90 container.19 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.20 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.21 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.22 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.23 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.24 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.25 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
++execute in overworld run item replace block -715 31 90 container.26 with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/click/gamemode.mcfunction	2026-07-04 02:37:24.649656530 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Click: gamemode
++# Remove the button item from the player's inventory, then load the WIP page.
++clear @s minecraft:iron_sword[minecraft:custom_data={gui_btn:"gamemode"}]
++function gui:pages/wip
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/click/terrain.mcfunction	2026-07-04 02:37:24.653656530 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Click: terrain
++# Remove the button item from the player's inventory, then load the WIP page.
++clear @s minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain"}]
++function gui:pages/wip
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/click/npc_settings.mcfunction	2026-07-04 02:37:24.661656530 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Click: npc_settings
++# Remove the button item from the player's inventory, then load the WIP page.
++clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"npc_settings"}]
++function gui:pages/wip
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/click/statistics.mcfunction	2026-07-04 02:37:24.665656530 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Click: statistics
++# Remove the button item from the player's inventory, then load the WIP page.
++clear @s minecraft:gold_ingot[minecraft:custom_data={gui_btn:"statistics"}]
++function gui:pages/wip
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/click/debug.mcfunction	2026-07-04 02:37:24.668539131 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Click: debug
++# Remove the button item from the player's inventory, then load the WIP page.
++clear @s minecraft:emerald_block[minecraft:custom_data={gui_btn:"debug"}]
++function gui:pages/wip
+--- /dev/null	2026-07-01 23:52:30.068664952 +0000
++++ b/datapacks/Practicebot/data/gui/function/click/back.mcfunction	2026-07-04 02:37:28.993656431 +0000
+@@ -0,0 +1,4 @@
++# GUI System — Click: back
++# Remove the back feather and return to the main page.
++clear @s minecraft:feather[minecraft:custom_data={gui_btn:"back"}]
++function gui:pages/main
+--- a/datapacks/Practicebot/data/minecraft/tags/function/tick.json	2026-07-04 02:39:14.613654015 +0000
++++ b/datapacks/Practicebot/data/minecraft/tags/function/tick.json	2026-07-04 02:39:14.624446291 +0000
+@@ -1,5 +1,6 @@
+ {
+     "values": [
+-    "quantum:tick"
+- ]
+-}
+\ No newline at end of file
++        "quantum:tick",
++        "gui:tick"
++    ]
++}
+--- a/datapacks/Practicebot/data/minecraft/tags/function/load.json	2026-07-04 02:39:14.617654015 +0000
++++ b/datapacks/Practicebot/data/minecraft/tags/function/load.json	2026-07-04 02:39:14.626228840 +0000
+@@ -1,6 +1,7 @@
+ {
+     "values": [
+-    "quantum:load",
+-    "xaniclelib:init"
+-]
+-}
+\ No newline at end of file
++        "quantum:load",
++        "xaniclelib:init",
++        "gui:init"
++    ]
++}
