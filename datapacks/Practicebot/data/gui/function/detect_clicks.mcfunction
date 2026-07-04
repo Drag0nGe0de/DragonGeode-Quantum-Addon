@@ -8,7 +8,7 @@ execute if items entity @s inventory.* minecraft:writable_book[minecraft:custom_
 execute if items entity @s inventory.* minecraft:gold_ingot[minecraft:custom_data~{gui_btn:"credits_support"}] run function gui:click/credits_support
 
 # Play-page buttons
-execute if items entity @s inventory.* minecraft:green_wool[minecraft:custom_data~{gui_btn:"start"}] run function gui:click/start
+execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data~{gui_btn:"start"}] run function gui:click/start
 execute if items entity @s inventory.* minecraft:iron_sword[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
 execute if items entity @s inventory.* minecraft:grass_block[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:click/terrain
 execute if items entity @s inventory.* minecraft:iron_chestplate[minecraft:custom_data~{gui_btn:"difficulty"}] run function gui:click/difficulty

@@ -14,5 +14,9 @@ execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=e
 #   data modify entity @s CustomName set value {"text":"...","color":"..."}
 execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Settings","italic":false}
 
+# Initialize the page history stack to page 1 (main)
+scoreboard players set .gui_prev gui_page 1
+scoreboard players set .gui_prev2 gui_page 1
+
 # Fill the barrel with the main page (also sets gui_page = 1, stopping re-setup)
 function gui:pages/main
