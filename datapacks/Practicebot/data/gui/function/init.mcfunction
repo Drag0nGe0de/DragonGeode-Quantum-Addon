@@ -3,6 +3,7 @@
 
 execute in overworld run forceload add -45 5
 
+scoreboard objectives remove gui_page
 scoreboard objectives add gui_page dummy
 
 # Place the GUI barrel facing east at -715 31 90
