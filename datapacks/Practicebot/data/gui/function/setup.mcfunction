@@ -17,6 +17,8 @@ execute in minecraft:overworld run data modify block -715 31 90 CustomName set v
 # Initialize the page history stack to page 1 (main)
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
+# Initialize gamemode selection (.gm: 0=none, 1=TnT Cart, 2=Pot, 3=Mace, 4=Vanilla, 5=OP Sword)
+scoreboard players set .gm gui_page 0
 
 # Fill the barrel with the main page (also sets gui_page = 1, stopping re-setup)
 function gui:pages/main

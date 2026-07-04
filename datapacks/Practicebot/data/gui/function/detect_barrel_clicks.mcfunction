@@ -33,3 +33,17 @@ execute if score .gui gui_page matches 2 unless score #s gui_page matches 1 run 
 # ── WIP page (gui_page 3) ── Back(18)
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
 execute if score .gui gui_page matches 3 unless score #s gui_page matches 1 run function gui:click/back
+
+# ── Gamemode page (gui_page 4) ── TnT Cart(11), Pot(12), Mace(13), Vanilla(14), OP Sword(15), Back(18)
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:11b}].id
+execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/gamemode_tnt_cart
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:12b}].id
+execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/gamemode_pot
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:13b}].id
+execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/gamemode_mace
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:14b}].id
+execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/gamemode_vanilla
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:15b}].id
+execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/gamemode_op_sword
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
+execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/back

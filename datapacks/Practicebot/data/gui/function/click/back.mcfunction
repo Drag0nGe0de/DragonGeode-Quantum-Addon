@@ -10,3 +10,4 @@ scoreboard players operation .gui_prev gui_page = .gui_prev2 gui_page
 execute if score #s gui_page matches 1 run function gui:pages/main
 execute if score #s gui_page matches 2 run function gui:pages/play
 execute if score #s gui_page matches 3 run function gui:pages/wip
+execute if score #s gui_page matches 4 run function gui:pages/gamemode

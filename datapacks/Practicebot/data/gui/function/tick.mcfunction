@@ -4,7 +4,7 @@
 # Repair the GUI when a player is nearby. This handles reloads where the score
 # was set but the chunk/barrel contents were not ready yet.
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..3 run function gui:setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..4 run function gui:setup
 
 # Aggressively clear any GUI items from nearby players' inventories.
 # This catches items that landed in inventory (barrel close, shift-click).
@@ -22,6 +22,13 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"settings"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:feather[minecraft:custom_data={gui_btn:"back"}]
 
+# Gamemode page items
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode_tnt_cart"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode_pot"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode_mace"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode_vanilla"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode_op_sword"}]
+
 # Detect barrel clicks: check if a button was taken from the barrel.
 # This catches normal clicks (item goes to cursor, NOT inventory.*).
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run function gui:detect_barrel_clicks
@@ -32,3 +39,4 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
