@@ -1,4 +1,5 @@
 scoreboard players set .mode mode 5
+scoreboard players set .gm gui_page 2
 title @a actionbar [{"text":"POT","color": "#ff0000"},{"text":" ON!", "color":"#00ff00"}]
 tellraw @a [{"text":"POT","color": "#ff0000"},{"text":" ON!", "color":"#00ff00"}]
 execute if score .gear toggles matches 1 as @a[tag=xlib_bot] run function quantum:botgear/neth
