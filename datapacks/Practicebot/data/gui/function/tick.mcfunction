@@ -13,7 +13,13 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:gray_stained_glass_pane[minecraft:custom_data={gui_btn:"filler"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"filler"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_sword[minecraft:custom_data={gui_btn:"play"}]
+# Play-page gamemode button (icon changes — clear all possible item types)
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_sword[minecraft:custom_data={gui_btn:"gamemode"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:writable_book[minecraft:custom_data={gui_btn:"statistics"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:gold_ingot[minecraft:custom_data={gui_btn:"credits_support"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:lime_wool[minecraft:custom_data={gui_btn:"start"}]
