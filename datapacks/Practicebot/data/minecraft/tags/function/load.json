@@ -1,6 +1,7 @@
 {
     "values": [
-    "quantum:load",
-    "xaniclelib:init"
-]
+        "quantum:load",
+        "xaniclelib:init",
+        "gui:init"
+    ]
 }
