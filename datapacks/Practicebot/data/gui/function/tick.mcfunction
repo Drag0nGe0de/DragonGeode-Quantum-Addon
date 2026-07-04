@@ -8,7 +8,7 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance
 
 # Detect barrel clicks: check if a button was taken from the barrel.
 # This catches normal clicks (item goes to cursor, NOT inventory.*).
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..4,limit=1] run function gui:detect_barrel_clicks
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..4] run function gui:detect_barrel_clicks
 
 # Detect inventory clicks: check if a GUI item ended up in a player's inventory.
 # This catches shift-clicks and items that were on the cursor when the barrel closed.
