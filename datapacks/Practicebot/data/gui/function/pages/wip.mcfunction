@@ -8,7 +8,7 @@
 # R = red stained glass  "Currently in development!"
 # B = feather            "Back"
 
-scoreboard players set .gui gui_page 2
+scoreboard players set .gui gui_page 3
 
 # ── Row 1 ─────────────────────────────────────────────────────────────────────
 execute in overworld run item replace block -715 31 90 container.0  with minecraft:gray_stained_glass_pane[minecraft:item_name={"text":"","italic":false},minecraft:custom_data={gui_btn:"filler"}] 1

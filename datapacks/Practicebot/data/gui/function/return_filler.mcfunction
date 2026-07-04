@@ -5,7 +5,8 @@ clear @s minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"filler"}]
 
 # Refresh whichever page is currently shown
 execute if score .gui gui_page matches 1 run function gui:pages/main
-execute if score .gui gui_page matches 2 run function gui:pages/wip
+execute if score .gui gui_page matches 2 run function gui:pages/play
+execute if score .gui gui_page matches 3 run function gui:pages/wip
 
 # Safety: if state is unknown, fall back to main
-execute unless score .gui gui_page matches 1..2 run function gui:pages/main
+execute unless score .gui gui_page matches 1..3 run function gui:pages/main
