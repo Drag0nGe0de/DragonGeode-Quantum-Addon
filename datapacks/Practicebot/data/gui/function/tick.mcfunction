@@ -16,7 +16,7 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 # Play-page gamemode button (icon changes — clear all possible item types)
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_sword[minecraft:custom_data={gui_btn:"gamemode"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:flower_pot[minecraft:custom_data={gui_btn:"gamemode"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode"}]
@@ -30,7 +30,7 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 
 # Gamemode page items
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode_tnt_cart"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode_pot"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:flower_pot[minecraft:custom_data={gui_btn:"gamemode_pot"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode_mace"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode_vanilla"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode_op_sword"}]
