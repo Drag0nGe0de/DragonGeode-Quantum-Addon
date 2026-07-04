@@ -12,7 +12,7 @@ execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data
 # Play-page gamemode button (icon changes — check all possible item types)
 execute if items entity @s inventory.* minecraft:iron_sword[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
 execute if items entity @s inventory.* minecraft:tnt_minecart[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
-execute if items entity @s inventory.* minecraft:flower_pot[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
+execute if items entity @s inventory.* minecraft:splash_potion[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
 execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
 execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
 execute if items entity @s inventory.* minecraft:diamond_sword[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:click/gamemode
@@ -25,7 +25,7 @@ execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{
 
 # Gamemode page buttons
 execute if items entity @s inventory.* minecraft:tnt_minecart[minecraft:custom_data~{gui_btn:"gamemode_tnt_cart"}] run function gui:click/gamemode_tnt_cart
-execute if items entity @s inventory.* minecraft:flower_pot[minecraft:custom_data~{gui_btn:"gamemode_pot"}] run function gui:click/gamemode_pot
+execute if items entity @s inventory.* minecraft:splash_potion[minecraft:custom_data~{gui_btn:"gamemode_pot"}] run function gui:click/gamemode_pot
 execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"gamemode_mace"}] run function gui:click/gamemode_mace
 execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"gamemode_vanilla"}] run function gui:click/gamemode_vanilla
 execute if items entity @s inventory.* minecraft:diamond_sword[minecraft:custom_data~{gui_btn:"gamemode_op_sword"}] run function gui:click/gamemode_op_sword

@@ -1,6 +1,6 @@
 # GUI System - Click: gamemode_pot
 # Pot mode: function quantum:options/pot && tp to arena
-clear @s minecraft:flower_pot[minecraft:custom_data={gui_btn:"gamemode_pot"}]
+clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode_pot"}]
 
 # Store selected gamemode (.gm = 2 = Pot)
 scoreboard players set .gm gui_page 2

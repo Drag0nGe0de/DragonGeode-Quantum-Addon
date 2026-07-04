@@ -6,7 +6,7 @@ execute in minecraft:overworld run data merge block -715 31 90 {Items:[{Slot:0b,
 # ── Dynamic Gamemode icon (slot 12) based on .gm score ──
 # .gm values: 0=none(iron_sword), 1=TnT Cart, 2=Pot, 3=Mace, 4=Vanilla, 5=OP Sword
 execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:tnt_minecart"
-execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:flower_pot"
+execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:splash_potion"
 execute in minecraft:overworld if score .gm gui_page matches 3 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:mace"
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:end_crystal"
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:diamond_sword"
