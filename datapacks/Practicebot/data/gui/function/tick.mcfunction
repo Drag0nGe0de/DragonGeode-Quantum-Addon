@@ -51,6 +51,11 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain_mushroom"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain_netherite"}]
 
+# Kill any dropped GUI items on the ground near the barrel.
+# This prevents item theft via dropping (Q key or drag-out of inventory).
+# Targets any item entity whose Item has a gui_btn field in custom_data.
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
+
 # Detect barrel clicks: check if a button was taken from the barrel.
 # This catches normal clicks (item goes to cursor, NOT inventory.*).
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run function gui:detect_barrel_clicks

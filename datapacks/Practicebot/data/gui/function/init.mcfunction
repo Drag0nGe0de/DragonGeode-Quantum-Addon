@@ -13,7 +13,12 @@ scoreboard objectives add gui_page dummy
 # and a Back click in that window would resolve to 0 = "no page".
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
-scoreboard players set .gm gui_page 0
+# Default gamemode is Crystal (4). gui_page objective is recreated above so .gm
+# is always reset on reload — there's no way to preserve selection here.
+scoreboard players set .gm gui_page 4
+# Default terrain is Netherite (7). terrain objective persists across reloads,
+# so use "unless" to keep an existing valid selection.
+execute unless score .terrain terrain matches 0..7 run scoreboard players set .terrain terrain 7
 
 # Place the GUI barrel facing east at -715 31 90
 execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace

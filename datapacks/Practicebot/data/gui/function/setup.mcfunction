@@ -17,8 +17,9 @@ execute in minecraft:overworld run data modify block -715 31 90 CustomName set v
 # Initialize the page history stack to page 1 (main)
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
-# Initialize gamemode selection (.gm: 0=none, 1=TnT Cart, 2=Pot, 3=Mace, 4=Vanilla, 5=OP Sword)
-scoreboard players set .gm gui_page 0
+# Initialize gamemode selection (.gm: 0=none, 1=TnT Cart, 2=Pot, 3=Mace, 4=Crystal/Vanilla, 5=OP Sword)
+# Default is Crystal (4). Use "unless" so init's value (or a previously-set value) survives.
+execute unless score .gm gui_page matches 0..5 run scoreboard players set .gm gui_page 4
 # Initialize terrain selection (.terrain: 0=flat, 1=plains, 2=desert, 3=badlands,
 # 4=mushroom, 5=snow, 6=cave, 7=netherite — on the "terrain" objective, persists across GUI reloads)
 # Default is netherite (7). Use "unless" so a player's existing selection survives reloads.
