@@ -19,9 +19,10 @@ scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
 # Initialize gamemode selection (.gm: 0=none, 1=TnT Cart, 2=Pot, 3=Mace, 4=Vanilla, 5=OP Sword)
 scoreboard players set .gm gui_page 0
-# Initialize terrain selection (.terrain: 0=flat/default, 1=plains, 2=desert, 3=badlands,
+# Initialize terrain selection (.terrain: 0=flat, 1=plains, 2=desert, 3=badlands,
 # 4=mushroom, 5=snow, 6=cave, 7=netherite — on the "terrain" objective, persists across GUI reloads)
-scoreboard players set .terrain terrain 0
+# Default is netherite (7). Use "unless" so a player's existing selection survives reloads.
+execute unless score .terrain terrain matches 0..7 run scoreboard players set .terrain terrain 7
 
 # Fill the barrel with the main page (also sets gui_page = 1, stopping re-setup)
 function gui:pages/main
