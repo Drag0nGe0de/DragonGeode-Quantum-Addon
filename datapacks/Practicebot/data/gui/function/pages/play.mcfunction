@@ -27,7 +27,7 @@ execute in minecraft:overworld if score .terrain terrain matches 6 run data modi
 # Slot 14 defaults to iron_chestplate in the data merge above; override for all values.
 # NPC: set to player_head with custom texture
 execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:player_head"
-execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:profile" set value {properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTA5MDExMzg1ZjE5YzY4MGY4YmIzOWNiNmI3NTk5MWRkNDdjMTcxMmRjYzI3NjM0ODliYjgyZWMwYzljZjQ0MiJ9fX0="}]}
+execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:profile":{properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTA5MDExMzg1ZjE5YzY4MGY4YmIzOWNiNmI3NTk5MWRkNDdjMTcxMmRjYzI3NjM0ODliYjgyZWMwYzljZjQ0MiJ9fX0="}]}}
 # Remove profile when not NPC (so chestplate icons don't carry stale profile data)
 execute in minecraft:overworld unless score .difficulty difficulty matches 0 run data remove block -715 31 90 Items[{Slot:14b}].components."minecraft:profile"
 execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:leather_chestplate"
