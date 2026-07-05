@@ -27,7 +27,7 @@ execute in minecraft:overworld if score .terrain terrain matches 6 run data modi
 # then set the lore text based on the .gm score.
 execute in minecraft:overworld run data remove block -715 31 90 Items[{Slot:12b}].components."minecraft:tooltip_display".hidden_components
 execute in minecraft:overworld if score .gm gui_page matches 0 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: None",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: TnT Cart",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: TNT Cart",color:"#AAAAAA",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Pot",color:"#AAAAAA",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 3 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Mace",color:"#AAAAAA",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Crystal",color:"#AAAAAA",italic:false}]
