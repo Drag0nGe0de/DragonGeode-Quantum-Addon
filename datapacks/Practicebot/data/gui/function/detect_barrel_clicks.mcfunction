@@ -47,3 +47,21 @@ execute store success score #s gui_page run data get block -715 31 90 Items[{Slo
 execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/gamemode_op_sword
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
 execute if score .gui gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/back
+
+# ── Terrain page (gui_page 5) ── Badlands(10), Desert(11), Cave(12), Plains(13), Snowy Plains(14), Mushroom(15), Netherite(16), Back(18)
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:10b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_badlands
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:11b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_desert
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:12b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_cave
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:13b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_plains
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:14b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_snowy_plains
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:15b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_mushroom
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:16b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_netherite
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
+execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/back

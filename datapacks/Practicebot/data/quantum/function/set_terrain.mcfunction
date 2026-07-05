@@ -1,5 +1,6 @@
 title @a actionbar {"text":"Successfully set terrain","color": "green"}
 data remove entity @s interaction
+execute if entity @s[tag=netherite] run scoreboard players set .terrain terrain 7
 execute if entity @s[tag=cave] run scoreboard players set .terrain terrain 6
 execute if entity @s[tag=snow] run scoreboard players set .terrain terrain 5
 execute if entity @s[tag=mushroom] run scoreboard players set .terrain terrain 4

@@ -11,4 +11,15 @@ execute in minecraft:overworld if score .gm gui_page matches 3 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:end_crystal"
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:diamond_sword"
 
+# ── Dynamic Terrain icon (slot 13) based on .terrain score ──
+# .terrain values: 0=flat(default grass_block), 1=plains, 2=desert, 3=badlands,
+#                  4=mushroom, 5=snow, 6=cave, 7=netherite
+# Slot 13 defaults to grass_block in the data merge above; only override for non-plains.
+execute in minecraft:overworld if score .terrain terrain matches 2 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:sand"
+execute in minecraft:overworld if score .terrain terrain matches 3 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:red_sand"
+execute in minecraft:overworld if score .terrain terrain matches 4 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:mycelium"
+execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:snow_block"
+execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:stone"
+execute in minecraft:overworld if score .terrain terrain matches 7 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:netherite_block"
+
 scoreboard players set .gui gui_page 2
