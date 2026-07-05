@@ -81,3 +81,7 @@ execute store success score #s gui_page run data get block -715 31 90 Items[{Slo
 execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_master
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
 execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/back
+
+# ── Mech Training page (gui_page 7) ── Back(18)
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
+execute if score .gui gui_page matches 7 unless score #s gui_page matches 1 run function gui:click/back

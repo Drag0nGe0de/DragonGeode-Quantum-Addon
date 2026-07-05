@@ -14,6 +14,9 @@ execute if score .gui_back gui_page matches 1 run function gui:pages/main
 execute if score .gui_back gui_page matches 2 run function gui:pages/play
 execute if score .gui_back gui_page matches 3 run function gui:pages/wip
 execute if score .gui_back gui_page matches 4 run function gui:pages/gamemode
+execute if score .gui_back gui_page matches 5 run function gui:pages/terrain
+execute if score .gui_back gui_page matches 6 run function gui:pages/difficulty
+execute if score .gui_back gui_page matches 7 run function gui:pages/mech_training
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..4 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..7 run function gui:pages/main

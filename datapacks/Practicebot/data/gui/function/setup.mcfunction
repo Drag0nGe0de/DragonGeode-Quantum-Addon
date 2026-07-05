@@ -25,8 +25,8 @@ execute unless score .gm gui_page matches 0..5 run scoreboard players set .gm gu
 # Default is netherite (0). Use "unless" so a player's existing selection survives reloads.
 execute unless score .terrain terrain matches 0..6 run scoreboard players set .terrain terrain 0
 # Initialize difficulty selection (.difficulty: 0=NPC, 1=Easy, 2=Medium, 3=Hard, 4=Crazy, 5=Master)
-# Default is Hard (3). difficulty objective persists, so use "unless" to keep existing selection.
-execute unless score .difficulty difficulty matches 0..5 run scoreboard players set .difficulty difficulty 3
+# Default is Crazy (4). difficulty objective persists, so use "unless" to keep existing selection.
+execute unless score .difficulty difficulty matches 0..5 run scoreboard players set .difficulty difficulty 4
 
 # Fill the barrel with the main page (also sets gui_page = 1, stopping re-setup)
 function gui:pages/main

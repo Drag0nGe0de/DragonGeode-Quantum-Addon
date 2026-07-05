@@ -1,6 +1,6 @@
 # GUI System - Click: difficulty_npc
 # Npc difficulty: run quantum:difficulty/0 and return to play page
-clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"difficulty_npc"}]
+clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty_npc"}]
 
 # Run the difficulty function as quantumbot (sets .difficulty score, applies bot settings, etc.)
 execute as quantumbot run function quantum:difficulty/0
