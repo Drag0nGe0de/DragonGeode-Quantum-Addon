@@ -12,36 +12,35 @@ execute in minecraft:overworld if score .gm gui_page matches 4 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:diamond_sword"
 
 # ── Dynamic Terrain icon (slot 13) based on .terrain score ──
-# .terrain values: 0=flat(default grass_block), 1=plains, 2=desert, 3=badlands,
-#                  4=mushroom, 5=snow, 6=cave, 7=netherite
-# Slot 13 defaults to grass_block in the data merge above; only override for non-plains.
+# .terrain values: 0=netherite/flat, 1=plains, 2=desert, 3=badlands,
+#                  4=mushroom, 5=snow, 6=cave
+# Slot 13 defaults to grass_block in the data merge above; override for all values.
+execute in minecraft:overworld if score .terrain terrain matches 0 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:netherite_block"
 execute in minecraft:overworld if score .terrain terrain matches 2 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:sand"
 execute in minecraft:overworld if score .terrain terrain matches 3 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:red_sand"
 execute in minecraft:overworld if score .terrain terrain matches 4 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:mycelium"
 execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:snow_block"
 execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:stone"
-execute in minecraft:overworld if score .terrain terrain matches 7 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:netherite_block"
 
 # ── Dynamic Gamemode lore (slot 12) — "Current: <name>" in light gray ──
-# Remove "minecraft:lore" from hidden_components so the lore is visible,
-# then set the lore text based on the .gm score.
+# Use item modify set_lore for reliable non-italic rendering.
+# Also remove "minecraft:lore" from hidden_components so the lore is visible.
 execute in minecraft:overworld run data remove block -715 31 90 Items[{Slot:12b}].components."minecraft:tooltip_display".hidden_components
-execute in minecraft:overworld if score .gm gui_page matches 0 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: None",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: TnT Cart",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Pot",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .gm gui_page matches 3 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Mace",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Crystal",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: OP Sword",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .gm gui_page matches 0 run item modify block -715 31 90 container.12 {"function":"minecraft:set_lore","lore":[{text:"Current: None",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .gm gui_page matches 1 run item modify block -715 31 90 container.12 {"function":"minecraft:set_lore","lore":[{text:"Current: TnT Cart",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .gm gui_page matches 2 run item modify block -715 31 90 container.12 {"function":"minecraft:set_lore","lore":[{text:"Current: Pot",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .gm gui_page matches 3 run item modify block -715 31 90 container.12 {"function":"minecraft:set_lore","lore":[{text:"Current: Mace",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .gm gui_page matches 4 run item modify block -715 31 90 container.12 {"function":"minecraft:set_lore","lore":[{text:"Current: Crystal",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .gm gui_page matches 5 run item modify block -715 31 90 container.12 {"function":"minecraft:set_lore","lore":[{text:"Current: OP Sword",color:"#AAAAAA",italic:false}],"mode":"replace"}
 
 # ── Dynamic Terrain lore (slot 13) — "Current: <name>" in light gray ──
 execute in minecraft:overworld run data remove block -715 31 90 Items[{Slot:13b}].components."minecraft:tooltip_display".hidden_components
-execute in minecraft:overworld if score .terrain terrain matches 0 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Flat",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 1 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Plains",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 2 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Desert",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 3 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Badlands",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 4 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Mushroom",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Snow",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Cave",color:"#AAAAAA",italic:false}]
-execute in minecraft:overworld if score .terrain terrain matches 7 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Netherite",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .terrain terrain matches 0 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Netherite",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .terrain terrain matches 1 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Plains",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .terrain terrain matches 2 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Desert",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .terrain terrain matches 3 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Badlands",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .terrain terrain matches 4 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Mushroom",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .terrain terrain matches 5 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Snow",color:"#AAAAAA",italic:false}],"mode":"replace"}
+execute in minecraft:overworld if score .terrain terrain matches 6 run item modify block -715 31 90 container.13 {"function":"minecraft:set_lore","lore":[{text:"Current: Cave",color:"#AAAAAA",italic:false}],"mode":"replace"}
 
 scoreboard players set .gui gui_page 2

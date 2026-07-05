@@ -1,9 +1,9 @@
 # GUI System - Click: terrain_netherite
-# Netherite terrain: set .terrain = 7 and return to play page
+# Netherite terrain: set .terrain = 0 (flat/netherite dimension) and return to play page
 clear @s minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain_netherite"}]
 
-# Set the terrain score
-scoreboard players set .terrain terrain 7
+# Set the terrain score (.terrain = 0 = netherite/flat, matches rtp/passed.mcfunction)
+scoreboard players set .terrain terrain 0
 
 # Feedback (matches quantum:set_terrain behaviour)
 title @a actionbar {"text":"Successfully set terrain","color":"green"}
