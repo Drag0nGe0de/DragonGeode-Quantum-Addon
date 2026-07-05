@@ -22,6 +22,15 @@ execute in minecraft:overworld if score .terrain terrain matches 4 run data modi
 execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:snow_block"
 execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:stone"
 
+# ── Dynamic Difficulty icon (slot 14) based on .difficulty score ──
+# .difficulty values: 0=NPC, 1=Easy, 2=Medium, 3=Hard, 4=Crazy, 5=Master
+# Slot 14 defaults to iron_chestplate in the data merge above; override for all values.
+execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:command_block"
+execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:leather_chestplate"
+execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:diamond_chestplate"
+execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:netherite_chestplate"
+execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:netherite_chestplate"
+
 # ── Dynamic Gamemode lore (slot 12) — "Current: <name>" in light gray ──
 # Remove "minecraft:lore" from hidden_components so the lore is visible,
 # then set the lore text based on the .gm score.
@@ -42,5 +51,14 @@ execute in minecraft:overworld if score .terrain terrain matches 3 run data modi
 execute in minecraft:overworld if score .terrain terrain matches 4 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Mushroom",color:"#AAAAAA",italic:false}]
 execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Snow",color:"#AAAAAA",italic:false}]
 execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Cave",color:"#AAAAAA",italic:false}]
+
+# ── Dynamic Difficulty lore (slot 14) — "Current: <name>" in light gray ──
+execute in minecraft:overworld run data remove block -715 31 90 Items[{Slot:14b}].components."minecraft:tooltip_display".hidden_components
+execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: NPC",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Easy",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .difficulty difficulty matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Medium",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Hard",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Crazy",color:"#AAAAAA",italic:false}]
+execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Master",color:"#AAAAAA",italic:false}]
 
 scoreboard players set .gui gui_page 2

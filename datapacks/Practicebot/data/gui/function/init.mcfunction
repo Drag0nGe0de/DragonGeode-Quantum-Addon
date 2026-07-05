@@ -19,6 +19,9 @@ scoreboard players set .gm gui_page 4
 # Default terrain is Netherite (0 = flat/netherite dimension). terrain objective
 # persists across reloads, so use "unless" to keep an existing valid selection.
 execute unless score .terrain terrain matches 0..6 run scoreboard players set .terrain terrain 0
+# Default difficulty is Hard (3). difficulty objective persists across reloads,
+# so use "unless" to keep an existing valid selection.
+execute unless score .difficulty difficulty matches 0..5 run scoreboard players set .difficulty difficulty 3
 
 # Place the GUI barrel facing east at -715 31 90
 execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace

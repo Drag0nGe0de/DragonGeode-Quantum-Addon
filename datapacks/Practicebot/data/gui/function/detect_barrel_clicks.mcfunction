@@ -65,3 +65,19 @@ execute store success score #s gui_page run data get block -715 31 90 Items[{Slo
 execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/terrain_netherite
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
 execute if score .gui gui_page matches 5 unless score #s gui_page matches 1 run function gui:click/back
+
+# ── Difficulty page (gui_page 6) ── NPC(4), Easy(11), Medium(12), Hard(13), Crazy(14), Master(15), Back(22)
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:4b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_npc
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:11b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_easy
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:12b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_medium
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:13b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_hard
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:14b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_crazy
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:15b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/difficulty_master
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:22b}].id
+execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/back

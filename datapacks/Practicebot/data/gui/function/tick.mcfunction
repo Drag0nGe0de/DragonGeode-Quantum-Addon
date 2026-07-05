@@ -4,7 +4,7 @@
 # Repair the GUI when a player is nearby. This handles reloads where the score
 # was set but the chunk/barrel contents were not ready yet.
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..5 run function gui:setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..6 run function gui:setup
 
 # Aggressively clear any GUI items from nearby players' inventories.
 # This catches items that landed in inventory (barrel close, shift-click).
@@ -31,7 +31,12 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:snow_block[minecraft:custom_data={gui_btn:"terrain"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:stone[minecraft:custom_data={gui_btn:"terrain"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain"}]
+# Play-page difficulty button (icon changes — clear all possible item types)
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"difficulty"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"settings"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:feather[minecraft:custom_data={gui_btn:"back"}]
 
@@ -51,6 +56,14 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain_mushroom"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain_netherite"}]
 
+# Difficulty page items
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"difficulty_npc"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty_easy"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty_medium"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty_hard"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_crazy"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_master"}]
+
 # Kill any dropped GUI items on the ground near the barrel.
 # This prevents item theft via dropping (Q key or drag-out of inventory).
 # Targets any item entity whose Item has a gui_btn field in custom_data.
@@ -68,3 +81,4 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
