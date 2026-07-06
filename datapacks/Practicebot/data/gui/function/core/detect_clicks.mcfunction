@@ -6,6 +6,7 @@
 execute if items entity @s inventory.* minecraft:iron_sword[minecraft:custom_data~{gui_btn:"play"}] run function gui:click/main/play
 execute if items entity @s inventory.* minecraft:writable_book[minecraft:custom_data~{gui_btn:"statistics"}] run function gui:click/main/statistics
 execute if items entity @s inventory.* minecraft:gold_ingot[minecraft:custom_data~{gui_btn:"credits_support"}] run function gui:click/main/credits_support
+execute if items entity @s inventory.* minecraft:redstone_torch[minecraft:custom_data~{gui_btn:"extra"}] run function gui:click/main/extra
 
 # Play-page buttons
 execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data~{gui_btn:"start"}] run function gui:click/main/start
@@ -143,6 +144,16 @@ execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data
 execute if items entity @s inventory.* minecraft:red_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:click/npc_attr/mode
 # NPC Attributes page reset-to-defaults button (slot 26)
 execute if items entity @s inventory.* minecraft:red_stained_glass[minecraft:custom_data~{gui_btn:"npc_attr_reset"}] run function gui:click/npc_attr/reset
+# Extra page (page 14) buttons
+execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"extra_ai"}] run function gui:click/extra/ai
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"extra_optimize"}] run function gui:click/extra/optimize
+execute if items entity @s inventory.* minecraft:end_portal_frame[minecraft:custom_data~{gui_btn:"extra_teleports"}] run function gui:click/extra/teleports
+execute if items entity @s inventory.* minecraft:music_disc_13[minecraft:custom_data~{gui_btn:"extra_music"}] run function gui:click/extra/music
+execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"extra_bots"}] run function gui:click/extra/bots
+# Multiple Bots page (page 15) buttons
+execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_quantum"}] run function gui:click/bots/quantum
+execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_herobrine"}] run function gui:click/bots/herobrine
+execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_notch"}] run function gui:click/bots/notch
 # Filler cleanup
 # If a player accidentally takes a filler, remove it and refresh the barrel.
 execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler

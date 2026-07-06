@@ -20,6 +20,8 @@ execute if score .gui gui_page matches 10 run function gui:pages/armor
 execute if score .gui gui_page matches 11 run function gui:pages/presets
 execute if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
 execute if score .gui gui_page matches 13 run function gui:pages/npc_attributes
+execute if score .gui gui_page matches 14 run function gui:pages/extra
+execute if score .gui gui_page matches 15 run function gui:pages/multiple_bots
 
 # Safety: if state is unknown, fall back to main
-execute unless score .gui gui_page matches 1..13 run function gui:pages/main
+execute unless score .gui gui_page matches 1..15 run function gui:pages/main

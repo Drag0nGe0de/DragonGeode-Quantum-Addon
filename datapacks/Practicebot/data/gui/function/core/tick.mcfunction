@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..13 run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..15 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
 # the barrel needs to be (re)filled. This catches the case where the barrel block
 # survived from a previous session but its Items were wiped.
@@ -30,6 +30,7 @@ clear @a minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode"}]
 clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode"}]
 clear @a minecraft:writable_book[minecraft:custom_data={gui_btn:"statistics"}]
 clear @a minecraft:gold_ingot[minecraft:custom_data={gui_btn:"credits_support"}]
+clear @a minecraft:redstone_torch[minecraft:custom_data={gui_btn:"extra"}]
 clear @a minecraft:lime_wool[minecraft:custom_data={gui_btn:"start"}]
 clear @a minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain"}]
 clear @a minecraft:sand[minecraft:custom_data={gui_btn:"terrain"}]
@@ -146,6 +147,16 @@ clear @a minecraft:lime_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 clear @a minecraft:red_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 # NPC Attributes page reset-to-defaults button (slot 26)
 clear @a minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"npc_attr_reset"}]
+# Extra page (page 14) buttons
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"extra_ai"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"extra_optimize"}]
+clear @a minecraft:end_portal_frame[minecraft:custom_data={gui_btn:"extra_teleports"}]
+clear @a minecraft:music_disc_13[minecraft:custom_data={gui_btn:"extra_music"}]
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"extra_bots"}]
+# Multiple Bots page (page 15) buttons
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"bots_quantum"}]
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"bots_herobrine"}]
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"bots_notch"}]
 
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -241,4 +252,14 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 14 run function gui:pages/extra
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 14 run function gui:pages/extra
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 14 run function gui:pages/extra
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 14 run function gui:pages/extra
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 14 run function gui:pages/extra
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 15 run function gui:pages/multiple_bots
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 15 run function gui:pages/multiple_bots
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 15 run function gui:pages/multiple_bots
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 15 run function gui:pages/multiple_bots
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 15 run function gui:pages/multiple_bots
 

@@ -4,10 +4,11 @@
 # Uses "unless data block ... Items[{Slot:Nb}]" which succeeds when the slot
 # has no item (the path doesn't exist).
 
-# ── Main page (gui_page 1) ── Play(12), Statistics(13), Credits & Support(14)
+# ── Main page (gui_page 1) ── Play(12), Statistics(13), Credits & Support(14), Extra(26)
 $execute if score .gui gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/main/play
 $execute if score .gui gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/main/statistics
 $execute if score .gui gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/main/credits_support
+$execute if score .gui gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:26b}] run function gui:click/main/extra
 
 # ── Play page (gui_page 2) ── Mech Training(4), Start(11), Gamemode(12), Terrain(13), Difficulty(14), Settings(15), Back(18)
 $execute if score .gui gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/mech/training
@@ -164,3 +165,17 @@ $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/npc_attr/strength
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:22b}] run function gui:click/npc_attr/mode
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:26b}] run function gui:click/npc_attr/reset
+
+# ── Extra page (gui_page 14) ── Toggle AI(11), Optimize(12), Teleports(13), Undertale Music(14), Multiple Bots(15), Back(18)
+$execute if score .gui gui_page matches 14 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 14 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/extra/ai
+$execute if score .gui gui_page matches 14 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/extra/optimize
+$execute if score .gui gui_page matches 14 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/extra/teleports
+$execute if score .gui gui_page matches 14 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/extra/music
+$execute if score .gui gui_page matches 14 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/extra/bots
+
+# ── Multiple Bots page (gui_page 15) ── Quantum(12), Herobrine(13), Notch(14), Back(18)
+$execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/bots/quantum
+$execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/bots/herobrine
+$execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/bots/notch
