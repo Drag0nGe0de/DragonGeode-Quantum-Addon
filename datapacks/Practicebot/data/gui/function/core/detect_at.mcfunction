@@ -150,7 +150,7 @@ $execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matche
 $execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/npc_gs/prev
 
 # ── NPC Attributes page (gui_page 13) ──
-# Settings(0-9), Mode Wool(22), Back(18)
+# Settings(0-9), Mode Wool(22), Reset(26), Back(18)
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/npc_attr/bot_scale
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/npc_attr/bot_slowness
@@ -163,3 +163,4 @@ $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/npc_attr/speed
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/npc_attr/strength
 $execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:22b}] run function gui:click/npc_attr/mode
+$execute if score .gui gui_page matches 13 unless data block $(x) $(y) $(z) Items[{Slot:26b}] run function gui:click/npc_attr/reset

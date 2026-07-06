@@ -144,6 +144,8 @@ clear @a minecraft:blaze_powder[minecraft:custom_data={gui_btn:"npc_attr_strengt
 # NPC Attributes page mode wool (both variants)
 clear @a minecraft:lime_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 clear @a minecraft:red_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
+# NPC Attributes page reset-to-defaults button (slot 26)
+clear @a minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"npc_attr_reset"}]
 
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
