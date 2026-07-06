@@ -1,0 +1,10 @@
+# GUI System - Click: npc_attr/speed
+# Player Speed: adjust by .var var (1=increase, -1=decrease) then refresh.
+# This is a TOGGLE button — it does NOT navigate away from the page.
+clear @s minecraft:carrot_on_a_stick[minecraft:custom_data={gui_btn:"npc_attr_speed"}]
+
+# Adjust the value (npc:settings/toggle/speed handles the math + feedback).
+function npc:settings/toggle/speed
+
+# Refresh the page so the lore + value update instantly.
+function gui:pages/npc_attributes

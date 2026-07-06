@@ -127,6 +127,20 @@ execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gu
 # NPC General Settings nether star (display only — clear from inventory)
 execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"npc_gs_pageinfo"}] run function gui:core/return_filler
 
+# NPC Attributes page (page 13) setting buttons
+execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:click/npc_attr/bot_scale
+execute if items entity @s inventory.* minecraft:fermented_spider_eye[minecraft:custom_data~{gui_btn:"npc_attr_bot_slowness"}] run function gui:click/npc_attr/bot_slowness
+execute if items entity @s inventory.* minecraft:sugar[minecraft:custom_data~{gui_btn:"npc_attr_bot_speed"}] run function gui:click/npc_attr/bot_speed
+execute if items entity @s inventory.* minecraft:slime_ball[minecraft:custom_data~{gui_btn:"npc_attr_jump_boost"}] run function gui:click/npc_attr/jump_boost
+execute if items entity @s inventory.* minecraft:fishing_rod[minecraft:custom_data~{gui_btn:"npc_attr_reach"}] run function gui:click/npc_attr/reach
+execute if items entity @s inventory.* minecraft:repeater[minecraft:custom_data~{gui_btn:"npc_attr_react"}] run function gui:click/npc_attr/react
+execute if items entity @s inventory.* minecraft:armor_stand[minecraft:custom_data~{gui_btn:"npc_attr_scale"}] run function gui:click/npc_attr/scale
+execute if items entity @s inventory.* minecraft:soul_sand[minecraft:custom_data~{gui_btn:"npc_attr_slowness"}] run function gui:click/npc_attr/slowness
+execute if items entity @s inventory.* minecraft:carrot_on_a_stick[minecraft:custom_data~{gui_btn:"npc_attr_speed"}] run function gui:click/npc_attr/speed
+execute if items entity @s inventory.* minecraft:blaze_powder[minecraft:custom_data~{gui_btn:"npc_attr_strength"}] run function gui:click/npc_attr/strength
+# NPC Attributes page mode wool (both variants)
+execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:click/npc_attr/mode
+execute if items entity @s inventory.* minecraft:red_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:click/npc_attr/mode
 # Filler cleanup
 # If a player accidentally takes a filler, remove it and refresh the barrel.
 execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler

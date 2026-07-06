@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..12 run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..13 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
 # the barrel needs to be (re)filled. This catches the case where the barrel block
 # survived from a previous session but its Items were wiped.
@@ -130,6 +130,21 @@ clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"npc_gs_prev"}]
 clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"npc_gs_next"}]
 clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"npc_gs_pageinfo"}]
 
+# NPC Attributes page (page 13) setting buttons
+clear @a minecraft:skeleton_skull[minecraft:custom_data={gui_btn:"npc_attr_bot_scale"}]
+clear @a minecraft:fermented_spider_eye[minecraft:custom_data={gui_btn:"npc_attr_bot_slowness"}]
+clear @a minecraft:sugar[minecraft:custom_data={gui_btn:"npc_attr_bot_speed"}]
+clear @a minecraft:slime_ball[minecraft:custom_data={gui_btn:"npc_attr_jump_boost"}]
+clear @a minecraft:fishing_rod[minecraft:custom_data={gui_btn:"npc_attr_reach"}]
+clear @a minecraft:repeater[minecraft:custom_data={gui_btn:"npc_attr_react"}]
+clear @a minecraft:armor_stand[minecraft:custom_data={gui_btn:"npc_attr_scale"}]
+clear @a minecraft:soul_sand[minecraft:custom_data={gui_btn:"npc_attr_slowness"}]
+clear @a minecraft:carrot_on_a_stick[minecraft:custom_data={gui_btn:"npc_attr_speed"}]
+clear @a minecraft:blaze_powder[minecraft:custom_data={gui_btn:"npc_attr_strength"}]
+# NPC Attributes page mode wool (both variants)
+clear @a minecraft:lime_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
+clear @a minecraft:red_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
+
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
 execute in minecraft:overworld positioned -683.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -219,4 +234,9 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 13 run function gui:pages/npc_attributes
 

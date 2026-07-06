@@ -24,6 +24,7 @@ execute if score .gui_back gui_page matches 9 run function gui:pages/npc_setting
 execute if score .gui_back gui_page matches 10 run function gui:pages/armor
 execute if score .gui_back gui_page matches 11 run function gui:pages/presets
 execute if score .gui_back gui_page matches 12 run function gui:pages/npc_general_settings
+execute if score .gui_back gui_page matches 13 run function gui:pages/npc_attributes
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..12 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..13 run function gui:pages/main

@@ -25,6 +25,20 @@ scoreboard players set .gui_prev3 gui_page 1
 scoreboard players set .gui_prev4 gui_page 1
 # Default NPC General Settings sub-page to 1 (first page of toggles).
 scoreboard players set .npc_gs_page gui_page 1
+# Initialize customizable setting scores (mirrors reset_custom defaults)
+# so the Attributes page can read them on first load.
+execute unless score .bot_scale var matches -1..255 run scoreboard players set .bot_scale var 2
+execute unless score .bot_slowness var matches -1..255 run scoreboard players set .bot_slowness var -1
+execute unless score .bot_speed var matches -1..255 run scoreboard players set .bot_speed var -1
+execute unless score .jump_boost var matches -1..255 run scoreboard players set .jump_boost var -1
+execute unless score .reach var matches -1..255 run scoreboard players set .reach var 6
+execute unless score .react var matches -1..255 run scoreboard players set .react var 1
+execute unless score .scale var matches -1..255 run scoreboard players set .scale var 2
+execute unless score .slowness var matches -1..255 run scoreboard players set .slowness var -1
+execute unless score .speed var matches -1..255 run scoreboard players set .speed var -1
+execute unless score .strength var matches -1..255 run scoreboard players set .strength var -1
+# Default .var var to 1 (increase mode) if not already 1 or -1
+execute unless score .var var matches 1 run execute unless score .var var matches -1 run scoreboard players set .var var 1
 # Restore gamemode selection (.gm) from the persistent .mode score.
 # gui_page objective is recreated above (wiping .gm), but the "mode" objective
 # persists across reloads. Map mode -> gm:
