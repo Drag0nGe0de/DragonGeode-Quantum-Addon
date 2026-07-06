@@ -33,6 +33,37 @@ execute if items entity @s inventory.* minecraft:command_block[minecraft:custom_
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"difficulty"}] run function gui:click/difficulty
 execute if items entity @s inventory.* minecraft:command_block[minecraft:custom_data~{gui_btn:"settings"}] run function gui:click/settings
 
+# Settings page buttons
+execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"settings_npc"}] run function gui:click/settings_npc
+execute if items entity @s inventory.* minecraft:repeating_command_block[minecraft:custom_data~{gui_btn:"settings_general"}] run function gui:click/settings_general
+execute if items entity @s inventory.* minecraft:chain_command_block[minecraft:custom_data~{gui_btn:"settings_advanced"}] run function gui:click/settings_advanced
+
+# NPC Settings page buttons
+execute if items entity @s inventory.* minecraft:iron_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc_armor
+execute if items entity @s inventory.* minecraft:leather_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc_armor
+execute if items entity @s inventory.* minecraft:chainmail_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc_armor
+execute if items entity @s inventory.* minecraft:diamond_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc_armor
+execute if items entity @s inventory.* minecraft:netherite_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc_armor
+execute if items entity @s inventory.* minecraft:repeating_command_block[minecraft:custom_data~{gui_btn:"npc_general_settings"}] run function gui:click/npc_general_settings
+execute if items entity @s inventory.* minecraft:beacon[minecraft:custom_data~{gui_btn:"npc_attributes"}] run function gui:click/npc_attributes
+execute if items entity @s inventory.* minecraft:book[minecraft:custom_data~{gui_btn:"npc_presets"}] run function gui:click/npc_presets
+execute if items entity @s inventory.* minecraft:writable_book[minecraft:custom_data~{gui_btn:"npc_tutorial"}] run function gui:click/npc_tutorial
+
+# Armor page buttons
+execute if items entity @s inventory.* minecraft:leather_chestplate[minecraft:custom_data~{gui_btn:"armor_leather"}] run function gui:click/armor_leather
+execute if items entity @s inventory.* minecraft:chainmail_chestplate[minecraft:custom_data~{gui_btn:"armor_chainmail"}] run function gui:click/armor_chainmail
+execute if items entity @s inventory.* minecraft:iron_chestplate[minecraft:custom_data~{gui_btn:"armor_iron"}] run function gui:click/armor_iron
+execute if items entity @s inventory.* minecraft:diamond_chestplate[minecraft:custom_data~{gui_btn:"armor_diamond"}] run function gui:click/armor_diamond
+execute if items entity @s inventory.* minecraft:netherite_chestplate[minecraft:custom_data~{gui_btn:"armor_netherite"}] run function gui:click/armor_netherite
+execute if items entity @s inventory.* minecraft:netherite_leggings[minecraft:custom_data~{gui_btn:"armor_dbp"}] run function gui:click/armor_dbp
+execute if items entity @s inventory.* minecraft:netherite_leggings[minecraft:custom_data~{gui_btn:"armor_sbp"}] run function gui:click/armor_sbp
+execute if items entity @s inventory.* minecraft:barrier[minecraft:custom_data~{gui_btn:"armor_prot"}] run function gui:click/armor_prot
+
+# Presets page buttons
+execute if items entity @s inventory.* minecraft:diamond_sword[minecraft:custom_data~{gui_btn:"preset_sword"}] run function gui:click/preset_sword
+execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"preset_crystal"}] run function gui:click/preset_crystal
+execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"preset_mace"}] run function gui:click/preset_mace
+
 # Sub-page back button
 execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{gui_btn:"back"}] run function gui:click/back
 

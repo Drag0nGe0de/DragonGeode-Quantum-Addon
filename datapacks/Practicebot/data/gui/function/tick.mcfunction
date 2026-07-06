@@ -114,6 +114,15 @@ execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-619",y:"31",z:"90"}
 execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:detect_at {x:"-619",y:"31",z:"134"}
 
+# Fallback: also check player inventories for GUI items (catches shift-clicks
+# and cases where a cursor item was swapped into the barrel, preventing
+# detect_at from seeing an empty slot).
+execute in minecraft:overworld positioned -715.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
+execute in minecraft:overworld positioned -683.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
+execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
+execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
+execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:detect_clicks
+
 # Refresh barrel contents every tick while a player is nearby.
 # Page functions modify the main barrel (-715 31 90) and then call
 # gui:sync_barrels to copy Items to the 4 satellite barrels.
