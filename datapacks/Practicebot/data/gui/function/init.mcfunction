@@ -13,9 +13,24 @@ scoreboard objectives add gui_page dummy
 # and a Back click in that window would resolve to 0 = "no page".
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
-# Default gamemode is Crystal (4). gui_page objective is recreated above so .gm
-# is always reset on reload — there's no way to preserve selection here.
-scoreboard players set .gm gui_page 4
+# Restore gamemode selection (.gm) from the persistent .mode score.
+# gui_page objective is recreated above (wiping .gm), but the "mode" objective
+# persists across reloads. Map mode -> gm:
+#   mode 1 (sword)    -> gm 5 (OP Sword)
+#   mode 2 (crystal)  -> gm 4 (Vanilla)
+#   mode 3 (mace)     -> gm 3 (Mace)
+#   mode 4 (nethpot)  -> gm 2 (Pot)
+#   mode 5 (pot)      -> gm 2 (Pot)
+#   mode 6 (cart)     -> gm 1 (TNT Cart)
+# If .mode is unset/invalid, default to Crystal (gm 4).
+execute if score .mode mode matches 1 run scoreboard players set .gm gui_page 5
+execute if score .mode mode matches 2 run scoreboard players set .gm gui_page 4
+execute if score .mode mode matches 3 run scoreboard players set .gm gui_page 3
+execute if score .mode mode matches 4 run scoreboard players set .gm gui_page 2
+execute if score .mode mode matches 5 run scoreboard players set .gm gui_page 2
+execute if score .mode mode matches 6 run scoreboard players set .gm gui_page 1
+# Fallback: if .mode is not 1..6, default to Crystal (gm 4)
+execute unless score .mode mode matches 1..6 run scoreboard players set .gm gui_page 4
 # Default terrain is Netherite (0 = flat/netherite dimension). terrain objective
 # persists across reloads, so use "unless" to keep an existing valid selection.
 execute unless score .terrain terrain matches 0..6 run scoreboard players set .terrain terrain 0

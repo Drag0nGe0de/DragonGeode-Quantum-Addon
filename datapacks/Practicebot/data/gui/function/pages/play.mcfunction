@@ -23,6 +23,12 @@ execute in minecraft:overworld if score .gm gui_page matches 3 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Vanilla",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: OP Sword",color:"gray",italic:false}]
 
+# Pot (gm=2) needs special handling: splash_potion has a default item name that
+# overrides item_name. Use item modify set_name (custom_name) like the gamemode
+# page does, then merge a red potion color so the icon looks right.
+execute in minecraft:overworld if score .gm gui_page matches 2 run item modify block -715 31 90 container.12 {"function":"minecraft:set_name","target":"custom_name","name":{"text":"Gamemode","color":"aqua","italic":false}}
+execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].components merge value {"minecraft:potion_contents":{"custom_color":16711680}}
+
 # -- Dynamic Terrain icon (slot 13) based on .terrain score --
 # .terrain values: 0=netherite/flat, 1=plains, 2=desert, 3=badlands,
 #                  4=mushroom, 5=snow, 6=cave
