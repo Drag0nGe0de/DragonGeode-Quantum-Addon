@@ -4,12 +4,17 @@
 
 # Repair any GUI barrel when a player is nearby.
 # Handles reloads where the score was set but the chunk/barrel wasn't ready.
+# Also checks for empty barrels (barrel exists but slot 12 has no item = needs fill).
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -683 31 90 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..7 run function gui:setup
+# Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
+# the barrel needs to be (re)filled. This catches the case where the barrel block
+# survived from a previous session but its Items were wiped.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[{Slot:12b}] run function gui:setup
 
 # Clear any GUI items from all players' inventories (not just nearby).
 # Items have gui_btn/gui_cat tags so this won't affect normal items.

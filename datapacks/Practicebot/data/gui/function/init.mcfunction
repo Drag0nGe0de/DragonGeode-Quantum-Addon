@@ -1,7 +1,15 @@
 # GUI System — Initialisation
 # Called on datapack load via minecraft:load tag.
 
-execute in minecraft:overworld run forceload add -45 5
+# Forceload the chunks containing all 5 GUI barrels so that the setblock/data
+# commands below succeed on initial world load (before any player approaches).
+# forceload takes BLOCK coordinates, not chunk coordinates.
+# Barrel chunks: (-45,5) (-43,5) (-41,5) (-39,5) (-39,8)
+execute in minecraft:overworld run forceload add -715 90
+execute in minecraft:overworld run forceload add -683 90
+execute in minecraft:overworld run forceload add -651 90
+execute in minecraft:overworld run forceload add -619 90
+execute in minecraft:overworld run forceload add -619 134
 
 scoreboard objectives remove gui_page
 scoreboard objectives add gui_page dummy
