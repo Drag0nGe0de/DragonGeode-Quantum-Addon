@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..8 run function gui:setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..11 run function gui:setup
 # Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
 # the barrel needs to be (re)filled. This catches the case where the barrel block
 # survived from a previous session but its Items were wiped.
@@ -48,6 +48,25 @@ clear @a minecraft:command_block[minecraft:custom_data={gui_btn:"settings"}]
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"settings_npc"}]
 clear @a minecraft:repeating_command_block[minecraft:custom_data={gui_btn:"settings_general"}]
 clear @a minecraft:chain_command_block[minecraft:custom_data={gui_btn:"settings_advanced"}]
+# NPC Settings page (page 9) items
+clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"npc_armor"}]
+clear @a minecraft:repeating_command_block[minecraft:custom_data={gui_btn:"npc_general_settings"}]
+clear @a minecraft:beacon[minecraft:custom_data={gui_btn:"npc_attributes"}]
+clear @a minecraft:book[minecraft:custom_data={gui_btn:"npc_presets"}]
+clear @a minecraft:writable_book[minecraft:custom_data={gui_btn:"npc_tutorial"}]
+# Armor page (page 10) items
+clear @a minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"armor_leather"}]
+clear @a minecraft:chainmail_chestplate[minecraft:custom_data={gui_btn:"armor_chainmail"}]
+clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"armor_iron"}]
+clear @a minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"armor_diamond"}]
+clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"armor_netherite"}]
+clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"armor_dbp"}]
+clear @a minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"armor_sbp"}]
+clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"armor_prot"}]
+# Presets page (page 11) items
+clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"preset_sword"}]
+clear @a minecraft:end_crystal[minecraft:custom_data={gui_btn:"preset_crystal"}]
+clear @a minecraft:mace[minecraft:custom_data={gui_btn:"preset_mace"}]
 clear @a minecraft:feather[minecraft:custom_data={gui_btn:"back"}]
 clear @a minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode_tnt_cart"}]
 clear @a minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode_pot"}]
@@ -104,6 +123,9 @@ execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 8 run function gui:pages/settings
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 9 run function gui:pages/npc_settings
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 10 run function gui:pages/armor
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 11 run function gui:pages/presets
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
@@ -112,6 +134,9 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
 execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 8 run function gui:pages/settings
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 9 run function gui:pages/npc_settings
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 10 run function gui:pages/armor
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 11 run function gui:pages/presets
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
@@ -120,6 +145,9 @@ execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 8 run function gui:pages/settings
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 9 run function gui:pages/npc_settings
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 10 run function gui:pages/armor
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 11 run function gui:pages/presets
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
@@ -128,6 +156,9 @@ execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 8 run function gui:pages/settings
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 9 run function gui:pages/npc_settings
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 10 run function gui:pages/armor
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 11 run function gui:pages/presets
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
@@ -136,4 +167,7 @@ execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distanc
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 8 run function gui:pages/settings
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 9 run function gui:pages/npc_settings
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 10 run function gui:pages/armor
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 11 run function gui:pages/presets
 

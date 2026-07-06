@@ -1,8 +1,7 @@
-# GUI System - Click: settings_npc
-# Navigate to the NPC settings page (page 9).
-clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"settings_npc"}]
+# GUI System - Click: npc_general_settings
+clear @s minecraft:repeating_command_block[minecraft:custom_data={gui_btn:"npc_general_settings"}]
 
 # Push current page onto history stack before navigating
 scoreboard players operation .gui_prev2 gui_page = .gui_prev gui_page
 scoreboard players operation .gui_prev gui_page = .gui gui_page
-function gui:pages/npc_settings
+function gui:pages/wip

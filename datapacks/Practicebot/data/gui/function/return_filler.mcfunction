@@ -12,6 +12,9 @@ execute if score .gui gui_page matches 5 run function gui:pages/terrain
 execute if score .gui gui_page matches 6 run function gui:pages/difficulty
 execute if score .gui gui_page matches 7 run function gui:pages/mech_training
 execute if score .gui gui_page matches 8 run function gui:pages/settings
+execute if score .gui gui_page matches 9 run function gui:pages/npc_settings
+execute if score .gui gui_page matches 10 run function gui:pages/armor
+execute if score .gui gui_page matches 11 run function gui:pages/presets
 
 # Safety: if state is unknown, fall back to main
-execute unless score .gui gui_page matches 1..8 run function gui:pages/main
+execute unless score .gui gui_page matches 1..11 run function gui:pages/main
