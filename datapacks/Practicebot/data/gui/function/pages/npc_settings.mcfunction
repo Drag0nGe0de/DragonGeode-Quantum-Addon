@@ -7,5 +7,19 @@ execute in minecraft:overworld run data merge block -715 31 90 {Items:[{Slot:0b,
 execute in minecraft:overworld if score .disable_tutorial npc matches 0 run data modify block -715 31 90 Items[{Slot:15b}].components."minecraft:lore" set value [{text:"Current: Enabled",color:"green",italic:false}]
 execute in minecraft:overworld if score .disable_tutorial npc matches 1 run data modify block -715 31 90 Items[{Slot:15b}].components."minecraft:lore" set value [{text:"Current: Disabled",color:"red",italic:false}]
 
+# Dynamic Armor icon (slot 11) based on .botgear npc score.
+# .botgear values: 1=Netherite, 2=Diamond, 3=Iron, 4=Chainmail, 5=Leather
+execute in minecraft:overworld if score .botgear npc matches 1 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:netherite_chestplate"
+execute in minecraft:overworld if score .botgear npc matches 2 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:diamond_chestplate"
+execute in minecraft:overworld if score .botgear npc matches 3 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:iron_chestplate"
+execute in minecraft:overworld if score .botgear npc matches 4 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:chainmail_chestplate"
+execute in minecraft:overworld if score .botgear npc matches 5 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:leather_chestplate"
+# Armor lore: show current type
+execute in minecraft:overworld if score .botgear npc matches 1 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Netherite",color:"gray",italic:false}]
+execute in minecraft:overworld if score .botgear npc matches 2 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Diamond",color:"gray",italic:false}]
+execute in minecraft:overworld if score .botgear npc matches 3 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Iron",color:"gray",italic:false}]
+execute in minecraft:overworld if score .botgear npc matches 4 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Chainmail",color:"gray",italic:false}]
+execute in minecraft:overworld if score .botgear npc matches 5 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Leather",color:"gray",italic:false}]
+
 scoreboard players set .gui gui_page 9
 function gui:sync_barrels
