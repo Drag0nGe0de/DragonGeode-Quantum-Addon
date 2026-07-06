@@ -16,10 +16,6 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance
 # survived from a previous session but its Items were wiped.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[{Slot:12b}] run function gui:setup
 
-# Decrement the tutorial toggle lock (prevents double-toggle from cursor item)
-# When the lock reaches 0, the tutorial button can be clicked again.
-execute if score .npc_tutorial_lock gui_page matches 1.. run scoreboard players remove .npc_tutorial_lock gui_page 1
-
 # Clear any GUI items from all players' inventories (not just nearby).
 # Items have gui_btn/gui_cat tags so this won't affect normal items.
 # Cursor items can't be cleared — they're cleaned up when the barrel refreshes.

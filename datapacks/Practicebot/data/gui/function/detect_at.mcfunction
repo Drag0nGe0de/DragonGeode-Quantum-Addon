@@ -92,7 +92,7 @@ $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/npc_general_settings
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/npc_attributes
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/npc_presets
-$execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:15b}] unless score .npc_tutorial_lock gui_page matches 1.. run function gui:click/npc_tutorial
+$execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/npc_tutorial
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/back
 
 # ── Armor page (gui_page 10) ──
