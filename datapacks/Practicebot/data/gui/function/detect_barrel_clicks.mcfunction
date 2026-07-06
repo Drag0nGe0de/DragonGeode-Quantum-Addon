@@ -16,7 +16,11 @@ execute if score .gui gui_page matches 1 unless score #s gui_page matches 1 run 
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:14b}].id
 execute if score .gui gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/credits_support
 
-# ── Play page (gui_page 2) ── Start(11), Gamemode(12), Terrain(13), Difficulty(14), Settings(15), Back(18)
+# ── Play page (gui_page 2) ── Mech Training(4), Start(11), Gamemode(12), Terrain(13), Difficulty(14), Settings(15), Back(18)
+# Mech Training diamond now lives at Slot 4 (top row, centered). Detect a
+# click by checking whether the slot is empty (item moved to cursor).
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:4b}].id
+execute if score .gui gui_page matches 2 unless score #s gui_page matches 1 run function gui:click/mech_training
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:11b}].id
 execute if score .gui gui_page matches 2 unless score #s gui_page matches 1 run function gui:click/start
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:12b}].id
