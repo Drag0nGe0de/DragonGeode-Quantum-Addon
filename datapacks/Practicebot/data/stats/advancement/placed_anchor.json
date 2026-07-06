@@ -13,6 +13,6 @@
     }
   },
   "rewards": {
-    "function": "quantum:sayhi"
+    "function": "stats:advancements/placed_anchor"
   }
 }

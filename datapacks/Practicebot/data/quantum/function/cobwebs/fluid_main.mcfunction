@@ -6,6 +6,7 @@ execute if score @s in_range matches 0 run tag @s add util
 
 # Cobweb
 execute if score .cobweb toggles matches 1 at @s[scores={cobweb_cd=..0,slam_decision=0,hit_decision=0,crit_decision=0,real_hitcd=1..,airborne=0},tag=util,distance=0..] at @p[tag=xlib_target,scores={in_cobweb_decision=0},distance=0..,predicate=quantum:vmotion0_1] anchored eyes positioned ^ ^ ^ at @n[tag=in_player,distance=..5,type=marker] align y run return run function quantum:cobwebs/cobweb
+execute if score .cobweb toggles matches 1 at @s[scores={cobweb_cd=..0,slam_decision=0,hit_decision=0,crit_decision=0,real_hitcd=1..,airborne=0},tag=util,distance=0..] run say hi
 
 # On Fire or in Cobweb
 execute if score .water toggles matches 1 run function quantum:cobwebs/water_main

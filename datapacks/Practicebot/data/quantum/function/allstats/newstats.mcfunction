@@ -16,7 +16,7 @@ execute store result score @s fall_distance run data get entity @s fall_distance
 scoreboard players operation .old distance_to_target = @s distance_to_target
 execute store result score @s horiz_distance_to_target run distance from @s to @p[tag=xlib_target] horizontal e 1
 execute store result score @s vertical_distance_to_target run distance from @s to @p[tag=xlib_target] vertical e 1
-execute positioned ~ ~1.6 ~ store result score @s distance_to_target run distance from ~ ~ ~ toHitbox @p[tag=xlib_target] e 1
+execute store result score @s distance_to_target run distance from ~ ~ ~ to @p[tag=xlib_target] e 1
 execute store result score .old_bot distance_to_target run distance from @n[tag=old_pos_marker,tag=bot,distance=0..,type=marker] to @p[tag=xlib_target] e 1
 execute store result score .old_target distance_to_target run distance from @n[tag=old_pos_marker,tag=target,distance=0..,type=marker] to @s e 1
 scoreboard players set @s[scores={OnGround=1}] airborne 0
