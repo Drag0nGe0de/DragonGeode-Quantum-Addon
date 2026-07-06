@@ -4,10 +4,11 @@
 clear @s minecraft:lime_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 clear @s minecraft:red_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 
-# Flip the mode: if currently increase (1), switch to decrease (-1).
-# Otherwise (including 0/unset), switch to increase (1).
-execute if score .var var matches 1 run scoreboard players set .var var -1
-execute unless score .var var matches 1 run scoreboard players set .var var 1
+# Flip the mode using return run to avoid double-flip.
+# If currently increase (1), switch to decrease (-1) and stop.
+execute if score .var var matches 1 run return run scoreboard players set .var var -1
+# Otherwise (was -1 or unset), switch to increase (1).
+scoreboard players set .var var 1
 
 # Refresh the page so the wool color + all lore lines update.
 function gui:pages/npc_attributes
