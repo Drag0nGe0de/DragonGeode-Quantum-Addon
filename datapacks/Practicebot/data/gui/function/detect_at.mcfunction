@@ -92,18 +92,21 @@ $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/npc_general_settings
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/npc_attributes
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/npc_presets
-$execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/npc_tutorial
+$execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:15b}] unless score .npc_tutorial_cd gui_page matches 1.. run function gui:click/npc_tutorial
 $execute if score .gui gui_page matches 9 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/back
 
-# ── Armor page (gui_page 10) ── Leather(10), Chainmail(11), Iron(12), Diamond(13), Netherite(14), DBP(15), SBP(16), Prot(17), Back(18)
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/armor_leather
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/armor_chainmail
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/armor_iron
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/armor_diamond
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/armor_netherite
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/armor_dbp
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/armor_sbp
-$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/armor_prot
+# ── Armor page (gui_page 10) ──
+# Top row: DBP(3), SBP(4), Prot(5)
+# Middle row: Leather(11), Chainmail(12), Iron(13), Diamond(14), Netherite(15)
+# Back(18)
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/armor_dbp
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/armor_sbp
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/armor_prot
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/armor_leather
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/armor_chainmail
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/armor_iron
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/armor_diamond
+$execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/armor_netherite
 $execute if score .gui gui_page matches 10 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/back
 
 # ── Presets page (gui_page 11) ── Sword(12), Crystal(13), Mace(14), Back(18)

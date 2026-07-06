@@ -60,6 +60,14 @@ execute in minecraft:overworld if score .difficulty difficulty matches 2 run dat
 execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:diamond_chestplate"
 execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:netherite_chestplate"
 execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:netherite_chestplate"
+# Master difficulty (5) has an enchantment glint; remove it for all others so
+# the glint doesn't persist when switching away from Master.
+execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
+execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
+execute in minecraft:overworld if score .difficulty difficulty matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
+execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
+execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
+execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":true}
 # Difficulty lore: "Current: <name>" in gray, non-italic
 execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Easy",color:"gray",italic:false}]
 execute in minecraft:overworld if score .difficulty difficulty matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Medium",color:"gray",italic:false}]

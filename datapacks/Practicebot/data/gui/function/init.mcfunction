@@ -21,6 +21,7 @@ scoreboard objectives add gui_page dummy
 # and a Back click in that window would resolve to 0 = "no page".
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
+scoreboard players set .gui_prev3 gui_page 1
 # Restore gamemode selection (.gm) from the persistent .mode score.
 # gui_page objective is recreated above (wiping .gm), but the "mode" objective
 # persists across reloads. Map mode -> gm:

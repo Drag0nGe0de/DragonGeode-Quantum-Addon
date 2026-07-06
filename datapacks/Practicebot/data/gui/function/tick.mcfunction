@@ -16,6 +16,9 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance
 # survived from a previous session but its Items were wiped.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[{Slot:12b}] run function gui:setup
 
+# Decrement the tutorial toggle cooldown (prevents double-fire across barrels)
+execute if score .npc_tutorial_cd gui_page matches 1.. run scoreboard players remove .npc_tutorial_cd gui_page 1
+
 # Clear any GUI items from all players' inventories (not just nearby).
 # Items have gui_btn/gui_cat tags so this won't affect normal items.
 # Cursor items can't be cleared — they're cleaned up when the barrel refreshes.
@@ -60,9 +63,9 @@ clear @a minecraft:chainmail_chestplate[minecraft:custom_data={gui_btn:"armor_ch
 clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"armor_iron"}]
 clear @a minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"armor_diamond"}]
 clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"armor_netherite"}]
-clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"armor_dbp"}]
-clear @a minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"armor_sbp"}]
-clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"armor_prot"}]
+clear @a minecraft:netherite_leggings[minecraft:custom_data={gui_btn:"armor_dbp"}]
+clear @a minecraft:netherite_leggings[minecraft:custom_data={gui_btn:"armor_sbp"}]
+clear @a minecraft:barrier[minecraft:custom_data={gui_btn:"armor_prot"}]
 # Presets page (page 11) items
 clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"preset_sword"}]
 clear @a minecraft:end_crystal[minecraft:custom_data={gui_btn:"preset_crystal"}]

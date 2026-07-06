@@ -3,6 +3,10 @@
 # 0 = tutorial enabled, 1 = tutorial disabled.
 clear @s minecraft:writable_book[minecraft:custom_data={gui_btn:"npc_tutorial"}]
 
+# Set a cooldown so detect_at doesn't re-trigger this handler on other barrels
+# before the barrel contents propagate. The tick clears the cooldown each tick.
+scoreboard players set .npc_tutorial_cd gui_page 5
+
 # If tutorial is disabled (1), enable it
 execute if score .disable_tutorial npc matches 1 run function npc:settings/on/enable_tutorial
 # If tutorial is enabled (0), disable it
