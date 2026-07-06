@@ -80,3 +80,9 @@ $execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless
 
 # Slot 16: Cart(3) when gm=1
 $execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/mech_cart_3
+
+# ── Settings page (gui_page 8) ── NPC Settings(12), General Settings(13), Advanced Settings(14), Back(18)
+$execute if score .gui gui_page matches 8 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/settings_npc
+$execute if score .gui gui_page matches 8 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/settings_general
+$execute if score .gui gui_page matches 8 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/settings_advanced
+$execute if score .gui gui_page matches 8 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/back
