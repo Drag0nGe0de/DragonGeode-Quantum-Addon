@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..11 run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..12 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
 # the barrel needs to be (re)filled. This catches the case where the barrel block
 # survived from a previous session but its Items were wiped.
@@ -101,6 +101,35 @@ clear @a minecraft:mace[minecraft:custom_data~{gui_cat:"mech"}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{gui_cat:"mech"}]
 clear @a minecraft:tnt_minecart[minecraft:custom_data~{gui_cat:"mech"}]
 
+# NPC General Settings page (page 12) toggle buttons
+clear @a minecraft:shield[minecraft:custom_data={gui_btn:"npc_gs_shield"}]
+clear @a minecraft:elytra[minecraft:custom_data={gui_btn:"npc_gs_better_shield"}]
+clear @a minecraft:firework_rocket[minecraft:custom_data={gui_btn:"npc_gs_auto_wind"}]
+clear @a minecraft:phantom_membrane[minecraft:custom_data={gui_btn:"npc_gs_bot_sf"}]
+clear @a minecraft:cobweb[minecraft:custom_data={gui_btn:"npc_gs_sf"}]
+clear @a minecraft:slime_block[minecraft:custom_data={gui_btn:"npc_gs_airborne_sf"}]
+clear @a minecraft:compass[minecraft:custom_data={gui_btn:"npc_gs_display_shield_dura"}]
+clear @a minecraft:honey_block[minecraft:custom_data={gui_btn:"npc_gs_falldmg"}]
+clear @a minecraft:ender_pearl[minecraft:custom_data={gui_btn:"npc_gs_far_pearl"}]
+clear @a minecraft:clock[minecraft:custom_data={gui_btn:"npc_gs_insta_shieldcd"}]
+clear @a minecraft:rabbit_foot[minecraft:custom_data={gui_btn:"npc_gs_jreset"}]
+clear @a minecraft:ender_eye[minecraft:custom_data={gui_btn:"npc_gs_no_pearl_land"}]
+clear @a minecraft:firework_star[minecraft:custom_data={gui_btn:"npc_gs_pflash"}]
+clear @a minecraft:water_bucket[minecraft:custom_data={gui_btn:"npc_gs_rain"}]
+clear @a minecraft:chest[minecraft:custom_data={gui_btn:"npc_gs_refill"}]
+clear @a minecraft:fire_charge[minecraft:custom_data={gui_btn:"npc_gs_simfire"}]
+clear @a minecraft:leather_boots[minecraft:custom_data={gui_btn:"npc_gs_strafe"}]
+clear @a minecraft:chainmail_boots[minecraft:custom_data={gui_btn:"npc_gs_strafe_fb"}]
+clear @a minecraft:golden_axe[minecraft:custom_data={gui_btn:"npc_gs_stun"}]
+clear @a minecraft:golden_apple[minecraft:custom_data={gui_btn:"npc_gs_uhc"}]
+clear @a minecraft:wind_charge[minecraft:custom_data={gui_btn:"npc_gs_wind_pearl"}]
+clear @a minecraft:breeze_rod[minecraft:custom_data={gui_btn:"npc_gs_wind"}]
+clear @a minecraft:iron_boots[minecraft:custom_data={gui_btn:"npc_gs_move_forward"}]
+# NPC General Settings page navigation
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"npc_gs_prev"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"npc_gs_next"}]
+clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"npc_gs_pageinfo"}]
+
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
 execute in minecraft:overworld positioned -683.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -185,4 +214,9 @@ execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distanc
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 9 run function gui:pages/npc_settings
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 10 run function gui:pages/armor
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 11 run function gui:pages/presets
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 12 run function gui:pages/npc_general_settings
 

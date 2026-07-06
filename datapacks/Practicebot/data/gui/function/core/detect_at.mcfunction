@@ -115,3 +115,36 @@ $execute if score .gui gui_page matches 11 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 11 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/preset/crystal
 $execute if score .gui gui_page matches 11 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/preset/mace
 $execute if score .gui gui_page matches 11 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+
+
+# ── NPC General Settings page (gui_page 12) ──
+# Sub-page 1: toggles in slots 0-17 + next arrow at 23 + back at 18
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/npc_gs/shield
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/npc_gs/better_shield
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/npc_gs/auto_wind
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/npc_gs/bot_sf
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/npc_gs/sf
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/npc_gs/airborne_sf
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/npc_gs/display_shield_dura
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/npc_gs/falldmg
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/npc_gs/far_pearl
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/npc_gs/insta_shieldcd
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/npc_gs/jreset
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/npc_gs/no_pearl_land
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/npc_gs/pflash
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/npc_gs/rain
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/npc_gs/refill
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/npc_gs/simfire
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/npc_gs/strafe
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/npc_gs/strafe_fb
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/npc_gs/next
+
+# Sub-page 2: toggles in slots 0-4 + prev arrow at 21 + back at 18
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/npc_gs/stun
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/npc_gs/uhc
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/npc_gs/wind_pearl
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/npc_gs/wind
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/npc_gs/move_forward
+$execute if score .gui gui_page matches 12 if score .npc_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/npc_gs/prev
