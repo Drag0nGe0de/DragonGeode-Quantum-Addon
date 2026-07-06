@@ -54,8 +54,10 @@ data modify storage gui:attr_temp step set value 0.5d
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Reaction Time (slot 5, type int, step 5)
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .react var
+# Reaction Time (slot 5, type int, step 5) — display clamped to 0 (never negative)
+scoreboard players operation #attr_disp var = .react var
+execute if score #attr_disp var matches ..-1 run scoreboard players set #attr_disp var 0
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 5
 data modify storage gui:attr_temp step set value 5
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
