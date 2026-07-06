@@ -1,1 +1,0 @@
-$data modify block -715 31 90 Items[{Slot:$(slot)b}].components."minecraft:lore" set value [{"text":"Click to Increase","color":"green","italic":false},{"text":$(value),"color":"gray","italic":false,"extra":[{"text":" (+","color":"green","italic":false},{"text":$(step),"color":"green","italic":false},{"text":")","color":"green","italic":false}]}]
