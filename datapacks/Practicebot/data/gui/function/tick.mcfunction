@@ -73,13 +73,9 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data~{gui_cat:"mech"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:obsidian[minecraft:custom_data~{gui_cat:"mech"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:respawn_anchor[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:elytra[minecraft:custom_data~{gui_cat:"mech"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:ender_pearl[minecraft:custom_data~{gui_cat:"mech"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data~{gui_cat:"mech"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:firework_rocket[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:glass_bottle[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:brewing_stand[minecraft:custom_data~{gui_cat:"mech"}]
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data~{gui_cat:"mech"}]
 
 # Kill any dropped GUI items on the ground near the barrel.
