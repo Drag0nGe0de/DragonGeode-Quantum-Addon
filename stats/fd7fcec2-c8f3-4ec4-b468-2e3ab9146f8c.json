@@ -1,15 +1,34 @@
 {
   "stats": {
-    "minecraft:killed_by": {
-      "minecraft:player": 478,
-      "minecraft:creeper": 12
+    "minecraft:mined": {
+      "minecraft:fire": 12,
+      "minecraft:glowstone": 1
     },
-    "minecraft:killed": {
-      "minecraft:bee": 4,
-      "minecraft:player": 1302
-    },
-    "minecraft:dropped": {
-      "minecraft:totem_of_undying": 99
+    "minecraft:custom": {
+      "minecraft:damage_blocked_by_shield": 4103145,
+      "minecraft:damage_resisted": 4568435,
+      "minecraft:time_since_rest": 100827,
+      "minecraft:walk_one_cm": 8759546,
+      "minecraft:leave_game": 2355,
+      "minecraft:walk_under_water_one_cm": 2896,
+      "minecraft:damage_taken": 10943355,
+      "minecraft:mob_kills": 6,
+      "minecraft:interact_with_lectern": 1,
+      "minecraft:play_time": 10656191,
+      "minecraft:damage_dealt": 764197,
+      "minecraft:damage_absorbed": 4065987,
+      "minecraft:jump": 102981,
+      "minecraft:time_since_death": 100827,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 24237883,
+      "minecraft:fall_one_cm": 19946966,
+      "minecraft:total_world_time": 17857065,
+      "minecraft:swim_one_cm": 19056,
+      "minecraft:fly_one_cm": 16306124,
+      "minecraft:walk_on_water_one_cm": 206626,
+      "minecraft:crouch_one_cm": 1357,
+      "minecraft:deaths": 665,
+      "minecraft:player_kills": 2227
     },
     "minecraft:used": {
       "minecraft:shield": 14992,
@@ -39,6 +58,17 @@
       "minecraft:totem_of_undying": 53576,
       "minecraft:ender_pearl": 64661,
       "minecraft:bow": 4055
+    },
+    "minecraft:dropped": {
+      "minecraft:totem_of_undying": 99
+    },
+    "minecraft:killed": {
+      "minecraft:bee": 4,
+      "minecraft:player": 1302
+    },
+    "minecraft:killed_by": {
+      "minecraft:player": 478,
+      "minecraft:creeper": 12
     },
     "minecraft:picked_up": {
       "minecraft:experience_bottle": 768,
@@ -112,36 +142,6 @@
       "minecraft:waxed_copper_bulb": 9,
       "minecraft:end_crystal": 2416,
       "minecraft:waxed_weathered_copper_bulb": 1
-    },
-    "minecraft:custom": {
-      "minecraft:damage_blocked_by_shield": 4103145,
-      "minecraft:damage_resisted": 4568435,
-      "minecraft:time_since_rest": 100293,
-      "minecraft:walk_one_cm": 8759546,
-      "minecraft:leave_game": 2354,
-      "minecraft:walk_under_water_one_cm": 2896,
-      "minecraft:damage_taken": 10943355,
-      "minecraft:mob_kills": 6,
-      "minecraft:interact_with_lectern": 1,
-      "minecraft:play_time": 10655657,
-      "minecraft:damage_dealt": 764197,
-      "minecraft:damage_absorbed": 4065987,
-      "minecraft:jump": 102981,
-      "minecraft:time_since_death": 100293,
-      "minecraft:drop": 1,
-      "minecraft:sprint_one_cm": 24237883,
-      "minecraft:fall_one_cm": 19946966,
-      "minecraft:total_world_time": 17856521,
-      "minecraft:swim_one_cm": 19056,
-      "minecraft:fly_one_cm": 16306124,
-      "minecraft:walk_on_water_one_cm": 206626,
-      "minecraft:crouch_one_cm": 1357,
-      "minecraft:deaths": 665,
-      "minecraft:player_kills": 2227
-    },
-    "minecraft:mined": {
-      "minecraft:fire": 12,
-      "minecraft:glowstone": 1
     },
     "minecraft:broken": {
       "minecraft:netherite_leggings": 2,
