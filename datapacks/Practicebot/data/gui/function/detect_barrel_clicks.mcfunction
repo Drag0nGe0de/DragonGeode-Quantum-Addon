@@ -86,6 +86,47 @@ execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run 
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
 execute if score .gui gui_page matches 6 unless score #s gui_page matches 1 run function gui:click/back
 
-# ── Mech Training page (gui_page 7) ── Back(18)
+# ── Mech Training page (gui_page 7) ──
+# Button slots depend on the current gamemode (.gm). Each slot check is gated
+# by the gamemode score so only the correct handler fires for that gamemode.
+# Back(18) is always present.
 execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:18b}].id
 execute if score .gui gui_page matches 7 unless score #s gui_page matches 1 run function gui:click/back
+
+# Slot 10: Cart(-3) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:10b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_neg3
+
+# Slot 11: Mace(Breach Swap) when gm=3, Cart(-2) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:11b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_neg2
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 3 unless score #s gui_page matches 1 run function gui:click/mech_mace_breach
+
+# Slot 12: Crystal(DTap) when gm=4, Mace(Far Pearl) when gm=3, Pot(Repot) when gm=2, Cart(-1) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:12b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_neg1
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 2 unless score #s gui_page matches 1 run function gui:click/mech_pot_repot
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 3 unless score #s gui_page matches 1 run function gui:click/mech_mace_far_pearl
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/mech_crystal_dtap
+
+# Slot 13: Crystal(Ledge) when gm=4, Mace(Stun Slam) when gm=3, Pot(Refill Hotbar) when gm=2, Cart(0) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:13b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_0
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 2 unless score #s gui_page matches 1 run function gui:click/mech_pot_refill_hotbar
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 3 unless score #s gui_page matches 1 run function gui:click/mech_mace_stun_slam
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/mech_crystal_ledge
+
+# Slot 14: Crystal(Hit Anchor) when gm=4, Mace(Divebomb) when gm=3, Pot(Refill Inventory) when gm=2, Cart(1) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:14b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_1
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 2 unless score #s gui_page matches 1 run function gui:click/mech_pot_refill_inventory
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 3 unless score #s gui_page matches 1 run function gui:click/mech_mace_divebomb
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 4 unless score #s gui_page matches 1 run function gui:click/mech_crystal_hit_anchor
+
+# Slot 15: Cart(2) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:15b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_2
+
+# Slot 16: Cart(3) when gm=1
+execute store success score #s gui_page run data get block -715 31 90 Items[{Slot:16b}].id
+execute if score .gui gui_page matches 7 if score .gm gui_page matches 1 unless score #s gui_page matches 1 run function gui:click/mech_cart_3

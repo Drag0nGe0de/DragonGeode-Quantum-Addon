@@ -68,6 +68,20 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] r
 # Mech Training button (play page)
 execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond[minecraft:custom_data={gui_btn:"mech_training"}]
 
+# Mech Training page buttons (page 7) — clear by item type + gui_cat:"mech"
+# (gui_cat distinguishes them from gamemode/difficulty page items of the same type)
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:obsidian[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:respawn_anchor[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:elytra[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:ender_pearl[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:firework_rocket[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:glass_bottle[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:brewing_stand[minecraft:custom_data~{gui_cat:"mech"}]
+execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data~{gui_cat:"mech"}]
+
 # Kill any dropped GUI items on the ground near the barrel.
 # This prevents item theft via dropping (Q key or drag-out of inventory).
 # Targets any item entity whose Item has a gui_btn field in custom_data.
