@@ -8,83 +8,88 @@ execute in minecraft:overworld run data merge block -715 31 90 {Items:[{Slot:0b,
 
 # -- Dynamic lore per setting (current value + delta) --
 # Uses gui:attr_temp storage to pass slot/value/step to macro functions.
-# value is read from .<name> var scoreboard; step is the increment size.
+# Value computation depends on setting type:
+#   half   → score × 0.5 (double), step = 0.5
+#   offset → score + 1 (int), step = 1
+#   int    → score (int), step = N
 
-# Bot Scale (slot 0, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .bot_scale var
+# Bot Scale (slot 0, type half, step 0.5d)
+execute store result storage gui:attr_temp value double 0.5 run scoreboard players get .bot_scale var
 data modify storage gui:attr_temp slot set value 0
-data modify storage gui:attr_temp step set value 1
+data modify storage gui:attr_temp step set value 0.5d
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Bot Slowness (slot 1, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .bot_slowness var
+# Bot Slowness (slot 1, type offset, step 1)
+scoreboard players operation #attr_disp var = .bot_slowness var
+scoreboard players add #attr_disp var 1
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 1
 data modify storage gui:attr_temp step set value 1
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Bot Speed (slot 2, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .bot_speed var
+# Bot Speed (slot 2, type offset, step 1)
+scoreboard players operation #attr_disp var = .bot_speed var
+scoreboard players add #attr_disp var 1
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 2
 data modify storage gui:attr_temp step set value 1
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Jump Boost (slot 3, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .jump_boost var
+# Jump Boost (slot 3, type offset, step 1)
+scoreboard players operation #attr_disp var = .jump_boost var
+scoreboard players add #attr_disp var 1
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 3
 data modify storage gui:attr_temp step set value 1
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Reach (slot 4, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .reach var
+# Reach (slot 4, type half, step 0.5d)
+execute store result storage gui:attr_temp value double 0.5 run scoreboard players get .reach var
 data modify storage gui:attr_temp slot set value 4
-data modify storage gui:attr_temp step set value 1
+data modify storage gui:attr_temp step set value 0.5d
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Reaction Time (slot 5, step 5)
-data modify storage gui:attr_temp value set value 0
+# Reaction Time (slot 5, type int, step 5)
 execute store result storage gui:attr_temp value int 1 run scoreboard players get .react var
 data modify storage gui:attr_temp slot set value 5
 data modify storage gui:attr_temp step set value 5
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Player Scale (slot 6, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .scale var
+# Player Scale (slot 6, type half, step 0.5d)
+execute store result storage gui:attr_temp value double 0.5 run scoreboard players get .scale var
 data modify storage gui:attr_temp slot set value 6
-data modify storage gui:attr_temp step set value 1
+data modify storage gui:attr_temp step set value 0.5d
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Player Slowness (slot 7, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .slowness var
+# Player Slowness (slot 7, type offset, step 1)
+scoreboard players operation #attr_disp var = .slowness var
+scoreboard players add #attr_disp var 1
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 7
 data modify storage gui:attr_temp step set value 1
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Player Speed (slot 8, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .speed var
+# Player Speed (slot 8, type offset, step 1)
+scoreboard players operation #attr_disp var = .speed var
+scoreboard players add #attr_disp var 1
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 8
 data modify storage gui:attr_temp step set value 1
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
 execute unless score .var var matches 1 run function gui:pages/npc_attr/lore_dec with storage gui:attr_temp
 
-# Player Strength (slot 9, step 1)
-data modify storage gui:attr_temp value set value 0
-execute store result storage gui:attr_temp value int 1 run scoreboard players get .strength var
+# Player Strength (slot 9, type offset, step 1)
+scoreboard players operation #attr_disp var = .strength var
+scoreboard players add #attr_disp var 1
+execute store result storage gui:attr_temp value int 1 run scoreboard players get #attr_disp var
 data modify storage gui:attr_temp slot set value 9
 data modify storage gui:attr_temp step set value 1
 execute if score .var var matches 1 run function gui:pages/npc_attr/lore_inc with storage gui:attr_temp
