@@ -1,6 +1,6 @@
 {
     "values": [
         "quantum:tick",
-        "gui:tick"
+        "gui:core/tick"
     ]
 }

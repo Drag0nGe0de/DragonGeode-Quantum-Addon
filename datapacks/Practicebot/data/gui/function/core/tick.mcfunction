@@ -5,16 +5,16 @@
 # Repair any GUI barrel when a player is nearby.
 # Handles reloads where the score was set but the chunk/barrel wasn't ready.
 # Also checks for empty barrels (barrel exists but slot 12 has no item = needs fill).
-execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -683 31 90 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..11 run function gui:setup
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:core/setup
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -683 31 90 minecraft:barrel run function gui:core/setup
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..11 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
 # the barrel needs to be (re)filled. This catches the case where the barrel block
 # survived from a previous session but its Items were wiped.
-execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[{Slot:12b}] run function gui:setup
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[{Slot:12b}] run function gui:core/setup
 
 # Clear any GUI items from all players' inventories (not just nearby).
 # Items have gui_btn/gui_cat tags so this won't affect normal items.
@@ -84,6 +84,8 @@ clear @a minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain_plains"}]
 clear @a minecraft:snow_block[minecraft:custom_data={gui_btn:"terrain_snowy_plains"}]
 clear @a minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain_mushroom"}]
 clear @a minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain_netherite"}]
+# Flat Terrain toggle button (terrain page, slot 4) -- smooth_stone icon
+clear @a minecraft:smooth_stone[minecraft:custom_data={gui_btn:"terrain_flat"}]
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty_npc"}]
 clear @a minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty_easy"}]
 clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty_medium"}]
@@ -108,24 +110,24 @@ execute in minecraft:overworld positioned -619.5 31.5 133.5 as @e[type=item,dist
 
 # Detect barrel clicks for each barrel (checks for empty slots = clicked).
 # detect_at is a macro that takes barrel coordinates.
-execute in minecraft:overworld positioned -715.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-715",y:"31",z:"90"}
-execute in minecraft:overworld positioned -683.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-683",y:"31",z:"90"}
-execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-651",y:"31",z:"90"}
-execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-619",y:"31",z:"90"}
-execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:detect_at {x:"-619",y:"31",z:"134"}
+execute in minecraft:overworld positioned -715.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_at {x:"-715",y:"31",z:"90"}
+execute in minecraft:overworld positioned -683.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_at {x:"-683",y:"31",z:"90"}
+execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_at {x:"-651",y:"31",z:"90"}
+execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_at {x:"-619",y:"31",z:"90"}
+execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:core/detect_at {x:"-619",y:"31",z:"134"}
 
 # Fallback: also check player inventories for GUI items (catches shift-clicks
 # and cases where a cursor item was swapped into the barrel, preventing
 # detect_at from seeing an empty slot).
-execute in minecraft:overworld positioned -715.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
-execute in minecraft:overworld positioned -683.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
-execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
-execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:detect_clicks
-execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:detect_clicks
+execute in minecraft:overworld positioned -715.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_clicks
+execute in minecraft:overworld positioned -683.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_clicks
+execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_clicks
+execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:core/detect_clicks
+execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:core/detect_clicks
 
 # Refresh barrel contents every tick while a player is nearby.
 # Page functions modify the main barrel (-715 31 90) and then call
-# gui:sync_barrels to copy Items to the 4 satellite barrels.
+# gui:core/sync_barrels to copy Items to the 4 satellite barrels.
 # Only need to check one barrel for a nearby player since all share
 # the same .gui page state — if any barrel has a player, refresh.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main

@@ -24,4 +24,4 @@ execute in minecraft:overworld if score .blast_prot npc matches 1 run data modif
 execute in minecraft:overworld if score .blast_prot npc matches 2 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" append value {text:"Double Blast Prot",color:"gray",italic:false}
 
 scoreboard players set .gui gui_page 9
-function gui:sync_barrels
+function gui:core/sync_barrels
