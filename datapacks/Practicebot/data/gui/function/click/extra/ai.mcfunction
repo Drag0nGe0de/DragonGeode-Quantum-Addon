@@ -1,5 +1,5 @@
 # GUI System - Click: extra/ai
-# Toggle the AI (hardcode) setting, then refresh the Extra page.
+# Toggle the No AI (hardcode) setting, then refresh the Extra page.
 # This is a TOGGLE button — it does NOT navigate away from the page.
 clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"extra_ai"}]
 
