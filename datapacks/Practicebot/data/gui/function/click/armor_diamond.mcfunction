@@ -10,5 +10,6 @@ function npc:settings/toggle/dia
 scoreboard players operation .gui_back gui_page = .gui_prev gui_page
 scoreboard players operation .gui_prev gui_page = .gui_prev2 gui_page
 scoreboard players operation .gui_prev2 gui_page = .gui_prev3 gui_page
+scoreboard players operation .gui_prev3 gui_page = .gui_prev4 gui_page
 # Return to NPC settings page (refreshes the button icons + lore)
 function gui:pages/npc_settings

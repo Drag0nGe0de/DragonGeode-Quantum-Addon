@@ -3,10 +3,10 @@
 # 0 = tutorial enabled, 1 = tutorial disabled.
 clear @s minecraft:writable_book[minecraft:custom_data={gui_btn:"npc_tutorial"}]
 
-# Set a cooldown so detect_at doesn't re-trigger this handler.
-# The cooldown lasts 20 ticks (1 second) — enough time for the cursor item
-# to be cleared by tick and the barrel to fully refresh.
-scoreboard players set .npc_tutorial_cd gui_page 20
+# Set a lock flag that prevents the handler from running again until the lock
+# is cleared by tick.mcfunction (2 ticks later). This prevents double-toggle
+# caused by the cursor item being placed back into the barrel.
+scoreboard players set .npc_tutorial_lock gui_page 2
 
 # If tutorial is disabled (1), enable it
 execute if score .disable_tutorial npc matches 1 run function npc:settings/on/enable_tutorial

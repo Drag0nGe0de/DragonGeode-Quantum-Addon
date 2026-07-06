@@ -26,6 +26,7 @@ execute in minecraft:overworld run data modify block -619 31 134 CustomName set 
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1
 scoreboard players set .gui_prev3 gui_page 1
+scoreboard players set .gui_prev4 gui_page 1
 # Restore gamemode selection (.gm) from the persistent .mode score.
 # gui_page objective is recreated in init.mcfunction (wiping .gm), but the
 # "mode" objective persists. Map mode -> gm (see init.mcfunction for full table).

@@ -14,12 +14,19 @@ execute in minecraft:overworld if score .botgear npc matches 2 run data modify b
 execute in minecraft:overworld if score .botgear npc matches 3 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:iron_chestplate"
 execute in minecraft:overworld if score .botgear npc matches 4 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:chainmail_chestplate"
 execute in minecraft:overworld if score .botgear npc matches 5 run data modify block -715 31 90 Items[{Slot:11b}].id set value "minecraft:leather_chestplate"
-# Armor lore: show current type
+# Armor lore: "Current: <armor>, <blast_prot>" — uses 2 lore lines for clarity.
+# Line 1: Current: <armor type>
+# Line 2: <blast prot type>
+# .blast_prot npc: 0=No Blast Prot, 1=Single Blast Prot, 2=Double Blast Prot
 execute in minecraft:overworld if score .botgear npc matches 1 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Netherite",color:"gray",italic:false}]
 execute in minecraft:overworld if score .botgear npc matches 2 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Diamond",color:"gray",italic:false}]
 execute in minecraft:overworld if score .botgear npc matches 3 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Iron",color:"gray",italic:false}]
 execute in minecraft:overworld if score .botgear npc matches 4 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Chainmail",color:"gray",italic:false}]
 execute in minecraft:overworld if score .botgear npc matches 5 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" set value [{text:"Current: Leather",color:"gray",italic:false}]
+# Append blast prot line to the lore (append to existing array)
+execute in minecraft:overworld if score .blast_prot npc matches 0 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" append value {text:"No Blast Prot",color:"gray",italic:false}
+execute in minecraft:overworld if score .blast_prot npc matches 1 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" append value {text:"Single Blast Prot",color:"gray",italic:false}
+execute in minecraft:overworld if score .blast_prot npc matches 2 run data modify block -715 31 90 Items[{Slot:11b}].components."minecraft:lore" append value {text:"Double Blast Prot",color:"gray",italic:false}
 
 scoreboard players set .gui gui_page 9
 function gui:sync_barrels
