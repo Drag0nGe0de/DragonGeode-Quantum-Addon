@@ -8,3 +8,4 @@ execute in minecraft:overworld run item modify block -715 31 90 container.12 {"f
 execute in minecraft:overworld run data modify block -715 31 90 Items[{Slot:12b}].components merge value {"minecraft:potion_contents":{"custom_color":16711680}}
 
 scoreboard players set .gui gui_page 4
+function gui:sync_barrels

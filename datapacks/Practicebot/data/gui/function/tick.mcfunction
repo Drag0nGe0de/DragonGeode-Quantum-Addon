@@ -1,99 +1,126 @@
 # GUI System — Tick
 # Runs every game tick via minecraft:tick tag.
+# Supports 5 barrels: -715 31 90 (main), -683 31 90, -651 31 90, -619 31 90, -619 31 134
 
-# Repair the GUI when a player is nearby. This handles reloads where the score
-# was set but the chunk/barrel contents were not ready yet.
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:setup
+# Repair any GUI barrel when a player is nearby.
+# Handles reloads where the score was set but the chunk/barrel wasn't ready.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -715 31 90 minecraft:barrel run function gui:setup
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -683 31 90 minecraft:barrel run function gui:setup
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:setup
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:setup
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:setup
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..7 run function gui:setup
 
-# Aggressively clear any GUI items from nearby players' inventories.
-# This catches items that landed in inventory (barrel close, shift-click).
-# Cursor items cannot be cleared by commands — they are cleaned up here
-# the instant the player closes the barrel or places the item.
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:gray_stained_glass_pane[minecraft:custom_data={gui_btn:"filler"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"filler"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_sword[minecraft:custom_data={gui_btn:"play"}]
-# Play-page gamemode button (icon changes — clear all possible item types)
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_sword[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:writable_book[minecraft:custom_data={gui_btn:"statistics"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:gold_ingot[minecraft:custom_data={gui_btn:"credits_support"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:lime_wool[minecraft:custom_data={gui_btn:"start"}]
-# Play-page terrain button (icon changes — clear all possible item types)
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:sand[minecraft:custom_data={gui_btn:"terrain"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:red_sand[minecraft:custom_data={gui_btn:"terrain"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:snow_block[minecraft:custom_data={gui_btn:"terrain"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:stone[minecraft:custom_data={gui_btn:"terrain"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain"}]
-# Play-page difficulty button (icon changes — clear all possible item types)
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"difficulty"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"settings"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:feather[minecraft:custom_data={gui_btn:"back"}]
+# Clear any GUI items from all players' inventories (not just nearby).
+# Items have gui_btn/gui_cat tags so this won't affect normal items.
+# Cursor items can't be cleared — they're cleaned up when the barrel refreshes.
+clear @a minecraft:gray_stained_glass_pane[minecraft:custom_data={gui_btn:"filler"}]
+clear @a minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"filler"}]
+clear @a minecraft:iron_sword[minecraft:custom_data={gui_btn:"play"}]
+clear @a minecraft:iron_sword[minecraft:custom_data={gui_btn:"gamemode"}]
+clear @a minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode"}]
+clear @a minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode"}]
+clear @a minecraft:mace[minecraft:custom_data={gui_btn:"gamemode"}]
+clear @a minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode"}]
+clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode"}]
+clear @a minecraft:writable_book[minecraft:custom_data={gui_btn:"statistics"}]
+clear @a minecraft:gold_ingot[minecraft:custom_data={gui_btn:"credits_support"}]
+clear @a minecraft:lime_wool[minecraft:custom_data={gui_btn:"start"}]
+clear @a minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:sand[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:red_sand[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:snow_block[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:stone[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain"}]
+clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @a minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @a minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @a minecraft:command_block[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @a minecraft:command_block[minecraft:custom_data={gui_btn:"settings"}]
+clear @a minecraft:feather[minecraft:custom_data={gui_btn:"back"}]
+clear @a minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode_tnt_cart"}]
+clear @a minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode_pot"}]
+clear @a minecraft:mace[minecraft:custom_data={gui_btn:"gamemode_mace"}]
+clear @a minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode_vanilla"}]
+clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode_op_sword"}]
+clear @a minecraft:red_sand[minecraft:custom_data={gui_btn:"terrain_badlands"}]
+clear @a minecraft:sand[minecraft:custom_data={gui_btn:"terrain_desert"}]
+clear @a minecraft:stone[minecraft:custom_data={gui_btn:"terrain_cave"}]
+clear @a minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain_plains"}]
+clear @a minecraft:snow_block[minecraft:custom_data={gui_btn:"terrain_snowy_plains"}]
+clear @a minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain_mushroom"}]
+clear @a minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain_netherite"}]
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty_npc"}]
+clear @a minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty_easy"}]
+clear @a minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty_medium"}]
+clear @a minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty_hard"}]
+clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_crazy"}]
+clear @a minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_master"}]
+clear @a minecraft:diamond[minecraft:custom_data={gui_btn:"mech_training"}]
+clear @a minecraft:end_crystal[minecraft:custom_data~{gui_cat:"mech"}]
+clear @a minecraft:obsidian[minecraft:custom_data~{gui_cat:"mech"}]
+clear @a minecraft:respawn_anchor[minecraft:custom_data~{gui_cat:"mech"}]
+clear @a minecraft:ender_pearl[minecraft:custom_data~{gui_cat:"mech"}]
+clear @a minecraft:mace[minecraft:custom_data~{gui_cat:"mech"}]
+clear @a minecraft:firework_rocket[minecraft:custom_data~{gui_cat:"mech"}]
+clear @a minecraft:tnt_minecart[minecraft:custom_data~{gui_cat:"mech"}]
 
-# Gamemode page items
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data={gui_btn:"gamemode_tnt_cart"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:splash_potion[minecraft:custom_data={gui_btn:"gamemode_pot"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode_mace"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data={gui_btn:"gamemode_vanilla"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode_op_sword"}]
+# Kill any dropped GUI items on the ground near each barrel.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
+execute in minecraft:overworld positioned -683.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
+execute in minecraft:overworld positioned -651.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
+execute in minecraft:overworld positioned -619.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
+execute in minecraft:overworld positioned -619.5 31.5 133.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
 
-# Terrain page items
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:red_sand[minecraft:custom_data={gui_btn:"terrain_badlands"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:sand[minecraft:custom_data={gui_btn:"terrain_desert"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:stone[minecraft:custom_data={gui_btn:"terrain_cave"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:grass_block[minecraft:custom_data={gui_btn:"terrain_plains"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:snow_block[minecraft:custom_data={gui_btn:"terrain_snowy_plains"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mycelium[minecraft:custom_data={gui_btn:"terrain_mushroom"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_block[minecraft:custom_data={gui_btn:"terrain_netherite"}]
-
-# Difficulty page items
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty_npc"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty_easy"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty_medium"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty_hard"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_crazy"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_master"}]
-
-# Mech Training button (play page)
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:diamond[minecraft:custom_data={gui_btn:"mech_training"}]
-
-# Mech Training page buttons (page 7) — clear by item type + gui_cat:"mech"
-# (gui_cat distinguishes them from gamemode/difficulty page items of the same type)
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:end_crystal[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:obsidian[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:respawn_anchor[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:ender_pearl[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:mace[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:firework_rocket[minecraft:custom_data~{gui_cat:"mech"}]
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run clear @s minecraft:tnt_minecart[minecraft:custom_data~{gui_cat:"mech"}]
-
-# Kill any dropped GUI items on the ground near the barrel.
-# This prevents item theft via dropping (Q key or drag-out of inventory).
-# Targets any item entity whose Item has a gui_btn field in custom_data.
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
-
-# Detect barrel clicks: check if a button was taken from the barrel.
-# This catches normal clicks (item goes to cursor, NOT inventory.*).
-execute in minecraft:overworld positioned -715.5 31.5 90.5 as @a[distance=..8] run function gui:detect_barrel_clicks
+# Detect barrel clicks for each barrel (checks for empty slots = clicked).
+# detect_at is a macro that takes barrel coordinates.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-715",y:"31",z:"90"}
+execute in minecraft:overworld positioned -683.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-683",y:"31",z:"90"}
+execute in minecraft:overworld positioned -651.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-651",y:"31",z:"90"}
+execute in minecraft:overworld positioned -619.5 31.5 89.5 as @a[distance=..8] run function gui:detect_at {x:"-619",y:"31",z:"90"}
+execute in minecraft:overworld positioned -619.5 31.5 133.5 as @a[distance=..8] run function gui:detect_at {x:"-619",y:"31",z:"134"}
 
 # Refresh barrel contents every tick while a player is nearby.
-# This prevents item theft (barrel always has the correct items) and
-# restores any filler slots that were taken.
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
+# Page functions modify the main barrel (-715 31 90) and then call
+# gui:sync_barrels to copy Items to the 4 satellite barrels.
+# Only need to check one barrel for a nearby player since all share
+# the same .gui page state — if any barrel has a player, refresh.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 1 run function gui:pages/main
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:pages/play
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 3 run function gui:pages/wip
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 4 run function gui:pages/gamemode
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 5 run function gui:pages/terrain
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 6 run function gui:pages/difficulty
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 7 run function gui:pages/mech_training
+

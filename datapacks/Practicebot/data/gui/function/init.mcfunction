@@ -23,11 +23,21 @@ execute unless score .terrain terrain matches 0..6 run scoreboard players set .t
 # so use "unless" to keep an existing valid selection.
 execute unless score .difficulty difficulty matches 0..5 run scoreboard players set .difficulty difficulty 4
 
-# Place the GUI barrel facing east at -715 31 90
+# Place all 5 GUI barrels facing east
+# Main barrel: -715 31 90
+# Satellite barrels: -683 31 90, -651 31 90, -619 31 90, -619 31 134
 execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -683 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -651 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -619 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -619 31 134 minecraft:barrel[facing=east] replace
 
-# Give the barrel a title (using data modify to fix the CustomName bug)
+# Give all barrels a title (using data modify to fix the CustomName bug)
 execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Settings","italic":false}
 
-# Fill the barrel with the main page
+# Fill the main barrel with the main page (sync_barrels copies to satellites)
 function gui:pages/main

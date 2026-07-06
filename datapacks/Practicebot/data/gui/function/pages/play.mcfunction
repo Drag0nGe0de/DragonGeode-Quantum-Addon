@@ -71,3 +71,4 @@ execute in minecraft:overworld if score .gm gui_page matches 4 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"OP Sword",color:"gray",italic:false}]
 
 scoreboard players set .gui gui_page 2
+function gui:sync_barrels

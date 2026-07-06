@@ -3,8 +3,12 @@
 # the barrel after a datapack load/reload.  Running from tick means the chunk
 # at -715 31 90 is always loaded before any block command executes.
 
-# Place (or reset) the GUI barrel
+# Place (or reset) all 5 GUI barrels
 execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -683 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -651 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -619 31 90 minecraft:barrel[facing=east] replace
+execute in minecraft:overworld run setblock -619 31 134 minecraft:barrel[facing=east] replace
 
 # ── Bug 1 fix: use data modify ... set value with a compound text component ──
 # Do NOT use:  data merge block ... {CustomName:'{"text":"Settings","italic":false}'}
@@ -13,6 +17,10 @@ execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=e
 # Instead match the pattern used elsewhere in this pack for entity CustomName:
 #   data modify entity @s CustomName set value {"text":"...","color":"..."}
 execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Settings","italic":false}
 
 # Initialize the page history stack to page 1 (main)
 scoreboard players set .gui_prev gui_page 1
