@@ -141,6 +141,8 @@ execute if items entity @s inventory.* minecraft:blaze_powder[minecraft:custom_d
 # NPC Attributes page mode wool (both variants)
 execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:click/npc_attr/mode
 execute if items entity @s inventory.* minecraft:red_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:click/npc_attr/mode
+# NPC Attributes page reset-to-defaults button (slot 26)
+execute if items entity @s inventory.* minecraft:red_stained_glass[minecraft:custom_data~{gui_btn:"npc_attr_reset"}] run function gui:click/npc_attr/reset
 # Filler cleanup
 # If a player accidentally takes a filler, remove it and refresh the barrel.
 execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler
