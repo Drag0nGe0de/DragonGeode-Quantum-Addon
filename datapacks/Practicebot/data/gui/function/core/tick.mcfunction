@@ -11,10 +11,17 @@ execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..16 run function gui:core/setup
-# Empty-barrel safety: if the main barrel exists but slot 12 is empty (no button),
-# the barrel needs to be (re)filled. This catches the case where the barrel block
-# survived from a previous session but its Items were wiped.
-execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[{Slot:12b}] run function gui:core/setup
+# Empty-barrel safety: if the main barrel exists but its Items list is completely
+# empty, the barrel needs to be (re)filled. This catches the case where the barrel
+# block survived from a previous session but its Items were wiped.
+# NOTE: do NOT check a single slot (e.g. Items[{Slot:12b}]) here. Slot 12 is the
+# Play button on the main page (and other buttons on other pages); when a player
+# clicks it the slot is briefly empty, and a per-slot check would race ahead of
+# detect_at (called below) and re-run setup -> gui:pages/main, refilling slot 12
+# before detect_at could observe the empty slot and route the click to
+# gui:click/main/play. Checking the whole Items list (Items[]) only triggers when
+# the barrel is truly wiped, not on every normal click.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[] run function gui:core/setup
 
 # Clear any GUI items from all players' inventories (not just nearby).
 # Items have gui_btn/gui_cat tags so this won't affect normal items.
