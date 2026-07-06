@@ -22,6 +22,7 @@ execute if score .gui gui_page matches 12 run function gui:pages/npc_general_set
 execute if score .gui gui_page matches 13 run function gui:pages/npc_attributes
 execute if score .gui gui_page matches 14 run function gui:pages/extra
 execute if score .gui gui_page matches 15 run function gui:pages/multiple_bots
+execute if score .gui gui_page matches 16 run function gui:pages/teleports
 
 # Safety: if state is unknown, fall back to main
-execute unless score .gui gui_page matches 1..15 run function gui:pages/main
+execute unless score .gui gui_page matches 1..16 run function gui:pages/main

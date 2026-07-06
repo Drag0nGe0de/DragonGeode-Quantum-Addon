@@ -27,6 +27,7 @@ execute if score .gui_back gui_page matches 12 run function gui:pages/npc_genera
 execute if score .gui_back gui_page matches 13 run function gui:pages/npc_attributes
 execute if score .gui_back gui_page matches 14 run function gui:pages/extra
 execute if score .gui_back gui_page matches 15 run function gui:pages/multiple_bots
+execute if score .gui_back gui_page matches 16 run function gui:pages/teleports
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..15 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..16 run function gui:pages/main

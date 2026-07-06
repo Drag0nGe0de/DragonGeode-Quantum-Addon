@@ -179,3 +179,9 @@ $execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/bots/quantum
 $execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/bots/herobrine
 $execute if score .gui gui_page matches 15 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/bots/notch
+
+# ── Teleports page (gui_page 16) ── Main Hub(12), Advanced Settings(13), Old Kit Room(14), Back(18)
+$execute if score .gui gui_page matches 16 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 16 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/tp/hub
+$execute if score .gui gui_page matches 16 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/tp/advanced
+$execute if score .gui gui_page matches 16 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/tp/kitroom

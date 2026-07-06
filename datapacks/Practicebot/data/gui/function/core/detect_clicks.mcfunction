@@ -154,6 +154,10 @@ execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_da
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_quantum"}] run function gui:click/bots/quantum
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_herobrine"}] run function gui:click/bots/herobrine
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_notch"}] run function gui:click/bots/notch
+# Teleports page (page 16) buttons
+execute if items entity @s inventory.* minecraft:compass[minecraft:custom_data~{gui_btn:"tp_hub"}] run function gui:click/tp/hub
+execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"tp_advanced"}] run function gui:click/tp/advanced
+execute if items entity @s inventory.* minecraft:chest[minecraft:custom_data~{gui_btn:"tp_kitroom"}] run function gui:click/tp/kitroom
 # Filler cleanup
 # If a player accidentally takes a filler, remove it and refresh the barrel.
 execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler
