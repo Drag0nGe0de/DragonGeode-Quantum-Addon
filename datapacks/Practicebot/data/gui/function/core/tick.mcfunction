@@ -23,6 +23,14 @@ execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance
 # the barrel is truly wiped, not on every normal click.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless data block -715 31 90 Items[] run function gui:core/setup
 
+# Initialize bot reach to 28 (2.8 blocks) if not already set to a valid value.
+# This runs every tick but only sets the score when the bot's reach is unset (0),
+# so it's effectively a one-time init that catches the bot whenever it spawns.
+# Without this, the bot's reach defaults to 0 which breaks distance checks.
+scoreboard players set .adv_reach var 0
+execute store result score .adv_reach var run scoreboard players get @a[tag=xlib_bot,limit=1] reach
+execute unless score .adv_reach var matches 1..255 run scoreboard players set @a[tag=xlib_bot] reach 28
+
 # Clear any GUI items from all players' inventories (not just nearby).
 # Items have gui_btn/gui_cat tags so this won't affect normal items.
 # Cursor items can't be cleared — they're cleaned up when the barrel refreshes.
