@@ -184,6 +184,38 @@ execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gu
 # NPC General Settings nether star (display only — clear from inventory)
 execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"npc_gs_pageinfo"}] run function gui:core/return_filler
 
+# Mace General Settings page (page 26) toggle buttons (page 1: slots 0-17)
+execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"mace_gs_no_fall"}] run function gui:click/mace_gs/no_fall
+execute if items entity @s inventory.* minecraft:netherite_axe[minecraft:custom_data~{gui_btn:"mace_gs_stun"}] run function gui:click/mace_gs/stun
+execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"mace_gs_refill"}] run function gui:click/mace_gs/refill
+execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"mace_gs_pcrit"}] run function gui:click/mace_gs/pcrit
+execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"mace_gs_cobweb"}] run function gui:click/mace_gs/cobweb
+execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"mace_gs_small"}] run function gui:click/mace_gs/small
+execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"mace_gs_crit"}] run function gui:click/mace_gs/crit
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_buffs"}] run function gui:click/mace_gs/buffs
+execute if items entity @s inventory.* minecraft:shield[minecraft:custom_data~{gui_btn:"mace_gs_shield"}] run function gui:click/mace_gs/shield
+execute if items entity @s inventory.* minecraft:wind_charge[minecraft:custom_data~{gui_btn:"mace_gs_wind_pearl"}] run function gui:click/mace_gs/wind_pearl
+execute if items entity @s inventory.* minecraft:elytra[minecraft:custom_data~{gui_btn:"mace_gs_elytra"}] run function gui:click/mace_gs/elytra
+execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"mace_gs_strafe"}] run function gui:click/mace_gs/strafe
+execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"mace_gs_random"}] run function gui:click/mace_gs/random
+execute if items entity @s inventory.* minecraft:netherite_spear[minecraft:custom_data~{gui_btn:"mace_gs_spear"}] run function gui:click/mace_gs/spear
+execute if items entity @s inventory.* minecraft:ender_pearl[minecraft:custom_data~{gui_btn:"mace_gs_far_pearl"}] run function gui:click/mace_gs/far_pearl
+execute if items entity @s inventory.* minecraft:elytra[minecraft:custom_data~{gui_btn:"mace_gs_breakable"}] run function gui:click/mace_gs/breakable
+execute if items entity @s inventory.* minecraft:turtle_helmet[minecraft:custom_data~{gui_btn:"mace_gs_resistance"}] run function gui:click/mace_gs/resistance
+execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"mace_gs_water"}] run function gui:click/mace_gs/water
+# Mace General Settings page (page 26) toggle buttons (page 2: slots 0-5)
+execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"mace_gs_jreset"}] run function gui:click/mace_gs/jreset
+execute if items entity @s inventory.* minecraft:diamond_axe[minecraft:custom_data~{gui_btn:"mace_gs_axe"}] run function gui:click/mace_gs/axe
+execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"mace_gs_breach"}] run function gui:click/mace_gs/breach
+execute if items entity @s inventory.* minecraft:ender_eye[minecraft:custom_data~{gui_btn:"mace_gs_no_pearl_land"}] run function gui:click/mace_gs/no_pearl_land
+execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"mace_gs_stap"}] run function gui:click/mace_gs/stap
+execute if items entity @s inventory.* minecraft:clock[minecraft:custom_data~{gui_btn:"mace_gs_shieldcd"}] run function gui:click/mace_gs/shieldcd
+# Mace General Settings page navigation arrows
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_prev"}] run function gui:click/mace_gs/prev
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_next"}] run function gui:click/mace_gs/next
+# Mace General Settings nether star (display only — clear from inventory)
+execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"mace_gs_pageinfo"}] run function gui:core/return_filler
+
 # NPC Attributes page (page 13) setting buttons
 execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:click/npc_attr/bot_scale
 execute if items entity @s inventory.* minecraft:fermented_spider_eye[minecraft:custom_data~{gui_btn:"npc_attr_bot_slowness"}] run function gui:click/npc_attr/bot_slowness
@@ -204,8 +236,11 @@ execute if items entity @s inventory.* minecraft:red_stained_glass[minecraft:cus
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"extra_ai"}] run function gui:click/extra/ai
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"extra_optimize"}] run function gui:click/extra/optimize
 execute if items entity @s inventory.* minecraft:end_portal_frame[minecraft:custom_data~{gui_btn:"extra_teleports"}] run function gui:click/extra/teleports
-execute if items entity @s inventory.* minecraft:music_disc_13[minecraft:custom_data~{gui_btn:"extra_music"}] run function gui:click/extra/music
+execute if items entity @s inventory.* minecraft:jukebox[minecraft:custom_data~{gui_btn:"extra_music"}] run function gui:click/extra/music
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"extra_bots"}] run function gui:click/extra/bots
+# Music page (page 25) buttons
+execute if items entity @s inventory.* minecraft:music_disc_13[minecraft:custom_data~{gui_btn:"music_undertale"}] run function gui:click/music/undertale
+execute if items entity @s inventory.* minecraft:music_disc_otherside[minecraft:custom_data~{gui_btn:"music_otherside"}] run function gui:click/music/otherside
 # Multiple Bots page (page 15) buttons
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_quantum"}] run function gui:click/bots/quantum
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_herobrine"}] run function gui:click/bots/herobrine

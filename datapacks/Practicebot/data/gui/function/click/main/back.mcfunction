@@ -36,6 +36,8 @@ execute if score .gui_back gui_page matches 21 run function gui:pages/advanced/t
 execute if score .gui_back gui_page matches 22 run function gui:pages/advanced/ping
 execute if score .gui_back gui_page matches 23 run function gui:pages/credits_support
 execute if score .gui_back gui_page matches 24 run function gui:pages/credits_people
+execute if score .gui_back gui_page matches 25 run function gui:pages/music
+execute if score .gui_back gui_page matches 26 run function gui:pages/mace_general_settings
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..24 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..26 run function gui:pages/main

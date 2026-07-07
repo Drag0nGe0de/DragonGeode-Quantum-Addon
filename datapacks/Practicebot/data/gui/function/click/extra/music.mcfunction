@@ -1,10 +1,11 @@
 # GUI System - Click: extra/music
-# Toggle Undertale music on/off, then refresh the Extra page.
-# This is a TOGGLE button — it does NOT navigate away from the page.
-clear @s minecraft:music_disc_13[minecraft:custom_data={gui_btn:"extra_music"}]
+# Navigate to the Music page (page 25) where the player can pick between
+# Undertale Music (music=1) and Otherside (music=2).
+clear @s minecraft:jukebox[minecraft:custom_data={gui_btn:"extra_music"}]
 
-# quantum:options/music {"music":1} toggles Undertale on if off, or off if already 1.
-function quantum:options/music {"music":1}
-
-# Refresh the page so the lore + glint update instantly.
-function gui:pages/extra
+# Push current page onto history stack before navigating
+scoreboard players operation .gui_prev4 gui_page = .gui_prev3 gui_page
+scoreboard players operation .gui_prev3 gui_page = .gui_prev2 gui_page
+scoreboard players operation .gui_prev2 gui_page = .gui_prev gui_page
+scoreboard players operation .gui_prev gui_page = .gui gui_page
+function gui:pages/music
