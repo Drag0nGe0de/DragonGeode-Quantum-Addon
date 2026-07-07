@@ -156,7 +156,7 @@ clear @a minecraft:red_stained_glass[minecraft:custom_data={gui_btn:"npc_attr_re
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"extra_ai"}]
 clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"extra_optimize"}]
 clear @a minecraft:end_portal_frame[minecraft:custom_data={gui_btn:"extra_teleports"}]
-clear @a minecraft:music_disc_13[minecraft:custom_data={gui_btn:"extra_music"}]
+clear @a minecraft:jukebox[minecraft:custom_data={gui_btn:"extra_music"}]
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"extra_bots"}]
 # Multiple Bots page (page 15) buttons
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"bots_quantum"}]
@@ -231,6 +231,37 @@ clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_discord"}
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_people"}]
 # Important People page (page 24) items
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_person"}]
+# Music page (page 25) items
+clear @a minecraft:music_disc_13[minecraft:custom_data={gui_btn:"music_undertale"}]
+clear @a minecraft:music_disc_otherside[minecraft:custom_data={gui_btn:"music_otherside"}]
+# Mace General Settings page (page 26) items
+clear @a minecraft:hay_block[minecraft:custom_data={gui_btn:"mace_gs_no_fall"}]
+clear @a minecraft:netherite_axe[minecraft:custom_data={gui_btn:"mace_gs_stun"}]
+clear @a minecraft:cauldron[minecraft:custom_data={gui_btn:"mace_gs_refill"}]
+clear @a minecraft:cactus[minecraft:custom_data={gui_btn:"mace_gs_pcrit"}]
+clear @a minecraft:cobweb[minecraft:custom_data={gui_btn:"mace_gs_cobweb"}]
+clear @a minecraft:turtle_egg[minecraft:custom_data={gui_btn:"mace_gs_small"}]
+clear @a minecraft:fire_charge[minecraft:custom_data={gui_btn:"mace_gs_crit"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"mace_gs_buffs"}]
+clear @a minecraft:shield[minecraft:custom_data={gui_btn:"mace_gs_shield"}]
+clear @a minecraft:wind_charge[minecraft:custom_data={gui_btn:"mace_gs_wind_pearl"}]
+clear @a minecraft:elytra[minecraft:custom_data={gui_btn:"mace_gs_elytra"}]
+clear @a minecraft:magenta_glazed_terracotta[minecraft:custom_data={gui_btn:"mace_gs_strafe"}]
+clear @a minecraft:chorus_fruit[minecraft:custom_data={gui_btn:"mace_gs_random"}]
+clear @a minecraft:netherite_spear[minecraft:custom_data={gui_btn:"mace_gs_spear"}]
+clear @a minecraft:ender_pearl[minecraft:custom_data={gui_btn:"mace_gs_far_pearl"}]
+clear @a minecraft:elytra[minecraft:custom_data={gui_btn:"mace_gs_breakable"}]
+clear @a minecraft:turtle_helmet[minecraft:custom_data={gui_btn:"mace_gs_resistance"}]
+clear @a minecraft:water_bucket[minecraft:custom_data={gui_btn:"mace_gs_water"}]
+clear @a minecraft:slime_block[minecraft:custom_data={gui_btn:"mace_gs_jreset"}]
+clear @a minecraft:diamond_axe[minecraft:custom_data={gui_btn:"mace_gs_axe"}]
+clear @a minecraft:mace[minecraft:custom_data={gui_btn:"mace_gs_breach"}]
+clear @a minecraft:ender_eye[minecraft:custom_data={gui_btn:"mace_gs_no_pearl_land"}]
+clear @a minecraft:minecart[minecraft:custom_data={gui_btn:"mace_gs_stap"}]
+clear @a minecraft:clock[minecraft:custom_data={gui_btn:"mace_gs_shieldcd"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"mace_gs_prev"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"mace_gs_next"}]
+clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"mace_gs_pageinfo"}]
 
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -382,6 +413,16 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 25 run function gui:pages/music
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 25 run function gui:pages/music
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 25 run function gui:pages/music
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 25 run function gui:pages/music
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 25 run function gui:pages/music
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 26 run function gui:pages/mace_general_settings
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 26 run function gui:pages/mace_general_settings
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 26 run function gui:pages/mace_general_settings
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 26 run function gui:pages/mace_general_settings
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 26 run function gui:pages/mace_general_settings
 
 # Update barrel CustomName to match the current page (breadcrumb path).
 # Only need to check one barrel for a nearby player — update_name sets all 5.

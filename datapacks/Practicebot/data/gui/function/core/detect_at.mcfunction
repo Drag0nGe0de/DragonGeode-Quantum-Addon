@@ -271,3 +271,40 @@ $execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:core/return_filler
 $execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:core/return_filler
 $execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+
+# ── Music page (gui_page 25) ── Undertale(12), Otherside(14), Back(18)
+$execute if score .gui gui_page matches 25 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/music/undertale
+$execute if score .gui gui_page matches 25 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/music/otherside
+$execute if score .gui gui_page matches 25 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+
+# ── Mace General Settings page (gui_page 26), sub-page 1 ── Toggles(0-17), Back(18), Next(23)
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/mace_gs/no_fall
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/mace_gs/stun
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/mace_gs/refill
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/mace_gs/pcrit
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/mace_gs/cobweb
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/mace_gs/small
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/mace_gs/crit
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/mace_gs/buffs
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/mace_gs/shield
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/mace_gs/wind_pearl
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/mace_gs/elytra
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/mace_gs/strafe
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/mace_gs/random
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/mace_gs/spear
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/mace_gs/far_pearl
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/mace_gs/breakable
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/mace_gs/resistance
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/mace_gs/water
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/mace_gs/next
+
+# ── Mace General Settings page (gui_page 26), sub-page 2 ── Toggles(0-5), Back(18), Prev(21)
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/mace_gs/jreset
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/mace_gs/axe
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/mace_gs/breach
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/mace_gs/no_pearl_land
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/mace_gs/stap
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/mace_gs/shieldcd
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/mace_gs/prev
