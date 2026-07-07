@@ -218,10 +218,7 @@ execute if items entity @s inventory.* minecraft:chest[minecraft:custom_data~{gu
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"credits_discord"}] run function gui:click/credits/discord
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"credits_people"}] run function gui:click/credits/people
 # Important People page (page 24) buttons
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"credits_people_prev"}] run function gui:click/credits_people/prev
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"credits_people_next"}] run function gui:click/credits_people/next
 execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"credits_person"}] run function gui:core/return_filler
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"credits_people_pageinfo"}] run function gui:core/return_filler
 # Filler cleanup
 # If a player accidentally takes a filler, remove it and refresh the barrel.
 execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler

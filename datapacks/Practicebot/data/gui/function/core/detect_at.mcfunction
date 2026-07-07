@@ -262,20 +262,12 @@ $execute if score .gui gui_page matches 23 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 23 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/credits/people
 $execute if score .gui gui_page matches 23 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 
-# ── Important People page (gui_page 24) ── People(3,5,12,14), Back(18), Prev(21), PageInfo(22), Next(23)
-# Sub-page 1: 4 people (3,5,12,14) + Next(23)
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:22b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/credits_people/next
-# Sub-page 2: 3 people (3,5,12) + Prev(21)
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:core/return_filler
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/credits_people/prev
-$execute if score .gui gui_page matches 24 if score .credits_people_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:22b}] run function gui:core/return_filler
+# ── Important People page (gui_page 24) ── People(0-6), Back(18)
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:core/return_filler
+$execute if score .gui gui_page matches 24 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back

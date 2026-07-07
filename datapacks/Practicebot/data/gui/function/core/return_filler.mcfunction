@@ -6,7 +6,6 @@ clear @s minecraft:nether_star[minecraft:custom_data={gui_btn:"npc_gs_pageinfo"}
 clear @s minecraft:lime_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 clear @s minecraft:red_wool[minecraft:custom_data={gui_btn:"npc_attr_mode"}]
 clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"credits_person"}]
-clear @s minecraft:nether_star[minecraft:custom_data={gui_btn:"credits_people_pageinfo"}]
 
 # Refresh whichever page is currently shown (page functions also sync satellite barrels)
 execute if score .gui gui_page matches 1 run function gui:pages/main

@@ -34,6 +34,8 @@ execute if score .gui_back gui_page matches 19 run function gui:pages/advanced/j
 execute if score .gui_back gui_page matches 20 run function gui:pages/advanced/aggro
 execute if score .gui_back gui_page matches 21 run function gui:pages/advanced/tap
 execute if score .gui_back gui_page matches 22 run function gui:pages/advanced/ping
+execute if score .gui_back gui_page matches 23 run function gui:pages/credits_support
+execute if score .gui_back gui_page matches 24 run function gui:pages/credits_people
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..22 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..24 run function gui:pages/main

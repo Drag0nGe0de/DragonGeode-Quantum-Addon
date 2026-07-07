@@ -231,9 +231,6 @@ clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_discord"}
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_people"}]
 # Important People page (page 24) items
 clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_person"}]
-clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"credits_people_prev"}]
-clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"credits_people_pageinfo"}]
-clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"credits_people_next"}]
 
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s

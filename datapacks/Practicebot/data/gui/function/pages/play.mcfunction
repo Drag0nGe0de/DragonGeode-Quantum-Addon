@@ -93,5 +93,8 @@ execute in minecraft:overworld if score .gm gui_page matches 3 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"Vanilla",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"OP Sword",color:"gray",italic:false}]
 
+# Append 'Flat Terrain' indicator below the Current: line when flat terrain is enabled.
+execute in minecraft:overworld if score .flat_terrain toggles matches 1 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" append value {text:"Flat Terrain",color:"aqua",italic:false}
+
 scoreboard players set .gui gui_page 2
 function gui:core/sync_barrels
