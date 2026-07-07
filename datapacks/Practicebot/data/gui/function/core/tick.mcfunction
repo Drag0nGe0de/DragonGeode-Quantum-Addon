@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..22 run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..24 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but its Items list is completely
 # empty, the barrel needs to be (re)filled. This catches the case where the barrel
 # block survived from a previous session but its Items were wiped.
@@ -226,6 +226,15 @@ clear @a minecraft:oxidized_copper[minecraft:custom_data={gui_btn:"advanced_ping
 clear @a minecraft:oxidized_chiseled_copper[minecraft:custom_data={gui_btn:"advanced_ping_8"}]
 clear @a minecraft:oxidized_cut_copper[minecraft:custom_data={gui_btn:"advanced_ping_9"}]
 
+# Support & Credits page (page 23) items
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_discord"}]
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_people"}]
+# Important People page (page 24) items
+clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"credits_person"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"credits_people_prev"}]
+clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"credits_people_pageinfo"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"credits_people_next"}]
+
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
 execute in minecraft:overworld positioned -683.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -365,6 +374,17 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
+
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 23 run function gui:pages/credits_support
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 23 run function gui:pages/credits_support
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 23 run function gui:pages/credits_support
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 23 run function gui:pages/credits_support
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 23 run function gui:pages/credits_support
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 24 run function gui:pages/credits_people
 
 # Update barrel CustomName to match the current page (breadcrumb path).
 # Only need to check one barrel for a nearby player — update_name sets all 5.
