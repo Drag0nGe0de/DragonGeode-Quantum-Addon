@@ -206,16 +206,16 @@ clear @a minecraft:red_nether_bricks[minecraft:custom_data={gui_btn:"advanced_ag
 clear @a minecraft:nether_bricks[minecraft:custom_data={gui_btn:"advanced_aggro_7"}]
 clear @a minecraft:netherite_block[minecraft:custom_data={gui_btn:"advanced_aggro_8"}]
 # Advanced Settings > W & S-tap Chance page (page 21) options
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_0"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_1"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_2"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_3"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_4"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_5"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_6"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_7"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_8"}]
-clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_9"}]
+clear @a minecraft:red_bundle[minecraft:custom_data={gui_btn:"advanced_tap_0"}]
+clear @a minecraft:orange_bundle[minecraft:custom_data={gui_btn:"advanced_tap_1"}]
+clear @a minecraft:yellow_bundle[minecraft:custom_data={gui_btn:"advanced_tap_2"}]
+clear @a minecraft:lime_bundle[minecraft:custom_data={gui_btn:"advanced_tap_3"}]
+clear @a minecraft:cyan_bundle[minecraft:custom_data={gui_btn:"advanced_tap_4"}]
+clear @a minecraft:light_blue_bundle[minecraft:custom_data={gui_btn:"advanced_tap_5"}]
+clear @a minecraft:blue_bundle[minecraft:custom_data={gui_btn:"advanced_tap_6"}]
+clear @a minecraft:purple_bundle[minecraft:custom_data={gui_btn:"advanced_tap_7"}]
+clear @a minecraft:magenta_bundle[minecraft:custom_data={gui_btn:"advanced_tap_8"}]
+clear @a minecraft:pink_bundle[minecraft:custom_data={gui_btn:"advanced_tap_9"}]
 # Advanced Settings > Bot Ping page (page 22) options
 clear @a minecraft:cut_copper[minecraft:custom_data={gui_btn:"advanced_ping_0"}]
 clear @a minecraft:chiseled_copper[minecraft:custom_data={gui_btn:"advanced_ping_1"}]
@@ -367,4 +367,8 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
+
+# Update barrel CustomName to match the current page (breadcrumb path).
+# Only need to check one barrel for a nearby player — update_name sets all 5.
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] run function gui:core/update_name
 

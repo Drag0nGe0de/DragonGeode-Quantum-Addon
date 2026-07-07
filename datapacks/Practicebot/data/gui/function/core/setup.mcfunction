@@ -16,11 +16,11 @@ execute in minecraft:overworld run setblock -619 31 134 minecraft:barrel[facing=
 # it as literal text, not a text component, so the raw JSON appears as the title.
 # Instead match the pattern used elsewhere in this pack for entity CustomName:
 #   data modify entity @s CustomName set value {"text":"...","color":"..."}
-execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Settings","italic":false}
+execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
 
 # Initialize the page history stack to page 1 (main)
 scoreboard players set .gui_prev gui_page 1

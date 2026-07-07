@@ -194,65 +194,65 @@ $execute if score .gui gui_page matches 17 unless data block $(x) $(y) $(z) Item
 $execute if score .gui gui_page matches 17 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/advanced/ping
 $execute if score .gui gui_page matches 17 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 
-# ── Advanced Settings > Reach page (gui_page 18) ── Options(0-8), Back(18)
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/advanced/reach/0
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/advanced/reach/1
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/reach/2
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/reach/3
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/reach/4
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/reach/5
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/reach/6
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/advanced/reach/7
-$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/advanced/reach/8
+# ── Advanced Settings > Reach page (gui_page 18) ── Options in middle row (9-17), Back(18)
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/advanced/reach/0
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/advanced/reach/1
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/advanced/reach/2
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/advanced/reach/3
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/advanced/reach/4
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/advanced/reach/5
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/advanced/reach/6
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/advanced/reach/7
+$execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/advanced/reach/8
 $execute if score .gui gui_page matches 18 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 
-# ── Advanced Settings > Jump Reset Chance page (gui_page 19) ── Options(0-9), Back(18)
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/advanced/jreset/0
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/advanced/jreset/1
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/jreset/2
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/jreset/3
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/jreset/4
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/jreset/5
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/jreset/6
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/advanced/jreset/7
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/advanced/jreset/8
-$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/advanced/jreset/9
+# ── Advanced Settings > Jump Reset Chance page (gui_page 19) ── 5 top (2-6) + 5 middle (11-15), Back(18)
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/jreset/0
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/jreset/1
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/jreset/2
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/jreset/3
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/jreset/4
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/advanced/jreset/5
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/advanced/jreset/6
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/advanced/jreset/7
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/advanced/jreset/8
+$execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/advanced/jreset/9
 $execute if score .gui gui_page matches 19 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 
-# ── Advanced Settings > Aggro Factor page (gui_page 20) ── Options(0-8), Back(18)
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/advanced/aggro/0
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/advanced/aggro/1
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/aggro/2
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/aggro/3
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/aggro/4
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/aggro/5
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/aggro/6
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/advanced/aggro/7
-$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/advanced/aggro/8
+# ── Advanced Settings > Aggro Factor page (gui_page 20) ── Options in middle row (9-17), Back(18)
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/advanced/aggro/0
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/advanced/aggro/1
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/advanced/aggro/2
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/advanced/aggro/3
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/advanced/aggro/4
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/advanced/aggro/5
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/advanced/aggro/6
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/advanced/aggro/7
+$execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/advanced/aggro/8
 $execute if score .gui gui_page matches 20 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 
-# ── Advanced Settings > W & S-tap Chance page (gui_page 21) ── Options(0-9), Back(18)
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/advanced/tap/0
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/advanced/tap/1
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/tap/2
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/tap/3
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/tap/4
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/tap/5
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/tap/6
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/advanced/tap/7
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/advanced/tap/8
-$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/advanced/tap/9
+# ── Advanced Settings > W & S-tap Chance page (gui_page 21) ── 5 top (2-6) + 5 middle (11-15), Back(18)
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/tap/0
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/tap/1
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/tap/2
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/tap/3
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/tap/4
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/advanced/tap/5
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/advanced/tap/6
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/advanced/tap/7
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/advanced/tap/8
+$execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/advanced/tap/9
 $execute if score .gui gui_page matches 21 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 
-# ── Advanced Settings > Bot Ping page (gui_page 22) ── Options(0-9), Back(18)
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/advanced/ping/0
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/advanced/ping/1
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/ping/2
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/ping/3
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/ping/4
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/ping/5
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/ping/6
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/advanced/ping/7
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/advanced/ping/8
-$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/advanced/ping/9
+# ── Advanced Settings > Bot Ping page (gui_page 22) ── 5 top (2-6) + 5 middle (11-15), Back(18)
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/advanced/ping/0
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/advanced/ping/1
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/advanced/ping/2
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/advanced/ping/3
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/advanced/ping/4
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/advanced/ping/5
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/advanced/ping/6
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/advanced/ping/7
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/advanced/ping/8
+$execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/advanced/ping/9
 $execute if score .gui gui_page matches 22 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back

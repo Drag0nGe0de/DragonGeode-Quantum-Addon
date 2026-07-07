@@ -58,7 +58,7 @@ execute if items entity @s inventory.* minecraft:netherite_sword[minecraft:custo
 execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"advanced_reach_8"}] run function gui:click/advanced/reach/8
 
 # Advanced Settings > Jump Reset Chance page (page 19) — 10 options
-# Last 4 are all netherite_boots; distinguished by gui_btn value (+ trim on the latter 3).
+# Slots 2,6-9 are all netherite_boots; distinguished by gui_btn value (+ trim on 2,7,8,9).
 execute if items entity @s inventory.* minecraft:leather_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_0"}] run function gui:click/advanced/jreset/0
 execute if items entity @s inventory.* minecraft:chainmail_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_1"}] run function gui:click/advanced/jreset/1
 execute if items entity @s inventory.* minecraft:copper_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_2"}] run function gui:click/advanced/jreset/2
@@ -81,17 +81,17 @@ execute if items entity @s inventory.* minecraft:red_nether_bricks[minecraft:cus
 execute if items entity @s inventory.* minecraft:nether_bricks[minecraft:custom_data~{gui_btn:"advanced_aggro_7"}] run function gui:click/advanced/aggro/7
 execute if items entity @s inventory.* minecraft:netherite_block[minecraft:custom_data~{gui_btn:"advanced_aggro_8"}] run function gui:click/advanced/aggro/8
 
-# Advanced Settings > W & S-tap Chance page (page 21) — 10 options (dyed bundles)
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_0"}] run function gui:click/advanced/tap/0
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_1"}] run function gui:click/advanced/tap/1
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_2"}] run function gui:click/advanced/tap/2
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_3"}] run function gui:click/advanced/tap/3
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_4"}] run function gui:click/advanced/tap/4
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_5"}] run function gui:click/advanced/tap/5
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_6"}] run function gui:click/advanced/tap/6
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_7"}] run function gui:click/advanced/tap/7
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_8"}] run function gui:click/advanced/tap/8
-execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_9"}] run function gui:click/advanced/tap/9
+# Advanced Settings > W & S-tap Chance page (page 21) — 10 options (colored bundles)
+execute if items entity @s inventory.* minecraft:red_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_0"}] run function gui:click/advanced/tap/0
+execute if items entity @s inventory.* minecraft:orange_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_1"}] run function gui:click/advanced/tap/1
+execute if items entity @s inventory.* minecraft:yellow_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_2"}] run function gui:click/advanced/tap/2
+execute if items entity @s inventory.* minecraft:lime_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_3"}] run function gui:click/advanced/tap/3
+execute if items entity @s inventory.* minecraft:cyan_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_4"}] run function gui:click/advanced/tap/4
+execute if items entity @s inventory.* minecraft:light_blue_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_5"}] run function gui:click/advanced/tap/5
+execute if items entity @s inventory.* minecraft:blue_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_6"}] run function gui:click/advanced/tap/6
+execute if items entity @s inventory.* minecraft:purple_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_7"}] run function gui:click/advanced/tap/7
+execute if items entity @s inventory.* minecraft:magenta_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_8"}] run function gui:click/advanced/tap/8
+execute if items entity @s inventory.* minecraft:pink_bundle[minecraft:custom_data~{gui_btn:"advanced_tap_9"}] run function gui:click/advanced/tap/9
 
 # Advanced Settings > Bot Ping page (page 22) — 10 options (copper blocks)
 execute if items entity @s inventory.* minecraft:cut_copper[minecraft:custom_data~{gui_btn:"advanced_ping_0"}] run function gui:click/advanced/ping/0

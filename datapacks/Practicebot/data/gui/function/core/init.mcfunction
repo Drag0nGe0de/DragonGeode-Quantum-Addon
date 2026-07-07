@@ -87,11 +87,13 @@ execute in minecraft:overworld run setblock -619 31 90 minecraft:barrel[facing=e
 execute in minecraft:overworld run setblock -619 31 134 minecraft:barrel[facing=east] replace
 
 # Give all barrels a title (using data modify to fix the CustomName bug)
-execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Settings","italic":false}
-execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Settings","italic":false}
+# Default name is "Quantum AI" (main page); update_name.mcfunction changes it
+# to the breadcrumb path for the current page every tick.
+execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
 
 # Fill the main barrel with the main page (sync_barrels copies to satellites)
 function gui:pages/main

@@ -1,4 +1,4 @@
 # GUI System - Click: advanced_tap_7 (80%)
-clear @s minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_7"}]
+clear @s minecraft:purple_bundle[minecraft:custom_data={gui_btn:"advanced_tap_7"}]
 function quantum:options/set_tap_chance {"chance":"80"}
 function gui:pages/advanced/tap
