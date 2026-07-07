@@ -28,6 +28,12 @@ execute if score .gui_back gui_page matches 13 run function gui:pages/npc_attrib
 execute if score .gui_back gui_page matches 14 run function gui:pages/extra
 execute if score .gui_back gui_page matches 15 run function gui:pages/multiple_bots
 execute if score .gui_back gui_page matches 16 run function gui:pages/teleports
+execute if score .gui_back gui_page matches 17 run function gui:pages/advanced
+execute if score .gui_back gui_page matches 18 run function gui:pages/advanced/reach
+execute if score .gui_back gui_page matches 19 run function gui:pages/advanced/jreset
+execute if score .gui_back gui_page matches 20 run function gui:pages/advanced/aggro
+execute if score .gui_back gui_page matches 21 run function gui:pages/advanced/tap
+execute if score .gui_back gui_page matches 22 run function gui:pages/advanced/ping
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..16 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..22 run function gui:pages/main

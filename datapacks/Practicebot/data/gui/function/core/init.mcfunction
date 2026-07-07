@@ -64,6 +64,19 @@ execute unless score .terrain terrain matches 0..6 run scoreboard players set .t
 # so use "unless" to keep an existing valid selection.
 execute unless score .difficulty difficulty matches 0..5 run scoreboard players set .difficulty difficulty 4
 
+# Advanced Settings defaults (page 17 hub, pages 18-22 sub-pages).
+# These scores back the "Current" indicator on each option page.
+#   .jumpreset chance — 10..100 (% chance), default 100
+#   .tap chance       — 10..100 (% chance), default 100
+#   .ping toggles     — 0..180 (ms),       default 100
+#   .factor eval      — aggro factor,       default 999999999 (Max Aggro)
+# Bot reach (@a[tag=xlib_bot] reach) is per-entity and may not exist on load;
+# the Reach sub-page mirrors it into .adv_reach var and defaults to 28 (2.8 blocks).
+execute unless score .jumpreset chance matches 1..100 run scoreboard players set .jumpreset chance 100
+execute unless score .tap chance matches 1..100 run scoreboard players set .tap chance 100
+execute unless score .ping toggles matches 0..180 run scoreboard players set .ping toggles 100
+execute unless score .factor eval matches ..999999999 run scoreboard players set .factor eval 999999999
+
 # Place all 5 GUI barrels facing east
 # Main barrel: -715 31 90
 # Satellite barrels: -683 31 90, -651 31 90, -619 31 90, -619 31 134

@@ -39,6 +39,72 @@ execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_da
 execute if items entity @s inventory.* minecraft:repeating_command_block[minecraft:custom_data~{gui_btn:"settings_general"}] run function gui:click/settings/general
 execute if items entity @s inventory.* minecraft:chain_command_block[minecraft:custom_data~{gui_btn:"settings_advanced"}] run function gui:click/settings/advanced
 
+# Advanced Settings hub page (page 17) buttons
+execute if items entity @s inventory.* minecraft:diamond_sword[minecraft:custom_data~{gui_btn:"advanced_reach"}] run function gui:click/advanced/reach
+execute if items entity @s inventory.* minecraft:diamond_boots[minecraft:custom_data~{gui_btn:"advanced_jreset"}] run function gui:click/advanced/jreset
+execute if items entity @s inventory.* minecraft:blaze_powder[minecraft:custom_data~{gui_btn:"advanced_aggro"}] run function gui:click/advanced/aggro
+execute if items entity @s inventory.* minecraft:elytra[minecraft:custom_data~{gui_btn:"advanced_tap"}] run function gui:click/advanced/tap
+execute if items entity @s inventory.* minecraft:comparator[minecraft:custom_data~{gui_btn:"advanced_ping"}] run function gui:click/advanced/ping
+
+# Advanced Settings > Reach page (page 18) — 9 options
+execute if items entity @s inventory.* minecraft:stick[minecraft:custom_data~{gui_btn:"advanced_reach_0"}] run function gui:click/advanced/reach/0
+execute if items entity @s inventory.* minecraft:wooden_sword[minecraft:custom_data~{gui_btn:"advanced_reach_1"}] run function gui:click/advanced/reach/1
+execute if items entity @s inventory.* minecraft:stone_sword[minecraft:custom_data~{gui_btn:"advanced_reach_2"}] run function gui:click/advanced/reach/2
+execute if items entity @s inventory.* minecraft:copper_sword[minecraft:custom_data~{gui_btn:"advanced_reach_3"}] run function gui:click/advanced/reach/3
+execute if items entity @s inventory.* minecraft:golden_sword[minecraft:custom_data~{gui_btn:"advanced_reach_4"}] run function gui:click/advanced/reach/4
+execute if items entity @s inventory.* minecraft:iron_sword[minecraft:custom_data~{gui_btn:"advanced_reach_5"}] run function gui:click/advanced/reach/5
+execute if items entity @s inventory.* minecraft:diamond_sword[minecraft:custom_data~{gui_btn:"advanced_reach_6"}] run function gui:click/advanced/reach/6
+execute if items entity @s inventory.* minecraft:netherite_sword[minecraft:custom_data~{gui_btn:"advanced_reach_7"}] run function gui:click/advanced/reach/7
+execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"advanced_reach_8"}] run function gui:click/advanced/reach/8
+
+# Advanced Settings > Jump Reset Chance page (page 19) — 10 options
+# Last 4 are all netherite_boots; distinguished by gui_btn value (+ trim on the latter 3).
+execute if items entity @s inventory.* minecraft:leather_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_0"}] run function gui:click/advanced/jreset/0
+execute if items entity @s inventory.* minecraft:chainmail_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_1"}] run function gui:click/advanced/jreset/1
+execute if items entity @s inventory.* minecraft:copper_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_2"}] run function gui:click/advanced/jreset/2
+execute if items entity @s inventory.* minecraft:golden_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_3"}] run function gui:click/advanced/jreset/3
+execute if items entity @s inventory.* minecraft:iron_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_4"}] run function gui:click/advanced/jreset/4
+execute if items entity @s inventory.* minecraft:diamond_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_5"}] run function gui:click/advanced/jreset/5
+execute if items entity @s inventory.* minecraft:netherite_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_6"}] run function gui:click/advanced/jreset/6
+execute if items entity @s inventory.* minecraft:netherite_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_7"}] run function gui:click/advanced/jreset/7
+execute if items entity @s inventory.* minecraft:netherite_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_8"}] run function gui:click/advanced/jreset/8
+execute if items entity @s inventory.* minecraft:netherite_boots[minecraft:custom_data~{gui_btn:"advanced_jreset_9"}] run function gui:click/advanced/jreset/9
+
+# Advanced Settings > Aggro Factor page (page 20) — 9 options
+execute if items entity @s inventory.* minecraft:snow_block[minecraft:custom_data~{gui_btn:"advanced_aggro_0"}] run function gui:click/advanced/aggro/0
+execute if items entity @s inventory.* minecraft:blue_ice[minecraft:custom_data~{gui_btn:"advanced_aggro_1"}] run function gui:click/advanced/aggro/1
+execute if items entity @s inventory.* minecraft:packed_ice[minecraft:custom_data~{gui_btn:"advanced_aggro_2"}] run function gui:click/advanced/aggro/2
+execute if items entity @s inventory.* minecraft:ice[minecraft:custom_data~{gui_btn:"advanced_aggro_3"}] run function gui:click/advanced/aggro/3
+execute if items entity @s inventory.* minecraft:grass_block[minecraft:custom_data~{gui_btn:"advanced_aggro_4"}] run function gui:click/advanced/aggro/4
+execute if items entity @s inventory.* minecraft:netherrack[minecraft:custom_data~{gui_btn:"advanced_aggro_5"}] run function gui:click/advanced/aggro/5
+execute if items entity @s inventory.* minecraft:red_nether_bricks[minecraft:custom_data~{gui_btn:"advanced_aggro_6"}] run function gui:click/advanced/aggro/6
+execute if items entity @s inventory.* minecraft:nether_bricks[minecraft:custom_data~{gui_btn:"advanced_aggro_7"}] run function gui:click/advanced/aggro/7
+execute if items entity @s inventory.* minecraft:netherite_block[minecraft:custom_data~{gui_btn:"advanced_aggro_8"}] run function gui:click/advanced/aggro/8
+
+# Advanced Settings > W & S-tap Chance page (page 21) — 10 options (dyed bundles)
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_0"}] run function gui:click/advanced/tap/0
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_1"}] run function gui:click/advanced/tap/1
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_2"}] run function gui:click/advanced/tap/2
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_3"}] run function gui:click/advanced/tap/3
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_4"}] run function gui:click/advanced/tap/4
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_5"}] run function gui:click/advanced/tap/5
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_6"}] run function gui:click/advanced/tap/6
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_7"}] run function gui:click/advanced/tap/7
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_8"}] run function gui:click/advanced/tap/8
+execute if items entity @s inventory.* minecraft:bundle[minecraft:custom_data~{gui_btn:"advanced_tap_9"}] run function gui:click/advanced/tap/9
+
+# Advanced Settings > Bot Ping page (page 22) — 10 options (copper blocks)
+execute if items entity @s inventory.* minecraft:cut_copper[minecraft:custom_data~{gui_btn:"advanced_ping_0"}] run function gui:click/advanced/ping/0
+execute if items entity @s inventory.* minecraft:chiseled_copper[minecraft:custom_data~{gui_btn:"advanced_ping_1"}] run function gui:click/advanced/ping/1
+execute if items entity @s inventory.* minecraft:copper_block[minecraft:custom_data~{gui_btn:"advanced_ping_2"}] run function gui:click/advanced/ping/2
+execute if items entity @s inventory.* minecraft:exposed_copper[minecraft:custom_data~{gui_btn:"advanced_ping_3"}] run function gui:click/advanced/ping/3
+execute if items entity @s inventory.* minecraft:exposed_copper_grate[minecraft:custom_data~{gui_btn:"advanced_ping_4"}] run function gui:click/advanced/ping/4
+execute if items entity @s inventory.* minecraft:weathered_copper_grate[minecraft:custom_data~{gui_btn:"advanced_ping_5"}] run function gui:click/advanced/ping/5
+execute if items entity @s inventory.* minecraft:weathered_copper[minecraft:custom_data~{gui_btn:"advanced_ping_6"}] run function gui:click/advanced/ping/6
+execute if items entity @s inventory.* minecraft:oxidized_copper[minecraft:custom_data~{gui_btn:"advanced_ping_7"}] run function gui:click/advanced/ping/7
+execute if items entity @s inventory.* minecraft:oxidized_chiseled_copper[minecraft:custom_data~{gui_btn:"advanced_ping_8"}] run function gui:click/advanced/ping/8
+execute if items entity @s inventory.* minecraft:oxidized_cut_copper[minecraft:custom_data~{gui_btn:"advanced_ping_9"}] run function gui:click/advanced/ping/9
+
 # NPC Settings page buttons
 execute if items entity @s inventory.* minecraft:iron_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc/armor
 execute if items entity @s inventory.* minecraft:leather_chestplate[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:click/npc/armor
