@@ -8,10 +8,10 @@ clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"credits_discord"}
 title @s actionbar {"text":"Discord link sent to chat! Close barrel and click it.","color":"aqua"}
 
 # Broadcast the Discord link to all players as a clickable chat message.
-# The ENTIRE first line is one big clickable link (clickEvent on the root
-# "extra" entry), so the player can click anywhere on it to open the URL.
-# The second line shows the raw URL as a second clickable link as a fallback.
-tellraw @a {"text":"","extra":[{"text":"Click here to join the Discord server!","color":"blue","underlined":true,"bold":true,"clickEvent":{"action":"open_url","value":"https://discord.gg/tD9jNndhxd"},"hoverEvent":{"action":"show_text","value":{"text":"https://discord.gg/tD9jNndhxd","color":"aqua"}}},{"text":"\nOr copy/paste this link: ","color":"gray","clickEvent":{"action":"open_url","value":"https://discord.gg/tD9jNndhxd"}},{"text":"https://discord.gg/tD9jNndhxd","color":"blue","underlined":true,"clickEvent":{"action":"open_url","value":"https://discord.gg/tD9jNndhxd"},"hoverEvent":{"action":"show_text","value":{"text":"Click to open the Discord invite!","color":"aqua"}}}]}
+# Uses the 1.21.6+ text component format: click_event (snake_case) with "url"
+# instead of the old clickEvent/value format. The entire first line is one big
+# clickable link, and the second line shows the raw URL as a second fallback.
+tellraw @a {"text":"","extra":[{"text":"Click here to join the Discord server!","color":"blue","underlined":true,"bold":true,"click_event":{"action":"open_url","url":"https://discord.gg/tD9jNndhxd"},"hover_event":{"action":"show_text","value":{"text":"https://discord.gg/tD9jNndhxd","color":"aqua"}}},{"text":"\nOr copy/paste this link: ","color":"gray","click_event":{"action":"open_url","url":"https://discord.gg/tD9jNndhxd"}},{"text":"https://discord.gg/tD9jNndhxd","color":"blue","underlined":true,"click_event":{"action":"open_url","url":"https://discord.gg/tD9jNndhxd"},"hover_event":{"action":"show_text","value":{"text":"Click to open the Discord invite!","color":"aqua"}}}]}
 
 # Refresh the page.
 function gui:pages/credits_support

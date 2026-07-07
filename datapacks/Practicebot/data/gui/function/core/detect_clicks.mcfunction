@@ -186,27 +186,27 @@ execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_da
 
 # Mace General Settings page (page 26) toggle buttons (page 1: slots 0-17)
 execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"mace_gs_no_fall"}] run function gui:click/mace_gs/no_fall
-execute if items entity @s inventory.* minecraft:netherite_axe[minecraft:custom_data~{gui_btn:"mace_gs_stun"}] run function gui:click/mace_gs/stun
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_stun"}] run function gui:click/mace_gs/stun
 execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"mace_gs_refill"}] run function gui:click/mace_gs/refill
 execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"mace_gs_pcrit"}] run function gui:click/mace_gs/pcrit
 execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"mace_gs_cobweb"}] run function gui:click/mace_gs/cobweb
 execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"mace_gs_small"}] run function gui:click/mace_gs/small
 execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"mace_gs_crit"}] run function gui:click/mace_gs/crit
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_buffs"}] run function gui:click/mace_gs/buffs
-execute if items entity @s inventory.* minecraft:shield[minecraft:custom_data~{gui_btn:"mace_gs_shield"}] run function gui:click/mace_gs/shield
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_shield"}] run function gui:click/mace_gs/shield
 execute if items entity @s inventory.* minecraft:wind_charge[minecraft:custom_data~{gui_btn:"mace_gs_wind_pearl"}] run function gui:click/mace_gs/wind_pearl
-execute if items entity @s inventory.* minecraft:elytra[minecraft:custom_data~{gui_btn:"mace_gs_elytra"}] run function gui:click/mace_gs/elytra
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_elytra"}] run function gui:click/mace_gs/elytra
 execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"mace_gs_strafe"}] run function gui:click/mace_gs/strafe
 execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"mace_gs_random"}] run function gui:click/mace_gs/random
-execute if items entity @s inventory.* minecraft:netherite_spear[minecraft:custom_data~{gui_btn:"mace_gs_spear"}] run function gui:click/mace_gs/spear
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_spear"}] run function gui:click/mace_gs/spear
 execute if items entity @s inventory.* minecraft:ender_pearl[minecraft:custom_data~{gui_btn:"mace_gs_far_pearl"}] run function gui:click/mace_gs/far_pearl
-execute if items entity @s inventory.* minecraft:elytra[minecraft:custom_data~{gui_btn:"mace_gs_breakable"}] run function gui:click/mace_gs/breakable
-execute if items entity @s inventory.* minecraft:turtle_helmet[minecraft:custom_data~{gui_btn:"mace_gs_resistance"}] run function gui:click/mace_gs/resistance
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_breakable"}] run function gui:click/mace_gs/breakable
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_resistance"}] run function gui:click/mace_gs/resistance
 execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"mace_gs_water"}] run function gui:click/mace_gs/water
 # Mace General Settings page (page 26) toggle buttons (page 2: slots 0-5)
 execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"mace_gs_jreset"}] run function gui:click/mace_gs/jreset
-execute if items entity @s inventory.* minecraft:diamond_axe[minecraft:custom_data~{gui_btn:"mace_gs_axe"}] run function gui:click/mace_gs/axe
-execute if items entity @s inventory.* minecraft:mace[minecraft:custom_data~{gui_btn:"mace_gs_breach"}] run function gui:click/mace_gs/breach
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_axe"}] run function gui:click/mace_gs/axe
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_breach"}] run function gui:click/mace_gs/breach
 execute if items entity @s inventory.* minecraft:ender_eye[minecraft:custom_data~{gui_btn:"mace_gs_no_pearl_land"}] run function gui:click/mace_gs/no_pearl_land
 execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"mace_gs_stap"}] run function gui:click/mace_gs/stap
 execute if items entity @s inventory.* minecraft:clock[minecraft:custom_data~{gui_btn:"mace_gs_shieldcd"}] run function gui:click/mace_gs/shieldcd
