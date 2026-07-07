@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..16 run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..22 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but its Items list is completely
 # empty, the barrel needs to be (re)filled. This catches the case where the barrel
 # block survived from a previous session but its Items were wiped.
@@ -168,6 +168,65 @@ clear @a minecraft:player_head[minecraft:custom_data={gui_btn:"bots_notch"}]
 clear @a minecraft:compass[minecraft:custom_data={gui_btn:"tp_hub"}]
 clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"tp_advanced"}]
 clear @a minecraft:chest[minecraft:custom_data={gui_btn:"tp_kitroom"}]
+# Advanced Settings hub page (page 17) buttons
+clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"advanced_reach"}]
+clear @a minecraft:diamond_boots[minecraft:custom_data={gui_btn:"advanced_jreset"}]
+clear @a minecraft:blaze_powder[minecraft:custom_data={gui_btn:"advanced_aggro"}]
+clear @a minecraft:elytra[minecraft:custom_data={gui_btn:"advanced_tap"}]
+clear @a minecraft:comparator[minecraft:custom_data={gui_btn:"advanced_ping"}]
+# Advanced Settings > Reach page (page 18) options
+clear @a minecraft:stick[minecraft:custom_data={gui_btn:"advanced_reach_0"}]
+clear @a minecraft:wooden_sword[minecraft:custom_data={gui_btn:"advanced_reach_1"}]
+clear @a minecraft:stone_sword[minecraft:custom_data={gui_btn:"advanced_reach_2"}]
+clear @a minecraft:copper_sword[minecraft:custom_data={gui_btn:"advanced_reach_3"}]
+clear @a minecraft:golden_sword[minecraft:custom_data={gui_btn:"advanced_reach_4"}]
+clear @a minecraft:iron_sword[minecraft:custom_data={gui_btn:"advanced_reach_5"}]
+clear @a minecraft:diamond_sword[minecraft:custom_data={gui_btn:"advanced_reach_6"}]
+clear @a minecraft:netherite_sword[minecraft:custom_data={gui_btn:"advanced_reach_7"}]
+clear @a minecraft:mace[minecraft:custom_data={gui_btn:"advanced_reach_8"}]
+# Advanced Settings > Jump Reset Chance page (page 19) options
+clear @a minecraft:leather_boots[minecraft:custom_data={gui_btn:"advanced_jreset_0"}]
+clear @a minecraft:chainmail_boots[minecraft:custom_data={gui_btn:"advanced_jreset_1"}]
+clear @a minecraft:copper_boots[minecraft:custom_data={gui_btn:"advanced_jreset_2"}]
+clear @a minecraft:golden_boots[minecraft:custom_data={gui_btn:"advanced_jreset_3"}]
+clear @a minecraft:iron_boots[minecraft:custom_data={gui_btn:"advanced_jreset_4"}]
+clear @a minecraft:diamond_boots[minecraft:custom_data={gui_btn:"advanced_jreset_5"}]
+clear @a minecraft:netherite_boots[minecraft:custom_data={gui_btn:"advanced_jreset_6"}]
+clear @a minecraft:netherite_boots[minecraft:custom_data={gui_btn:"advanced_jreset_7"}]
+clear @a minecraft:netherite_boots[minecraft:custom_data={gui_btn:"advanced_jreset_8"}]
+clear @a minecraft:netherite_boots[minecraft:custom_data={gui_btn:"advanced_jreset_9"}]
+# Advanced Settings > Aggro Factor page (page 20) options
+clear @a minecraft:snow_block[minecraft:custom_data={gui_btn:"advanced_aggro_0"}]
+clear @a minecraft:blue_ice[minecraft:custom_data={gui_btn:"advanced_aggro_1"}]
+clear @a minecraft:packed_ice[minecraft:custom_data={gui_btn:"advanced_aggro_2"}]
+clear @a minecraft:ice[minecraft:custom_data={gui_btn:"advanced_aggro_3"}]
+clear @a minecraft:grass_block[minecraft:custom_data={gui_btn:"advanced_aggro_4"}]
+clear @a minecraft:netherrack[minecraft:custom_data={gui_btn:"advanced_aggro_5"}]
+clear @a minecraft:red_nether_bricks[minecraft:custom_data={gui_btn:"advanced_aggro_6"}]
+clear @a minecraft:nether_bricks[minecraft:custom_data={gui_btn:"advanced_aggro_7"}]
+clear @a minecraft:netherite_block[minecraft:custom_data={gui_btn:"advanced_aggro_8"}]
+# Advanced Settings > W & S-tap Chance page (page 21) options
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_0"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_1"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_2"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_3"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_4"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_5"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_6"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_7"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_8"}]
+clear @a minecraft:bundle[minecraft:custom_data={gui_btn:"advanced_tap_9"}]
+# Advanced Settings > Bot Ping page (page 22) options
+clear @a minecraft:cut_copper[minecraft:custom_data={gui_btn:"advanced_ping_0"}]
+clear @a minecraft:chiseled_copper[minecraft:custom_data={gui_btn:"advanced_ping_1"}]
+clear @a minecraft:copper_block[minecraft:custom_data={gui_btn:"advanced_ping_2"}]
+clear @a minecraft:exposed_copper[minecraft:custom_data={gui_btn:"advanced_ping_3"}]
+clear @a minecraft:exposed_copper_grate[minecraft:custom_data={gui_btn:"advanced_ping_4"}]
+clear @a minecraft:weathered_copper_grate[minecraft:custom_data={gui_btn:"advanced_ping_5"}]
+clear @a minecraft:weathered_copper[minecraft:custom_data={gui_btn:"advanced_ping_6"}]
+clear @a minecraft:oxidized_copper[minecraft:custom_data={gui_btn:"advanced_ping_7"}]
+clear @a minecraft:oxidized_chiseled_copper[minecraft:custom_data={gui_btn:"advanced_ping_8"}]
+clear @a minecraft:oxidized_cut_copper[minecraft:custom_data={gui_btn:"advanced_ping_9"}]
 
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -278,4 +337,34 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 16 run function gui:pages/teleports
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 16 run function gui:pages/teleports
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 16 run function gui:pages/teleports
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 17 run function gui:pages/advanced
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 17 run function gui:pages/advanced
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 17 run function gui:pages/advanced
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 17 run function gui:pages/advanced
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 17 run function gui:pages/advanced
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 18 run function gui:pages/advanced/reach
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 18 run function gui:pages/advanced/reach
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 18 run function gui:pages/advanced/reach
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 18 run function gui:pages/advanced/reach
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 18 run function gui:pages/advanced/reach
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 19 run function gui:pages/advanced/jreset
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 19 run function gui:pages/advanced/jreset
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 19 run function gui:pages/advanced/jreset
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 19 run function gui:pages/advanced/jreset
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 19 run function gui:pages/advanced/jreset
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 20 run function gui:pages/advanced/aggro
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 20 run function gui:pages/advanced/aggro
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 20 run function gui:pages/advanced/aggro
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 20 run function gui:pages/advanced/aggro
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 20 run function gui:pages/advanced/aggro
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 21 run function gui:pages/advanced/tap
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 21 run function gui:pages/advanced/tap
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 21 run function gui:pages/advanced/tap
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 21 run function gui:pages/advanced/tap
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 21 run function gui:pages/advanced/tap
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 22 run function gui:pages/advanced/ping
 
