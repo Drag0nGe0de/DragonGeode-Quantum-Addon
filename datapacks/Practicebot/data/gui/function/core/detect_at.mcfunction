@@ -308,3 +308,33 @@ $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page match
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/mace_gs/shieldcd
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/mace_gs/prev
+
+# ── Crystal General Settings page (gui_page 27), sub-page 1 ── Toggles(0-17), Back(18), Next(23)
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/crystal_gs/stun
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/crystal_gs/strafe
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/crystal_gs/blocks_drop
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/crystal_gs/refill
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/crystal_gs/axe
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/crystal_gs/small
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/crystal_gs/cobweb
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/crystal_gs/buffs
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/crystal_gs/shield
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/crystal_gs/holding
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/crystal_gs/slowfall
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/crystal_gs/crystals
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/crystal_gs/anchors
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/crystal_gs/better_npc_shield
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/crystal_gs/playstyle
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/crystal_gs/dbp
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/crystal_gs/inf_tot
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/crystal_gs/oldkb
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/crystal_gs/next
+
+# ── Crystal General Settings page (gui_page 27), sub-page 2 ── Toggles(0-3), Back(18), Prev(21)
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/crystal_gs/breakable
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/crystal_gs/resistance
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/crystal_gs/prompt_start
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/crystal_gs/triple_tap
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/crystal_gs/prev

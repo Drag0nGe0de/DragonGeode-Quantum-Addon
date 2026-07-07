@@ -216,6 +216,39 @@ execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gu
 # Mace General Settings nether star (display only — clear from inventory)
 execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"mace_gs_pageinfo"}] run function gui:core/return_filler
 
+# Crystal General Settings page (page 27) toggle buttons (page 1: slots 0-17)
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_stun"}] run function gui:click/crystal_gs/stun
+execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"crystal_gs_strafe"}] run function gui:click/crystal_gs/strafe
+execute if items entity @s inventory.* minecraft:campfire[minecraft:custom_data~{gui_btn:"crystal_gs_blocks_drop"}] run function gui:click/crystal_gs/blocks_drop
+execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"crystal_gs_refill"}] run function gui:click/crystal_gs/refill
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_axe"}] run function gui:click/crystal_gs/axe
+execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"crystal_gs_small"}] run function gui:click/crystal_gs/small
+execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"crystal_gs_cobweb"}] run function gui:click/crystal_gs/cobweb
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_buffs"}] run function gui:click/crystal_gs/buffs
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_shield"}] run function gui:click/crystal_gs/shield
+execute if items entity @s inventory.* minecraft:chain[minecraft:custom_data~{gui_btn:"crystal_gs_holding"}] run function gui:click/crystal_gs/holding
+execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{gui_btn:"crystal_gs_slowfall"}] run function gui:click/crystal_gs/slowfall
+execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"crystal_gs_crystals"}] run function gui:click/crystal_gs/crystals
+execute if items entity @s inventory.* minecraft:respawn_anchor[minecraft:custom_data~{gui_btn:"crystal_gs_anchors"}] run function gui:click/crystal_gs/anchors
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_better_npc_shield"}] run function gui:click/crystal_gs/better_npc_shield
+# Playstyle toggle (slot 14): icon can be either end_crystal OR respawn_anchor
+# depending on which playstyle is currently selected, so check both item ids.
+execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"crystal_gs_playstyle"}] run function gui:click/crystal_gs/playstyle
+execute if items entity @s inventory.* minecraft:respawn_anchor[minecraft:custom_data~{gui_btn:"crystal_gs_playstyle"}] run function gui:click/crystal_gs/playstyle
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_dbp"}] run function gui:click/crystal_gs/dbp
+execute if items entity @s inventory.* minecraft:totem_of_undying[minecraft:custom_data~{gui_btn:"crystal_gs_inf_tot"}] run function gui:click/crystal_gs/inf_tot
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_oldkb"}] run function gui:click/crystal_gs/oldkb
+# Crystal General Settings page (page 27) toggle buttons (page 2: slots 0-3)
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_breakable"}] run function gui:click/crystal_gs/breakable
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_resistance"}] run function gui:click/crystal_gs/resistance
+execute if items entity @s inventory.* minecraft:egg[minecraft:custom_data~{gui_btn:"crystal_gs_prompt_start"}] run function gui:click/crystal_gs/prompt_start
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_triple_tap"}] run function gui:click/crystal_gs/triple_tap
+# Crystal General Settings page navigation arrows
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"crystal_gs_prev"}] run function gui:click/crystal_gs/prev
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"crystal_gs_next"}] run function gui:click/crystal_gs/next
+# Crystal General Settings nether star (display only — clear from inventory)
+execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"crystal_gs_pageinfo"}] run function gui:core/return_filler
+
 # NPC Attributes page (page 13) setting buttons
 execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:click/npc_attr/bot_scale
 execute if items entity @s inventory.* minecraft:fermented_spider_eye[minecraft:custom_data~{gui_btn:"npc_attr_bot_slowness"}] run function gui:click/npc_attr/bot_slowness

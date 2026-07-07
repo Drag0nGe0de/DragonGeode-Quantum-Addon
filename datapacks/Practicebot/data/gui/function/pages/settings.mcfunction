@@ -4,8 +4,9 @@ execute in minecraft:overworld run data merge block -715 31 90 {Items:[{Slot:0b,
 
 # -- General Settings (slot 13): lore shows the currently selected gamemode --
 # .gm gui_page values: 0=None, 1=TNT Cart, 2=Pot, 3=Mace, 4=Vanilla, 5=OP Sword
-# Only Mace has a real settings page right now; all other modes still lead to
-# the WIP page when the button is clicked (see click/settings/general.mcfunction).
+# Mace (3) and Crystal/Vanilla (4) have real General Settings pages (26, 27);
+# all other modes still lead to the WIP page when the button is clicked
+# (see click/settings/general.mcfunction).
 execute in minecraft:overworld if score .gm gui_page matches 0 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: None",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: TNT Cart",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Pot",color:"gray",italic:false}]
