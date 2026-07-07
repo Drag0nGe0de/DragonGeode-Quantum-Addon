@@ -212,6 +212,7 @@ scoreboard objectives add current_click dummy
 scoreboard objectives add current_slot dummy
 scoreboard objectives add current_action dummy
 scoreboard objectives add map dummy
+scoreboard objectives add debug dummy
 
 # Reset timings
 scoreboard players set .100 Math 100

@@ -42,3 +42,6 @@ execute if score .mode mode matches 607 run return run function mech_train:cart/
 
 # Generic
 execute if score .mode mode matches 701 run function mech_train:generic/flick_aim.mcfunction/tick
+
+# Debug overlay (only prints when .debug toggles == 1)
+function mech_train:debug

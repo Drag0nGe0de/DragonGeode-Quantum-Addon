@@ -1,3 +1,5 @@
+# [DEBUG] log every time the loop fires
+execute if score .debug toggles matches 1 run function mech_train:debug/snapshot {label:"hit_anchor LOOP fired"}
 execute if score @s pops matches 1.. run title @a actionbar {"text":"Digging isn't meta!","color": "green"}
 execute if score @s pops matches 1.. if score @s shield_cd matches 1.. run title @a actionbar {"text":"How... THOSE SHIELD STUNS!","color": "green"}
 execute unless score @s pops matches 1.. run title @a actionbar {"text":"🥺 Failed!","color": "red"}
