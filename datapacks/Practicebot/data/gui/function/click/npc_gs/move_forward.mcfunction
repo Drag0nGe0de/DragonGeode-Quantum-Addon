@@ -1,7 +1,7 @@
 # GUI System - Click: npc_gs/move_forward
 # Toggle the 'Move Forward' NPC setting, then refresh the current General Settings page.
 # This is a TOGGLE button — it does NOT navigate away from the page.
-clear @s minecraft:iron_boots[minecraft:custom_data={gui_btn:"npc_gs_move_forward"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"npc_gs_move_forward"}]
 
 # Flip the toggle (npc:settings/toggle/<name> handles on->off / off->on + feedback).
 function npc:settings/toggle/move_forward

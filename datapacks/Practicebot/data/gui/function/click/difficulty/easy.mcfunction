@@ -1,6 +1,6 @@
 # GUI System - Click: difficulty_easy
 # Easy difficulty: run quantum:difficulty/1 and return to play page
-clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty_easy"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"difficulty_easy"}]
 
 # Run the difficulty function as quantumbot (sets .difficulty score, applies bot settings, etc.)
 execute as quantumbot run function quantum:difficulty/1

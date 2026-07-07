@@ -1,5 +1,5 @@
 # GUI System - Click: preset_sword
-clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"preset_sword"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"preset_sword"}]
 
 # Run the NPC preset function
 function npc:settings/presets/sword

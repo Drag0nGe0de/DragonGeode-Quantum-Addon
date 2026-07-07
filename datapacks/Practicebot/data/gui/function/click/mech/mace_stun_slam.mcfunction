@@ -1,6 +1,6 @@
 # GUI System - Click: mech_mace_stun_slam
 # Stun Slam mech training: run mech_train:mace/stun_slam/init and return to play page
-clear @s minecraft:mace[minecraft:custom_data={gui_btn:"mech_mace_stun_slam"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"mech_mace_stun_slam"}]
 
 # Reset history stack so Back from Play returns to Main (not to Play itself).
 scoreboard players set .gui_prev gui_page 1

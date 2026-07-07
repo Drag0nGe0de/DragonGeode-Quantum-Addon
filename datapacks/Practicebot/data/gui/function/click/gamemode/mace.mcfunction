@@ -1,6 +1,6 @@
 # GUI System - Click: gamemode_mace
 # Mace mode: function quantum:options/mace && tp to arena
-clear @s minecraft:mace[minecraft:custom_data={gui_btn:"gamemode_mace"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"gamemode_mace"}]
 
 # Store selected gamemode (.gm = 3 = Mace)
 scoreboard players set .gm gui_page 3

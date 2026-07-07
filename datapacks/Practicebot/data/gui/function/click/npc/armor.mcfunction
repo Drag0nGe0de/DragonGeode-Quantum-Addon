@@ -1,10 +1,6 @@
 # GUI System - Click: npc_armor
 # Clear ALL possible chestplate variants since the icon changes based on .botgear
-clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"npc_armor"}]
-clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"npc_armor"}]
-clear @s minecraft:chainmail_chestplate[minecraft:custom_data={gui_btn:"npc_armor"}]
-clear @s minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"npc_armor"}]
-clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"npc_armor"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"npc_armor"}]
 
 # Push current page onto history stack before navigating
 scoreboard players operation .gui_prev4 gui_page = .gui_prev3 gui_page

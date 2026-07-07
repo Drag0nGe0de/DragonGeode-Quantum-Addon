@@ -1,5 +1,5 @@
 # GUI System - Click: armor_sbp
-clear @s minecraft:netherite_leggings[minecraft:custom_data={gui_btn:"armor_sbp"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"armor_sbp"}]
 
 # Run the NPC settings toggle function
 function npc:settings/toggle/sbp

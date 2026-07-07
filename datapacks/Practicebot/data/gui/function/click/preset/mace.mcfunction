@@ -1,5 +1,5 @@
 # GUI System - Click: preset_mace
-clear @s minecraft:mace[minecraft:custom_data={gui_btn:"preset_mace"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"preset_mace"}]
 
 # Run the NPC preset function
 function npc:settings/presets/mace

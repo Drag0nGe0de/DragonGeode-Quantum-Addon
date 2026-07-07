@@ -1,6 +1,6 @@
 # GUI System - Click: difficulty_master
 # Master difficulty: run quantum:difficulty/5 and return to play page
-clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty_master"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"difficulty_master"}]
 
 # Run the difficulty function as quantumbot (sets .difficulty score, applies bot settings, etc.)
 execute as quantumbot run function quantum:difficulty/5

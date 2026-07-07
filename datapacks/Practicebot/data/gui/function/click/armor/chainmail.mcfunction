@@ -1,5 +1,5 @@
 # GUI System - Click: armor_chainmail
-clear @s minecraft:chainmail_chestplate[minecraft:custom_data={gui_btn:"armor_chainmail"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"armor_chainmail"}]
 
 # Run the NPC settings toggle function
 function npc:settings/toggle/chainmail

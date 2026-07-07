@@ -1,6 +1,6 @@
 # GUI System - Click: gamemode_op_sword
 # OP Sword mode: function quantum:options/sword && tp to arena
-clear @s minecraft:diamond_sword[minecraft:custom_data={gui_btn:"gamemode_op_sword"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"gamemode_op_sword"}]
 
 # Store selected gamemode (.gm = 5 = OP Sword)
 scoreboard players set .gm gui_page 5

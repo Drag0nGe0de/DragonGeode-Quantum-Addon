@@ -1,10 +1,7 @@
 # GUI System - Click: difficulty
 # Navigate to the difficulty selection page (page 6)
 # Clear ALL possible icon variants (the icon changes based on selected difficulty)
-clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-clear @s minecraft:leather_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-clear @s minecraft:diamond_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
-clear @s minecraft:netherite_chestplate[minecraft:custom_data={gui_btn:"difficulty"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"difficulty"}]
 clear @s minecraft:command_block[minecraft:custom_data={gui_btn:"difficulty"}]
 clear @s minecraft:player_head[minecraft:custom_data={gui_btn:"difficulty"}]
 

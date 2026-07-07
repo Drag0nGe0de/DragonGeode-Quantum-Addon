@@ -1,6 +1,6 @@
 # GUI System - Click: difficulty_medium
 # Medium difficulty: run quantum:difficulty/2 and return to play page
-clear @s minecraft:iron_chestplate[minecraft:custom_data={gui_btn:"difficulty_medium"}]
+clear @s minecraft:gold_nugget[minecraft:custom_data={gui_btn:"difficulty_medium"}]
 
 # Run the difficulty function as quantumbot (sets .difficulty score, applies bot settings, etc.)
 execute as quantumbot run function quantum:difficulty/2
