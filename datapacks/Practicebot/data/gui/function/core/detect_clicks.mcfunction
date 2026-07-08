@@ -253,6 +253,35 @@ execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gu
 # Crystal General Settings nether star (display only — clear from inventory)
 execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"crystal_gs_pageinfo"}] run function gui:core/return_filler
 
+# Sword General Settings page (page 28) toggle buttons (page 1: slots 0-17)
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_armor"}] run function gui:click/sword_gs/armor
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_shield"}] run function gui:click/sword_gs/shield
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_resistance"}] run function gui:click/sword_gs/resistance
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_breakable"}] run function gui:click/sword_gs/breakable
+execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"sword_gs_no_fall"}] run function gui:click/sword_gs/no_fall
+execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"sword_gs_cobweb"}] run function gui:click/sword_gs/cobweb
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_stun"}] run function gui:click/sword_gs/stun
+execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"sword_gs_pcrit"}] run function gui:click/sword_gs/pcrit
+execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"sword_gs_crit"}] run function gui:click/sword_gs/crit
+execute if items entity @s inventory.* minecraft:seagrass[minecraft:custom_data~{gui_btn:"sword_gs_scrit"}] run function gui:click/sword_gs/scrit
+execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"sword_gs_strafe"}] run function gui:click/sword_gs/strafe
+execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"sword_gs_stap"}] run function gui:click/sword_gs/stap
+execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"sword_gs_jreset"}] run function gui:click/sword_gs/jreset
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_axe"}] run function gui:click/sword_gs/axe
+execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"sword_gs_refill"}] run function gui:click/sword_gs/refill
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_buffs"}] run function gui:click/sword_gs/buffs
+execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"sword_gs_water"}] run function gui:click/sword_gs/water
+execute if items entity @s inventory.* minecraft:lava_bucket[minecraft:custom_data~{gui_btn:"sword_gs_lava"}] run function gui:click/sword_gs/lava
+# Sword General Settings page (page 28) toggle buttons (page 2: slots 0-2)
+execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"sword_gs_healing"}] run function gui:click/sword_gs/healing
+execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"sword_gs_small"}] run function gui:click/sword_gs/small
+execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"sword_gs_random"}] run function gui:click/sword_gs/random
+# Sword General Settings page navigation arrows
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"sword_gs_prev"}] run function gui:click/sword_gs/prev
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"sword_gs_next"}] run function gui:click/sword_gs/next
+# Sword General Settings nether star (display only — clear from inventory)
+execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"sword_gs_pageinfo"}] run function gui:core/return_filler
+
 # NPC Attributes page (page 13) setting buttons
 execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:click/npc_attr/bot_scale
 execute if items entity @s inventory.* minecraft:fermented_spider_eye[minecraft:custom_data~{gui_btn:"npc_attr_bot_slowness"}] run function gui:click/npc_attr/bot_slowness

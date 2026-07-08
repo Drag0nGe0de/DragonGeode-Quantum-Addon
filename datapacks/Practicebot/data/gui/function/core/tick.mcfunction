@@ -10,7 +10,7 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -651 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] unless block -619 31 90 minecraft:barrel run function gui:core/setup
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] unless block -619 31 134 minecraft:barrel run function gui:core/setup
-execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..27 run function gui:core/setup
+execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if block -715 31 90 minecraft:barrel unless score .gui gui_page matches 1..28 run function gui:core/setup
 # Empty-barrel safety: if the main barrel exists but its Items list is completely
 # empty, the barrel needs to be (re)filled. This catches the case where the barrel
 # block survived from a previous session but its Items were wiped.
@@ -291,6 +291,31 @@ clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"crystal_gs_armor"
 clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"crystal_gs_prev"}]
 clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"crystal_gs_next"}]
 clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"crystal_gs_pageinfo"}]
+# Sword General Settings page (page 28) items
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_armor"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_shield"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_resistance"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_breakable"}]
+clear @a minecraft:hay_block[minecraft:custom_data={gui_btn:"sword_gs_no_fall"}]
+clear @a minecraft:cobweb[minecraft:custom_data={gui_btn:"sword_gs_cobweb"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_stun"}]
+clear @a minecraft:cactus[minecraft:custom_data={gui_btn:"sword_gs_pcrit"}]
+clear @a minecraft:fire_charge[minecraft:custom_data={gui_btn:"sword_gs_crit"}]
+clear @a minecraft:seagrass[minecraft:custom_data={gui_btn:"sword_gs_scrit"}]
+clear @a minecraft:magenta_glazed_terracotta[minecraft:custom_data={gui_btn:"sword_gs_strafe"}]
+clear @a minecraft:minecart[minecraft:custom_data={gui_btn:"sword_gs_stap"}]
+clear @a minecraft:slime_block[minecraft:custom_data={gui_btn:"sword_gs_jreset"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_axe"}]
+clear @a minecraft:cauldron[minecraft:custom_data={gui_btn:"sword_gs_refill"}]
+clear @a minecraft:gold_nugget[minecraft:custom_data={gui_btn:"sword_gs_buffs"}]
+clear @a minecraft:water_bucket[minecraft:custom_data={gui_btn:"sword_gs_water"}]
+clear @a minecraft:lava_bucket[minecraft:custom_data={gui_btn:"sword_gs_lava"}]
+clear @a minecraft:golden_apple[minecraft:custom_data={gui_btn:"sword_gs_healing"}]
+clear @a minecraft:turtle_egg[minecraft:custom_data={gui_btn:"sword_gs_small"}]
+clear @a minecraft:chorus_fruit[minecraft:custom_data={gui_btn:"sword_gs_random"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"sword_gs_prev"}]
+clear @a minecraft:arrow[minecraft:custom_data={gui_btn:"sword_gs_next"}]
+clear @a minecraft:nether_star[minecraft:custom_data={gui_btn:"sword_gs_pageinfo"}]
 
 # Kill any dropped GUI items on the ground near each barrel.
 execute in minecraft:overworld positioned -715.5 31.5 89.5 as @e[type=item,distance=..16] if data entity @s Item.components."minecraft:custom_data".gui_btn run kill @s
@@ -457,6 +482,11 @@ execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance
 execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 27 run function gui:pages/crystal_general_settings
 execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 27 run function gui:pages/crystal_general_settings
 execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 27 run function gui:pages/crystal_general_settings
+execute in minecraft:overworld positioned -715.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 28 run function gui:pages/sword_general_settings
+execute in minecraft:overworld positioned -683.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 28 run function gui:pages/sword_general_settings
+execute in minecraft:overworld positioned -651.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 28 run function gui:pages/sword_general_settings
+execute in minecraft:overworld positioned -619.5 31.5 89.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 28 run function gui:pages/sword_general_settings
+execute in minecraft:overworld positioned -619.5 31.5 133.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 28 run function gui:pages/sword_general_settings
 
 # Update barrel CustomName to match the current page (breadcrumb path).
 # Only need to check one barrel for a nearby player — update_name sets all 5.
