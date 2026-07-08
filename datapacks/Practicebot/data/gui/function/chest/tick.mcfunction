@@ -3,6 +3,31 @@
 # Manages the per-player chest minecart: tag holders, summon if missing,
 # follow the player's eye, despawn when no longer holding.
 
+# ── Game-state guard ──
+# The chest minecart GUI is NOT compatible with active games: when the player
+# is teleported to a game dimension the main barrel (-715 31 90) may be
+# unloaded, so sync_chest copies an empty Items list and the minecart goes
+# blank.  detect_chest then sees every slot as empty and fires EVERY button
+# handler every tick — toggling all three bots on (spamming the "multiple
+# bots" warning), navigating randomly, and corrupting the page-history stack
+# so Back ends up on the WIP page.
+#
+# Fix: while a game is in progress (.start start matches 1) we continuously
+#   • clear the Quantum AI summoner nether star from every player
+#   • remove the gui_chest_holding tag
+#   • clear Items[] then kill any lingering chest minecart (clear first so
+#     we don't dump a full inventory on the ground)
+#   • return early so none of the summon/follow/detect/sync steps run.
+# This also stops the "refill" feature (quantum:miscellaneous/treats/refill)
+# from stacking the nether star to 99, because the star is never in the
+# inventory during a game.  play/start.mcfunction does the same clear/kill
+# immediately on the Start click (before .start is set to 1 by start3).
+execute if score .start start matches 1 run clear @a minecraft:nether_star[minecraft:custom_data={gui_chest:1b}]
+execute if score .start start matches 1 run tag @a remove gui_chest_holding
+execute if score .start start matches 1 as @e[type=minecraft:chest_minecart,tag=gui_chest] run data merge entity @s {Items:[]}
+execute if score .start start matches 1 as @e[type=minecraft:chest_minecart,tag=gui_chest] run kill @s
+execute if score .start start matches 1 run return 0
+
 # Step 1: tag players holding the Quantum AI nether star in their main hand.
 # weapon.mainhand means the currently selected hotbar slot — exactly what
 # the user sees as "held".
@@ -58,3 +83,12 @@ execute as @a[tag=gui_chest_holding] run function gui:core/detect_inventory
 # immediately.  Running sync AFTER detect (not before) is critical: syncing
 # before detect would refill clicked slots and break all button clicks.
 function gui:core/sync_chest
+
+# Step 8: final fire extinguish — clear the Fire tag on every GUI minecart as
+# the very last step of the chest tick.  chest/follow already sets Fire:0s,
+# but the game can re-ignite the entity during its own entity tick (which
+# runs before the datapack tick) if the minecart is standing in lava or fire.
+# Clearing it again here — after all other NBT writes — guarantees the Fire
+# tag is 0 when the client renders the next frame, so the burning animation
+# never lingers even if the player walks through lava.
+execute as @e[type=minecraft:chest_minecart,tag=gui_chest] run data merge entity @s {Fire:0s}

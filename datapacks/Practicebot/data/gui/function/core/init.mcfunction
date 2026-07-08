@@ -96,10 +96,12 @@ execute in minecraft:overworld run data modify block -619 31 90 CustomName set v
 execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
 
 # Chest GUI motion-prediction constants (used by chest/follow.mcfunction).
-# .gc_lk = look-ahead factor * 1000  (1500 = 1.5 ticks of motion prediction;
-#           increase to push the minecart further ahead when moving fast)
-# .gc_1k = 1000 (used to divide out the *1000 scaling so the result is 1.5x)
-scoreboard players set .gc_lk var 1500
+# .gc_lk = look-ahead factor * 1000  (2000 = 2.0× velocity look-ahead;
+#           covers the one-tick tp delay + client render-interpolation lag.
+#           Increase to push the minecart further ahead when moving fast,
+#           decrease if the minecart overshoots when you stop.)
+# .gc_1k = 1000 (used to divide out the *1000 scaling so the result is 2.0x)
+scoreboard players set .gc_lk var 2000
 scoreboard players set .gc_1k var 1000
 
 # Fill the main barrel with the main page (sync_barrels copies to satellites)
