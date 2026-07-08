@@ -42,9 +42,9 @@ execute in minecraft:overworld run item modify block -715 31 90 container.7 {"fu
 # Default (unset or 1) = Ledge Spammer (end_crystal icon, "Ledge Spammer" green).
 # 2 = Anchor Spammer (respawn_anchor icon, "Anchor Spammer" green).
 execute in minecraft:overworld unless score .crystal_playstyle toggles matches 2 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:end_crystal"
-execute in minecraft:overworld unless score .crystal_playstyle toggles matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Ledge Spammer",color:"green",italic:false},{text:"Anchor Spammer",color:"gray",italic:false},{text:"Click to toggle playstyle.",color:"gray",italic:false}]
+execute in minecraft:overworld unless score .crystal_playstyle toggles matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"> Ledge Spammer",color:"green",italic:false},{text:"> Anchor Spammer",color:"gray",italic:false},{text:"Click to toggle playstyle.",color:"gray",italic:false}]
 execute in minecraft:overworld if score .crystal_playstyle toggles matches 2 run data modify block -715 31 90 Items[{Slot:14b}].id set value "minecraft:respawn_anchor"
-execute in minecraft:overworld if score .crystal_playstyle toggles matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Ledge Spammer",color:"gray",italic:false},{text:"Anchor Spammer",color:"green",italic:false},{text:"Click to toggle playstyle.",color:"gray",italic:false}]
+execute in minecraft:overworld if score .crystal_playstyle toggles matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"> Ledge Spammer",color:"gray",italic:false},{text:"> Anchor Spammer",color:"green",italic:false},{text:"Click to toggle playstyle.",color:"gray",italic:false}]
 
 # -- Dynamic lore + enchantment glint per toggle --
 execute in minecraft:overworld if score .stun toggles matches 1 run data modify block -715 31 90 Items[{Slot:0b}].components merge value {"minecraft:enchantment_glint_override":true,"minecraft:lore":[{text:"Current: Enabled",color:"green",italic:false}]}

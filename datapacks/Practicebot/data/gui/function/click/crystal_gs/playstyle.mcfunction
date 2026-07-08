@@ -13,8 +13,13 @@ clear @s minecraft:respawn_anchor[minecraft:custom_data={gui_btn:"crystal_gs_pla
 # crystal_playstyle sets the score AND calls the matching toggles/ function
 # (toggles/crystal_spam or toggles/anchor_spam), which recolors the in-world
 # item_display entities and shows the actionbar message.
-execute if score .crystal_playstyle toggles matches 1 run function quantum:options/crystal_playstyle {"playstyle":2}
-execute if score .crystal_playstyle toggles matches 2 run function quantum:options/crystal_playstyle {"playstyle":1}
+# IMPORTANT: use `return run` on the first branch. Without it, both execute lines
+# run sequentially — line 1 sets the score to 2, then line 2 sees the new value
+# (matches 2) and immediately flips it back to 1, so clicking Ledge Spammer
+# appears to do nothing. `return run` exits this function after the first
+# matching branch, exactly like the toggle functions in options/*.mcfunction.
+execute if score .crystal_playstyle toggles matches 1 run return run function quantum:options/crystal_playstyle {"playstyle":2}
+execute if score .crystal_playstyle toggles matches 2 run return run function quantum:options/crystal_playstyle {"playstyle":1}
 
 # Refresh the page so the icon + lore update instantly.
 function gui:pages/crystal_general_settings
