@@ -3,11 +3,5 @@
   "difficulty": "HARD",
   "difficultyLocked": false,
   "cheats": true,
-  "invited": [
-    "6745e6a9-9fe2-4910-915d-21ace89f68be"
-  ],
-  "shareResourcePack": false,
-  "oppedPlayers": [
-    "6745e6a9-9fe2-4910-915d-21ace89f68be"
-  ]
+  "shareResourcePack": false
 }
