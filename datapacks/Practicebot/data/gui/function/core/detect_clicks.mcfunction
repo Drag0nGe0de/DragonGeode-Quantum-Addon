@@ -212,6 +212,8 @@ execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~
 execute if items entity @s inventory.* minecraft:clock[minecraft:custom_data~{gui_btn:"mace_gs_shieldcd"}] run function gui:click/mace_gs/shieldcd
 # Mace General Settings armor toggle (page 2, slot 6) — gold_nugget+item_model
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_armor"}] run function gui:click/mace_gs/armor
+# Mace General Settings healing toggle (page 2, slot 7)
+execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"mace_gs_healing"}] run function gui:click/mace_gs/healing
 # Mace General Settings page navigation arrows
 execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_prev"}] run function gui:click/mace_gs/prev
 execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_next"}] run function gui:click/mace_gs/next
@@ -221,7 +223,7 @@ execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_da
 # Crystal General Settings page (page 27) toggle buttons (page 1: slots 0-17)
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_stun"}] run function gui:click/crystal_gs/stun
 execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"crystal_gs_strafe"}] run function gui:click/crystal_gs/strafe
-execute if items entity @s inventory.* minecraft:campfire[minecraft:custom_data~{gui_btn:"crystal_gs_blocks_drop"}] run function gui:click/crystal_gs/blocks_drop
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_blocks_drop"}] run function gui:click/crystal_gs/blocks_drop
 execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"crystal_gs_refill"}] run function gui:click/crystal_gs/refill
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_axe"}] run function gui:click/crystal_gs/axe
 execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"crystal_gs_small"}] run function gui:click/crystal_gs/small
@@ -302,6 +304,35 @@ execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_dat
 execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"pot_gs_random"}] run function gui:click/pot_gs/random
 # Pot General Settings nether star (display only — clear from inventory)
 execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"pot_gs_pageinfo"}] run function gui:core/return_filler
+
+# TNT Cart General Settings page (page 30) toggle buttons (page 1: slots 0-17)
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_armor"}] run function gui:click/tnt_gs/armor
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_shield"}] run function gui:click/tnt_gs/shield
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_resistance"}] run function gui:click/tnt_gs/resistance
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_breakable"}] run function gui:click/tnt_gs/breakable
+execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"tnt_gs_no_fall"}] run function gui:click/tnt_gs/no_fall
+execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"tnt_gs_cobweb"}] run function gui:click/tnt_gs/cobweb
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_stun"}] run function gui:click/tnt_gs/stun
+execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"tnt_gs_pcrit"}] run function gui:click/tnt_gs/pcrit
+execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"tnt_gs_crit"}] run function gui:click/tnt_gs/crit
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_blocks_drop"}] run function gui:click/tnt_gs/blocks_drop
+execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"tnt_gs_strafe"}] run function gui:click/tnt_gs/strafe
+execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"tnt_gs_stap"}] run function gui:click/tnt_gs/stap
+execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"tnt_gs_jreset"}] run function gui:click/tnt_gs/jreset
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_axe"}] run function gui:click/tnt_gs/axe
+execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"tnt_gs_refill"}] run function gui:click/tnt_gs/refill
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_buffs"}] run function gui:click/tnt_gs/buffs
+execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"tnt_gs_water"}] run function gui:click/tnt_gs/water
+execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"tnt_gs_healing"}] run function gui:click/tnt_gs/healing
+# TNT Cart General Settings page (page 30) toggle buttons (page 2: slots 0-2)
+execute if items entity @s inventory.* minecraft:egg[minecraft:custom_data~{gui_btn:"tnt_gs_prompt_start"}] run function gui:click/tnt_gs/prompt_start
+execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"tnt_gs_small"}] run function gui:click/tnt_gs/small
+execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"tnt_gs_random"}] run function gui:click/tnt_gs/random
+# TNT Cart General Settings page navigation arrows
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"tnt_gs_prev"}] run function gui:click/tnt_gs/prev
+execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"tnt_gs_next"}] run function gui:click/tnt_gs/next
+# TNT Cart General Settings nether star (display only — clear from inventory)
+execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"tnt_gs_pageinfo"}] run function gui:core/return_filler
 
 # NPC Attributes page (page 13) setting buttons
 execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:click/npc_attr/bot_scale

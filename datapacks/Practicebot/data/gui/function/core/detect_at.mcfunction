@@ -299,7 +299,7 @@ $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page match
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/mace_gs/next
 
-# ── Mace General Settings page (gui_page 26), sub-page 2 ── Toggles(0-6), Back(18), Prev(21)
+# ── Mace General Settings page (gui_page 26), sub-page 2 ── Toggles(0-7), Back(18), Prev(21)
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/mace_gs/refill
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/mace_gs/buffs
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/mace_gs/small
@@ -307,6 +307,7 @@ $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page match
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/mace_gs/breakable
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/mace_gs/resistance
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/mace_gs/axe
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/mace_gs/healing
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/mace_gs/prev
 
@@ -389,3 +390,32 @@ $execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matche
 $execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/pot_gs/small
 $execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/pot_gs/random
 $execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+
+# ── TNT Cart General Settings page (gui_page 30), sub-page 1 ── Toggles(0-17), Back(18), Next(23)
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/tnt_gs/armor
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/tnt_gs/shield
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/tnt_gs/resistance
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/tnt_gs/breakable
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/tnt_gs/no_fall
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/tnt_gs/cobweb
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/tnt_gs/stun
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/tnt_gs/pcrit
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/tnt_gs/crit
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/tnt_gs/blocks_drop
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/tnt_gs/strafe
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/tnt_gs/stap
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/tnt_gs/jreset
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/tnt_gs/axe
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/tnt_gs/refill
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/tnt_gs/buffs
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/tnt_gs/water
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:17b}] run function gui:click/tnt_gs/healing
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/tnt_gs/next
+
+# ── TNT Cart General Settings page (gui_page 30), sub-page 2 ── Toggles(0-2), Back(18), Prev(21)
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/tnt_gs/prompt_start
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/tnt_gs/small
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/tnt_gs/random
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
+$execute if score .gui gui_page matches 30 if score .tnt_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/tnt_gs/prev

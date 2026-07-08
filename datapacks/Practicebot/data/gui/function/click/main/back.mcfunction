@@ -41,6 +41,7 @@ execute if score .gui_back gui_page matches 26 run function gui:pages/mace_gener
 execute if score .gui_back gui_page matches 27 run function gui:pages/crystal_general_settings
 execute if score .gui_back gui_page matches 28 run function gui:pages/sword_general_settings
 execute if score .gui_back gui_page matches 29 run function gui:pages/pot_general_settings
+execute if score .gui_back gui_page matches 30 run function gui:pages/tnt_general_settings
 # Safety fallback: if the history stack was uninitialized or corrupted,
 # always fall back to the main page so the player is never stuck.
-execute unless score .gui_back gui_page matches 1..29 run function gui:pages/main
+execute unless score .gui_back gui_page matches 1..30 run function gui:pages/main
