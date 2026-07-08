@@ -226,7 +226,7 @@ execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_dat
 execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"crystal_gs_cobweb"}] run function gui:click/crystal_gs/cobweb
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_buffs"}] run function gui:click/crystal_gs/buffs
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_shield"}] run function gui:click/crystal_gs/shield
-execute if items entity @s inventory.* minecraft:chain[minecraft:custom_data~{gui_btn:"crystal_gs_holding"}] run function gui:click/crystal_gs/holding
+execute if items entity @s inventory.* minecraft:iron_chain[minecraft:custom_data~{gui_btn:"crystal_gs_holding"}] run function gui:click/crystal_gs/holding
 execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{gui_btn:"crystal_gs_slowfall"}] run function gui:click/crystal_gs/slowfall
 execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"crystal_gs_crystals"}] run function gui:click/crystal_gs/crystals
 execute if items entity @s inventory.* minecraft:respawn_anchor[minecraft:custom_data~{gui_btn:"crystal_gs_anchors"}] run function gui:click/crystal_gs/anchors
