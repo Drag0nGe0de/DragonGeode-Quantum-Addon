@@ -9,7 +9,7 @@
 clear @s minecraft:nether_star[minecraft:custom_data={gui_chest:1b}]
 
 # Give the new summoner star.
-give @s minecraft:nether_star[minecraft:custom_data={gui_chest:1b},minecraft:item_name='{"text":"Quantum AI","color":"aqua","italic":false}',minecraft:enchantment_glint_override=true,minecraft:hide_additional_tooltip={}] 1
+give @s minecraft:nether_star[minecraft:custom_data={gui_chest:1b},minecraft:item_name='{"text":"Quantum AI","color":"aqua","italic":false}',minecraft:enchantment_glint_override=true] 1
 
 tellraw @s {"text":"Hold the Quantum AI nether star to summon a chest minecart GUI in front of you.","color":"aqua","italic":false}
 tellraw @s {"text":"Switch to another item to dismiss the GUI.","color":"gray","italic":true}

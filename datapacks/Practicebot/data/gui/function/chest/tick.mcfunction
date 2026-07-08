@@ -6,8 +6,8 @@
 # Step 1: tag players holding the Quantum AI nether star in their main hand.
 # weapon.mainhand means the currently selected hotbar slot — exactly what
 # the user sees as "held".
-execute as @a if items entity @s weapon.mainhand minecraft:nether_star[minecraft:custom_data~={gui_chest:1b}] run tag @s add gui_chest_holding
-execute as @a unless items entity @s weapon.mainhand minecraft:nether_star[minecraft:custom_data~={gui_chest:1b}] run tag @s remove gui_chest_holding
+execute as @a if items entity @s weapon.mainhand minecraft:nether_star[minecraft:custom_data={gui_chest:1b}] run tag @s add gui_chest_holding
+execute as @a unless items entity @s weapon.mainhand minecraft:nether_star[minecraft:custom_data={gui_chest:1b}] run tag @s remove gui_chest_holding
 
 # Step 2: each holding player summons (if missing) + teleports their minecart.
 # chest/follow runs anchored at the player's eyes, so it can both summon
