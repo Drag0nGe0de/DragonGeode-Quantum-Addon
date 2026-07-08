@@ -6,3 +6,7 @@ execute if score .gear toggles matches 2 as @a[tag=xlib_bot] run function quantu
 function quantum:kits/loadkit
 playsound entity.experience_orb.pickup master @a ~ ~ ~ 1 1 1
 execute as @a[tag=xlib_target] run function quantum:map/tp_to_prev_hub
+# Reset GUI to the main page so stale General Settings pages are not still
+# displayed after the gamemode changes (see mace.mcfunction for full rationale).
+scoreboard players set .gui gui_page 1
+function gui:pages/main
