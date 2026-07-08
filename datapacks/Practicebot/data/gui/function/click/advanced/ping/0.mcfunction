@@ -1,4 +1,0 @@
-# GUI System - Click: advanced_ping_0 (0 ms)
-clear @s minecraft:cut_copper[minecraft:custom_data={gui_btn:"advanced_ping_0"}]
-function quantum:options/set_ping {"ping":"0"}
-function gui:pages/advanced/ping

@@ -11,4 +11,4 @@ execute as @a[tag=xlib_target] run function quantum:map/tp_to_prev_hub
 # settings page when switching from Crystal to Mace via a manual function call)
 # are not still displayed after the gamemode changes.
 scoreboard players set .gui gui_page 1
-function gui:pages/main
+function gui:features/main/page

@@ -1,0 +1,36 @@
+# UI — Refresh
+# Re-render the current page based on the .gui score.
+# Centralized so tick, return_filler and back all dispatch through here.
+execute if score .gui gui_page matches 1 run function gui:features/main/page
+execute if score .gui gui_page matches 2 run function gui:features/play/page
+execute if score .gui gui_page matches 3 run function gui:features/wip/page
+execute if score .gui gui_page matches 4 run function gui:features/gamemode/page
+execute if score .gui gui_page matches 5 run function gui:features/terrain/page
+execute if score .gui gui_page matches 6 run function gui:features/difficulty/page
+execute if score .gui gui_page matches 7 run function gui:features/mech/page
+execute if score .gui gui_page matches 8 run function gui:features/settings/page
+execute if score .gui gui_page matches 9 run function gui:features/npc/settings/page
+execute if score .gui gui_page matches 10 run function gui:features/armor/page
+execute if score .gui gui_page matches 11 run function gui:features/presets/page
+execute if score .gui gui_page matches 12 run function gui:features/npc/general_settings/page
+execute if score .gui gui_page matches 13 run function gui:features/npc/attributes/page
+execute if score .gui gui_page matches 14 run function gui:features/extra/page
+execute if score .gui gui_page matches 15 run function gui:features/bots/page
+execute if score .gui gui_page matches 16 run function gui:features/teleports/page
+execute if score .gui gui_page matches 17 run function gui:features/advanced/page
+execute if score .gui gui_page matches 18 run function gui:features/advanced/reach/page
+execute if score .gui gui_page matches 19 run function gui:features/advanced/jreset/page
+execute if score .gui gui_page matches 20 run function gui:features/advanced/aggro/page
+execute if score .gui gui_page matches 21 run function gui:features/advanced/tap/page
+execute if score .gui gui_page matches 22 run function gui:features/advanced/ping/page
+execute if score .gui gui_page matches 23 run function gui:features/credits/support
+execute if score .gui gui_page matches 24 run function gui:features/credits/people
+execute if score .gui gui_page matches 25 run function gui:features/music/page
+execute if score .gui gui_page matches 26 run function gui:features/gamemode_settings/mace/page
+execute if score .gui gui_page matches 27 run function gui:features/gamemode_settings/crystal/page
+execute if score .gui gui_page matches 28 run function gui:features/gamemode_settings/sword/page
+execute if score .gui gui_page matches 29 run function gui:features/gamemode_settings/pot/page
+execute if score .gui gui_page matches 30 run function gui:features/gamemode_settings/tnt/page
+
+# Safety: if state is unknown, fall back to main
+execute unless score .gui gui_page matches 1..30 run function gui:features/main/page

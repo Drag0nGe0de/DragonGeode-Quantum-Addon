@@ -48,4 +48,4 @@ execute unless score .terrain terrain matches 0..6 run scoreboard players set .t
 execute unless score .difficulty difficulty matches 0..5 run scoreboard players set .difficulty difficulty 4
 
 # Fill the barrel with the main page (also sets gui_page = 1, stopping re-setup)
-function gui:pages/main
+function gui:features/main/page

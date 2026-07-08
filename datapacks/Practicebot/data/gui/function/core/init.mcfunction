@@ -96,4 +96,4 @@ execute in minecraft:overworld run data modify block -619 31 90 CustomName set v
 execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
 
 # Fill the main barrel with the main page (sync_barrels copies to satellites)
-function gui:pages/main
+function gui:features/main/page
