@@ -31,7 +31,7 @@
 # We set CustomName via "data modify ... set value {compound}" below — the
 # same pattern used for the GUI barrels in core/setup.mcfunction (Bug 1 fix).
 # The "gui_chest_new" tag lets chest/tick pre-fill Items before detect_chest.
-execute unless entity @e[type=minecraft:chest_minecart,tag=gui_chest,distance=..5] run summon minecraft:chest_minecart ~ ~1 ~ {Invulnerable:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Tags:["gui_chest","gui_chest_new"]}
+execute unless entity @e[type=minecraft:chest_minecart,tag=gui_chest,distance=..5] run summon minecraft:chest_minecart ~ ~1 ~ {Invulnerable:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Fire:0s,Tags:["gui_chest","gui_chest_new"]}
 
 # Teleport the nearest minecart to eye position + 0.4 blocks forward.
 # ^ ^ ^0.4 = local coords (left, up, forward). 0.4 forward puts the minecart
@@ -73,8 +73,12 @@ execute as @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] 
 execute as @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] store result entity @s Pos[1] double 0.001 run scoreboard players get .gc_mcy var
 execute as @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] store result entity @s Pos[2] double 0.001 run scoreboard players get .gc_mcz var
 
-# Re-assert NoGravity/Invulnerable in case a plugin cleared them.
-execute at @s run data merge entity @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] {Invulnerable:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b}
+# Re-assert NoGravity/Invulnerable/Fire in case a plugin cleared them.
+# Fire:0s extinguishes the minecart every tick so it never appears to be on
+# fire (e.g. if the player walks through lava or stands in fire).  Combined
+# with Invulnerable:1b the minecart takes no fire damage AND never shows the
+# burning animation.
+execute at @s run data merge entity @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] {Invulnerable:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Fire:0s}
 # Set CustomName as a compound text component (NOT a string) so Minecraft
 # renders "Quantum AI" instead of the raw JSON.  Matches the barrel pattern.
 execute at @s run data modify entity @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
