@@ -1,2 +1,7 @@
 **/.DS_Store
 patches/
+
+# Player-specific data — regenerated per-player, not part of the addon
+playerdata/
+stats/
+advancements/
