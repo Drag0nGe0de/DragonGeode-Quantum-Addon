@@ -369,3 +369,23 @@ $execute if score .gui gui_page matches 28 if score .sword_gs_page gui_page matc
 $execute if score .gui gui_page matches 28 if score .sword_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/sword_gs/random
 $execute if score .gui gui_page matches 28 if score .sword_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 28 if score .sword_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/sword_gs/prev
+
+# ── Pot General Settings page (gui_page 29), sub-page 1 ── Toggles(0-16), Back(18)
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/pot_gs/armor
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/pot_gs/shield
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/pot_gs/resistance
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/pot_gs/breakable
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/pot_gs/no_fall
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/pot_gs/stun
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/pot_gs/pcrit
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:7b}] run function gui:click/pot_gs/crit
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:8b}] run function gui:click/pot_gs/scrit
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:9b}] run function gui:click/pot_gs/strafe
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:10b}] run function gui:click/pot_gs/stap
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:11b}] run function gui:click/pot_gs/jreset
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:12b}] run function gui:click/pot_gs/axe
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:13b}] run function gui:click/pot_gs/refill
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:14b}] run function gui:click/pot_gs/buffs
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:15b}] run function gui:click/pot_gs/small
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:16b}] run function gui:click/pot_gs/random
+$execute if score .gui gui_page matches 29 if score .pot_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back

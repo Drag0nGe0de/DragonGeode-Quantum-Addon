@@ -282,6 +282,27 @@ execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gu
 # Sword General Settings nether star (display only — clear from inventory)
 execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"sword_gs_pageinfo"}] run function gui:core/return_filler
 
+# Pot General Settings page (page 29) toggle buttons (page 1: slots 0-16)
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_armor"}] run function gui:click/pot_gs/armor
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_shield"}] run function gui:click/pot_gs/shield
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_resistance"}] run function gui:click/pot_gs/resistance
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_breakable"}] run function gui:click/pot_gs/breakable
+execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"pot_gs_no_fall"}] run function gui:click/pot_gs/no_fall
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_stun"}] run function gui:click/pot_gs/stun
+execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"pot_gs_pcrit"}] run function gui:click/pot_gs/pcrit
+execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"pot_gs_crit"}] run function gui:click/pot_gs/crit
+execute if items entity @s inventory.* minecraft:seagrass[minecraft:custom_data~{gui_btn:"pot_gs_scrit"}] run function gui:click/pot_gs/scrit
+execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"pot_gs_strafe"}] run function gui:click/pot_gs/strafe
+execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"pot_gs_stap"}] run function gui:click/pot_gs/stap
+execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"pot_gs_jreset"}] run function gui:click/pot_gs/jreset
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_axe"}] run function gui:click/pot_gs/axe
+execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"pot_gs_refill"}] run function gui:click/pot_gs/refill
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_buffs"}] run function gui:click/pot_gs/buffs
+execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"pot_gs_small"}] run function gui:click/pot_gs/small
+execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"pot_gs_random"}] run function gui:click/pot_gs/random
+# Pot General Settings nether star (display only — clear from inventory)
+execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"pot_gs_pageinfo"}] run function gui:core/return_filler
+
 # NPC Attributes page (page 13) setting buttons
 execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:click/npc_attr/bot_scale
 execute if items entity @s inventory.* minecraft:fermented_spider_eye[minecraft:custom_data~{gui_btn:"npc_attr_bot_slowness"}] run function gui:click/npc_attr/bot_slowness
