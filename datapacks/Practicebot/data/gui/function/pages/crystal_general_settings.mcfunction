@@ -13,5 +13,9 @@ execute unless score .crystal_gs_page gui_page matches 1..2 run scoreboard playe
 # and the first click skips straight to Anchor Spammer instead of toggling
 # from a properly-initialised Ledge Spammer state.
 execute unless score .crystal_playstyle toggles matches 1..2 run scoreboard players set .crystal_playstyle toggles 1
+# Default the bot armor to Netherite (1) if unset/corrupted.
+# .gear toggles: 1 = Netherite, 2 = Diamond. See mace_general_settings for
+# the full rationale.
+execute unless score .gear toggles matches 1..2 run scoreboard players set .gear toggles 1
 execute if score .crystal_gs_page gui_page matches 1 run function gui:pages/crystal_gs/p1
 execute if score .crystal_gs_page gui_page matches 2 run function gui:pages/crystal_gs/p2

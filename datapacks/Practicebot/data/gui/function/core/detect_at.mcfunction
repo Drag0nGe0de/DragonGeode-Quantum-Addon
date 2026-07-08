@@ -299,13 +299,14 @@ $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page match
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/mace_gs/next
 
-# ── Mace General Settings page (gui_page 26), sub-page 2 ── Toggles(0-5), Back(18), Prev(21)
+# ── Mace General Settings page (gui_page 26), sub-page 2 ── Toggles(0-6), Back(18), Prev(21)
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/mace_gs/jreset
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/mace_gs/axe
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/mace_gs/breach
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/mace_gs/no_pearl_land
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/mace_gs/stap
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:5b}] run function gui:click/mace_gs/shieldcd
+$execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:6b}] run function gui:click/mace_gs/armor
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 26 if score .mace_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/mace_gs/prev
 
@@ -331,10 +332,11 @@ $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page ma
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 1 unless data block $(x) $(y) $(z) Items[{Slot:23b}] run function gui:click/crystal_gs/next
 
-# ── Crystal General Settings page (gui_page 27), sub-page 2 ── Toggles(0-3), Back(18), Prev(21)
+# ── Crystal General Settings page (gui_page 27), sub-page 2 ── Toggles(0-4), Back(18), Prev(21)
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:0b}] run function gui:click/crystal_gs/breakable
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:1b}] run function gui:click/crystal_gs/resistance
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:2b}] run function gui:click/crystal_gs/prompt_start
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:3b}] run function gui:click/crystal_gs/triple_tap
+$execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:4b}] run function gui:click/crystal_gs/armor
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:18b}] run function gui:click/main/back
 $execute if score .gui gui_page matches 27 if score .crystal_gs_page gui_page matches 2 unless data block $(x) $(y) $(z) Items[{Slot:21b}] run function gui:click/crystal_gs/prev

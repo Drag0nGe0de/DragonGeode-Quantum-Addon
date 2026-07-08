@@ -210,6 +210,8 @@ execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_da
 execute if items entity @s inventory.* minecraft:ender_eye[minecraft:custom_data~{gui_btn:"mace_gs_no_pearl_land"}] run function gui:click/mace_gs/no_pearl_land
 execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"mace_gs_stap"}] run function gui:click/mace_gs/stap
 execute if items entity @s inventory.* minecraft:clock[minecraft:custom_data~{gui_btn:"mace_gs_shieldcd"}] run function gui:click/mace_gs/shieldcd
+# Mace General Settings armor toggle (page 2, slot 6) — gold_nugget+item_model
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_armor"}] run function gui:click/mace_gs/armor
 # Mace General Settings page navigation arrows
 execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_prev"}] run function gui:click/mace_gs/prev
 execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_next"}] run function gui:click/mace_gs/next
@@ -243,6 +245,8 @@ execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_da
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_resistance"}] run function gui:click/crystal_gs/resistance
 execute if items entity @s inventory.* minecraft:egg[minecraft:custom_data~{gui_btn:"crystal_gs_prompt_start"}] run function gui:click/crystal_gs/prompt_start
 execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_triple_tap"}] run function gui:click/crystal_gs/triple_tap
+# Crystal General Settings armor toggle (page 2, slot 4) — gold_nugget+item_model
+execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_armor"}] run function gui:click/crystal_gs/armor
 # Crystal General Settings page navigation arrows
 execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"crystal_gs_prev"}] run function gui:click/crystal_gs/prev
 execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"crystal_gs_next"}] run function gui:click/crystal_gs/next
