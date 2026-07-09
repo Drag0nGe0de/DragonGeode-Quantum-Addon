@@ -1,4 +1,3 @@
-# [DEBUG] log every time the loop fires
 execute if score .debug toggles matches 1 run function mech_train:debug/snapshot {label:"dtap LOOP fired"}
 execute if score @s pops matches 1.. run title @a actionbar {"text":"ez Dtap","color": "green"}
 execute if score @s pops matches 1.. if score @s shield_cd matches 1.. run title @a actionbar {"text":"MENACE SHIELD STUNS!","color": "green"}

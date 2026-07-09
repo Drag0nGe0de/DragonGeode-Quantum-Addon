@@ -38,5 +38,4 @@ function npc:botgear/loadkit
 stopsound @a master entity.experience_orb.pickup
 stopsound @a master block.note_block.bass
 playsound entity.experience_orb.pickup master @a ~ ~ ~ 1 1 1
-# Refresh GUI barrel if a player is near it (updates difficulty icon + lore on play page)
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:features/play/page

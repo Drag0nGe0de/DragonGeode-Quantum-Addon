@@ -12,26 +12,22 @@ scoreboard players operation @s Pos1_difference -= @p[tag=xlib_target] Pos1
 execute as @a store result score @s shield_cd run player @s itemCd shield
 function quantum:cooldowns
 
-# Crystal (mode 2)
 execute if score .mode mode matches 201 run return run function mech_train:crystal/dtap/tick
 execute if score .mode mode matches 202 run return run function mech_train:crystal/ledge/tick
 execute if score .mode mode matches 203 run return run function mech_train:crystal/hit_anchor/tick
 
 
-# Mace (mode 3)
 execute if score .mode mode matches 301 run return run function mech_train:mace/elytra/tick
 execute if score .mode mode matches 302 run return run function mech_train:mace/far_pearl/tick
 execute if score .mode mode matches 303 run return run function mech_train:mace/stun_slam/tick
 execute if score .mode mode matches 304 run return run function mech_train:mace/divebomb/tick
 
 
-# Pot (mode 4-5)
 execute if score .mode mode matches 401 run return run function mech_train:pot/repot/tick
 execute if score .mode mode matches 402 run return run function mech_train:pot/refill_hotbar/tick
 execute if score .mode mode matches 403 run return run function mech_train:pot/refill_inventory/tick
 
 
-# Cart (mode 6)
 execute if score .mode mode matches 601 run return run function mech_train:cart/-3/tick
 execute if score .mode mode matches 602 run return run function mech_train:cart/-2/tick
 execute if score .mode mode matches 603 run return run function mech_train:cart/-1/tick
@@ -40,8 +36,6 @@ execute if score .mode mode matches 605 run return run function mech_train:cart/
 execute if score .mode mode matches 606 run return run function mech_train:cart/2/tick
 execute if score .mode mode matches 607 run return run function mech_train:cart/3/tick
 
-# Generic
 execute if score .mode mode matches 701 run function mech_train:generic/flick_aim.mcfunction/tick
 
-# Debug overlay (only prints when .debug toggles == 1)
 function mech_train:debug

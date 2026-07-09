@@ -36,10 +36,7 @@ effect give @a regeneration 1 255 true
 scoreboard players reset * pops
 scoreboard players set @a combo 0
 
-# This checks if the player is a new player, and if so resets all stats and samples
 execute as @a[tag=xlib_target] unless score @s samples matches 1 run function stats:reset_stats
-# execute if score .music toggles matches 1 run function quantum:miscellaneous/play_undertale
-# execute if score .music toggles matches 2 run function quantum:miscellaneous/play_otherside
 scoreboard players set @a[tag=xlib_bot] lava_bucket_count 2
 scoreboard players set @a[tag=xlib_bot] water_bucket_count 4
 

@@ -3,16 +3,13 @@ execute if entity @e[tag=xlib,tag=usable,distance=0..,type=marker] run scoreboar
 scoreboard players set @s hit_decision_without_cd 0
 execute at @s if function quantum:g1gc/can_hit run scoreboard players set @s hit_decision_without_cd 1
 
-# Evaluation
 execute at @s unless score .factor eval matches 1023.. run function eval:tick
 execute at @s if score .factor eval matches 1023.. run scoreboard players set @s state 1
 
-# Totem
 function quantum:crystal/totmain
 execute unless score @s totem_timer matches ..0 at @s run return run function quantum:crystal/recovery
 function quantum:holeoffense/tick
 
-# Drain
 execute at @s unless score @s state matches 1..2 run function quantum:bin/13
 execute if score @s state matches 1..2 run function quantum:bin/27
 

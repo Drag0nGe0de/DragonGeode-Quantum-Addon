@@ -1,4 +1,3 @@
-# Offense
 scoreboard objectives add hitcd dummy
 scoreboard objectives add hitcd2 dummy
 scoreboard objectives add pearlcd dummy
@@ -17,10 +16,8 @@ scoreboard objectives add wind_pearl_cd dummy
 scoreboard objectives add pearl_reaction_cd dummy
 scoreboard objectives add crystal dummy
 
-# Prac stopwatches
 scoreboard objectives add bow_prac_stopwatch dummy
 
-# Eval
 scoreboard objectives add pop_difference dummy
 scoreboard objectives add Pos1_difference dummy
 scoreboard objectives add hp dummy
@@ -46,14 +43,12 @@ scoreboard objectives add empty_lava_decision dummy
 scoreboard objectives add water_bucket_count dummy
 scoreboard objectives add pearl_count dummy
 
-# Adaptive difficulty
 scoreboard objectives add combo dummy
 scoreboard objectives add crystalpopsdif dummy
 scoreboard objectives add adaptdifficulty dummy
 scoreboard objectives add reach dummy
 scoreboard objectives add damage_dealt minecraft.custom:damage_dealt {"text":"💥💥💥💥💥💥","color": "red"}
 
-# Crystal
 scoreboard objectives add crystal_cd dummy
 scoreboard objectives add crystal_timer dummy
 scoreboard objectives add anchor_cd dummy
@@ -71,20 +66,16 @@ scoreboard objectives add crystal2 dummy
 scoreboard objectives add escape_reaction_time dummy
 scoreboard objectives add can_see_target dummy
 
-# Toggles
 scoreboard objectives add toggles dummy
 
-# PLaying things
 scoreboard objectives add tempcrit dummy
 scoreboard objectives add tempscrit dummy
 scoreboard objectives add tempstap dummy
 
-# Pot and Neth Pot
 scoreboard objectives add pot_count dummy
 scoreboard objectives add pot_cd dummy
 scoreboard objectives add Health health
 
-# Cart
 scoreboard objectives add bowcharge dummy
 scoreboard objectives add rail_cd dummy
 scoreboard objectives add rail_timer dummy
@@ -92,10 +83,8 @@ scoreboard objectives add cart_cd dummy
 scoreboard objectives add cart_timer dummy
 scoreboard objectives add bow_timer dummy
 
-# Mace
 scoreboard objectives add airborne dummy
 
-# Defence
 scoreboard objectives add totem_timer dummy
 scoreboard objectives add totem_cd dummy
 scoreboard objectives add water_cd dummy
@@ -108,13 +97,11 @@ scoreboard objectives add shielding dummy
 scoreboard objectives add strafe2 dummy
 scoreboard objectives add empty_water_cd dummy
 
-# Miscellaneous
 scoreboard objectives add horiz_distance_to_target dummy
 scoreboard objectives add vertical_distance_to_target dummy
 scoreboard objectives add Rot0 dummy
 scoreboard objectives add Rot1 dummy
 scoreboard objectives add age dummy
-# scoreboard objectives add sprinting dummy
 scoreboard objectives add ray dummy
 scoreboard objectives add speed dummy
 scoreboard objectives add score dummy
@@ -132,7 +119,6 @@ scoreboard objectives add pops minecraft.used:totem_of_undying {"text":"⚡⚡�
 scoreboard objectives add Pos1 dummy
 scoreboard objectives add ray_rot dummy
 scoreboard objectives add random dummy
-# scoreboard objectives add ignore_fall_damage dummy
 scoreboard objectives add Motion1 dummy
 scoreboard objectives add Motion2 dummy
 scoreboard objectives add Motion3 dummy
@@ -189,7 +175,6 @@ scoreboard objectives add num_of_thrown_wind_charges minecraft.used:minecraft.wi
 scoreboard objectives add id dummy
 scoreboard objectives add threw_pearl minecraft.used:minecraft.ender_pearl
 
-# Decisions
 scoreboard objectives add decisions dummy
 scoreboard objectives add crit_decision dummy
 scoreboard objectives add disable_shield_decision dummy
@@ -214,7 +199,6 @@ scoreboard objectives add current_action dummy
 scoreboard objectives add map dummy
 scoreboard objectives add debug dummy
 
-# Reset timings
 scoreboard players set .100 Math 100
 scoreboard players set .10 Math 10
 scoreboard players set .90 Math 90
@@ -310,7 +294,6 @@ execute if score .difficulty difficulty matches 3 run function quantum:difficult
 execute if score .difficulty difficulty matches 4 run function quantum:difficulty/4
 execute if score .difficulty difficulty matches 5 run function quantum:difficulty/5
 
-# Reset
 schedule function quantum:miscellaneous/botspawning 15t
 scoreboard players set .resetcd resetcd 40
 execute unless entity @a[name=QuantumUltimate] run schedule function quantum:map/reset 30t

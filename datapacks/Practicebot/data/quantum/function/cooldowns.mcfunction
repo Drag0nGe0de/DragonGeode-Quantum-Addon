@@ -1,6 +1,5 @@
 execute unless score .mode mode matches 2 unless score .mode mode matches 100.. as @a unless items entity @s weapon.mainhand #enchantable/sharp_weapon run scoreboard players set @s hitcd 13
 
-# Util timers
 scoreboard players remove .title_timer map 1
 scoreboard players remove @a[scores={gap_timer=1..}] gap_timer 1
 scoreboard players remove @a[scores={crossbow_timer=1..}] crossbow_timer 1

@@ -1,14 +1,6 @@
-# GUI System - Play Page
-# Barrel layout: Mech Training(4), Start(11), Gamemode(12), Terrain(13), Difficulty(14), Settings(15), Back(18)
 
 execute in minecraft:overworld run data merge block -715 31 90 {Items:[{Slot:0b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:1b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:2b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:3b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:4b,id:"minecraft:diamond",count:1,components:{"minecraft:item_name":{text:"Mech Training",color:"light_purple",italic:false},"minecraft:custom_data":{gui_btn:"mech_training"}}},{Slot:5b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:6b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:7b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:8b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:9b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:10b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:11b,id:"minecraft:lime_wool",count:1,components:{"minecraft:item_name":{text:"Start",color:"green",italic:false},"minecraft:tooltip_display":{hidden_components:["minecraft:lore"]},"minecraft:custom_data":{gui_btn:"start"}}},{Slot:12b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:iron_sword","minecraft:item_name":{text:"Gamemode",color:"aqua",italic:false},"minecraft:tooltip_display":{"hidden_components":["minecraft:potion_contents"]},"minecraft:custom_data":{gui_btn:"gamemode"}}},{Slot:13b,id:"minecraft:grass_block",count:1,components:{"minecraft:item_name":{text:"Terrain",color:"dark_green",italic:false},"minecraft:custom_data":{gui_btn:"terrain"}}},{Slot:14b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:iron_chestplate","minecraft:item_name":{text:"Difficulty",color:"red",italic:false},"minecraft:custom_data":{gui_btn:"difficulty"}}},{Slot:15b,id:"minecraft:command_block",count:1,components:{"minecraft:item_name":{text:"Settings",color:"light_purple",italic:false},"minecraft:tooltip_display":{hidden_components:["minecraft:lore"]},"minecraft:custom_data":{gui_btn:"settings"}}},{Slot:16b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:17b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:18b,id:"minecraft:feather",count:1,components:{"minecraft:item_name":{text:"Back",italic:false},"minecraft:tooltip_display":{hidden_components:["minecraft:lore"]},"minecraft:custom_data":{gui_btn:"back"}}},{Slot:19b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:20b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:21b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:22b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:23b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:24b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:25b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:26b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}}]}
 
-# -- Dynamic Gamemode icon (slot 12) based on .gm score --
-# .gm values: 0=none, 1=TnT Cart, 2=Pot, 3=Mace, 4=Vanilla, 5=OP Sword
-# Explicitly set the icon for EVERY value so the barrel always reflects the
-# scoreboard.  This avoids the brief "wrong default icon" flicker that happens
-# when the chunk/barrel is still loading in and the data-merge default
-# (iron_sword) is shown before the conditional override runs.
 execute in minecraft:overworld if score .gm gui_page matches 0 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:item_model" set value "minecraft:iron_sword"
 execute in minecraft:overworld if score .gm gui_page matches 1 run data remove block -715 31 90 Items[{Slot:12b}].components."minecraft:item_model"
 execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:tnt_minecart"
@@ -17,7 +9,6 @@ execute in minecraft:overworld if score .gm gui_page matches 3 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 4 run data remove block -715 31 90 Items[{Slot:12b}].components."minecraft:item_model"
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].id set value "minecraft:end_crystal"
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:item_model" set value "minecraft:diamond_sword"
-# Gamemode lore: "Current: <name>" in gray, non-italic
 execute in minecraft:overworld if score .gm gui_page matches 0 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: None",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: TNT Cart",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Pot",color:"gray",italic:false}]
@@ -25,16 +16,9 @@ execute in minecraft:overworld if score .gm gui_page matches 3 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: Vanilla",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:12b}].components."minecraft:lore" set value [{text:"Current: OP Sword",color:"gray",italic:false}]
 
-# Pot (gm=2) needs special handling: splash_potion has a default item name that
-# overrides item_name. Use item modify set_name (custom_name) like the gamemode
-# page does, then merge a red potion color so the icon looks right.
 execute in minecraft:overworld if score .gm gui_page matches 2 run item modify block -715 31 90 container.12 {"function":"minecraft:set_name","target":"custom_name","name":{"text":"Gamemode","color":"aqua","italic":false}}
 execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:12b}].components merge value {"minecraft:potion_contents":{"custom_color":16711680}}
 
-# -- Dynamic Terrain icon (slot 13) based on .terrain score --
-# .terrain values: 0=netherite/flat, 1=plains, 2=desert, 3=badlands,
-#                  4=mushroom, 5=snow, 6=cave
-# Explicitly set the icon for EVERY value (see .gm note above).
 execute in minecraft:overworld if score .terrain terrain matches 0 run data remove block -715 31 90 Items[{Slot:13b}].components."minecraft:item_model"
 execute in minecraft:overworld if score .terrain terrain matches 0 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:netherite_block"
 execute in minecraft:overworld if score .terrain terrain matches 1 run data remove block -715 31 90 Items[{Slot:13b}].components."minecraft:item_model"
@@ -49,7 +33,6 @@ execute in minecraft:overworld if score .terrain terrain matches 5 run data remo
 execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:snow_block"
 execute in minecraft:overworld if score .terrain terrain matches 6 run data remove block -715 31 90 Items[{Slot:13b}].components."minecraft:item_model"
 execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].id set value "minecraft:stone"
-# Terrain lore: "Current: <name>" in gray, non-italic
 execute in minecraft:overworld if score .terrain terrain matches 0 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Netherite",color:"gray",italic:false}]
 execute in minecraft:overworld if score .terrain terrain matches 1 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Plains",color:"gray",italic:false}]
 execute in minecraft:overworld if score .terrain terrain matches 2 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Desert",color:"gray",italic:false}]
@@ -58,34 +41,24 @@ execute in minecraft:overworld if score .terrain terrain matches 4 run data modi
 execute in minecraft:overworld if score .terrain terrain matches 5 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Snowy Plains",color:"gray",italic:false}]
 execute in minecraft:overworld if score .terrain terrain matches 6 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" set value [{text:"Current: Cave",color:"gray",italic:false}]
 
-# -- Dynamic Difficulty icon (slot 14) based on .difficulty score --
-# .difficulty values: 0=NPC, 1=Easy, 2=Medium, 3=Hard, 4=Crazy, 5=Master
-# NPC uses a player_head with the custom head texture (same texture as the
-# NPC button on the difficulty page). The full item compound is replaced
-# because data modify on .id alone cannot attach a minecraft:profile component.
 execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}] set value {Slot:14b,id:"minecraft:player_head",count:1,components:{"minecraft:item_name":{text:"Difficulty",color:"red",italic:false},"minecraft:custom_data":{gui_btn:"difficulty"},"minecraft:profile":{properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTA5MDExMzg1ZjE5YzY4MGY4YmIzOWNiNmI3NTk5MWRkNDdjMTcxMmRjYzI3NjM0ODliYjgyZWMwYzljZjQ0MiJ9fX0="}]},"minecraft:lore":[{text:"Current: NPC",color:"gray",italic:false}]}}
 execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:item_model" set value "minecraft:leather_chestplate"
 execute in minecraft:overworld if score .difficulty difficulty matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:item_model" set value "minecraft:iron_chestplate"
 execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:item_model" set value "minecraft:diamond_chestplate"
 execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:item_model" set value "minecraft:netherite_chestplate"
 execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:item_model" set value "minecraft:netherite_chestplate"
-# Master difficulty (5) has an enchantment glint; remove it for all others so
-# the glint doesn't persist when switching away from Master.
 execute in minecraft:overworld if score .difficulty difficulty matches 0 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
 execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
 execute in minecraft:overworld if score .difficulty difficulty matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
 execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
 execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":false}
 execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].components merge value {"minecraft:enchantment_glint_override":true}
-# Difficulty lore: "Current: <name>" in gray, non-italic
 execute in minecraft:overworld if score .difficulty difficulty matches 1 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Easy",color:"gray",italic:false}]
 execute in minecraft:overworld if score .difficulty difficulty matches 2 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Medium",color:"gray",italic:false}]
 execute in minecraft:overworld if score .difficulty difficulty matches 3 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Hard",color:"gray",italic:false}]
 execute in minecraft:overworld if score .difficulty difficulty matches 4 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Crazy",color:"gray",italic:false}]
 execute in minecraft:overworld if score .difficulty difficulty matches 5 run data modify block -715 31 90 Items[{Slot:14b}].components."minecraft:lore" set value [{text:"Current: Master",color:"gray",italic:false}]
 
-# -- Mech Training diamond lore (slot 4) based on .gm score --
-# Shows the current gamemode name (no "Current:" prefix), gray non-italic.
 execute in minecraft:overworld if score .gm gui_page matches 0 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"None",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 1 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"TNT Cart",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 2 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"Pot",color:"gray",italic:false}]
@@ -93,7 +66,6 @@ execute in minecraft:overworld if score .gm gui_page matches 3 run data modify b
 execute in minecraft:overworld if score .gm gui_page matches 4 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"Vanilla",color:"gray",italic:false}]
 execute in minecraft:overworld if score .gm gui_page matches 5 run data modify block -715 31 90 Items[{Slot:4b}].components."minecraft:lore" set value [{text:"OP Sword",color:"gray",italic:false}]
 
-# Append 'Flat Terrain' indicator below the Current: line when flat terrain is enabled.
 execute in minecraft:overworld if score .flat_terrain toggles matches 1 run data modify block -715 31 90 Items[{Slot:13b}].components."minecraft:lore" append value {text:"Flat Terrain",color:"gray",italic:false}
 
 scoreboard players set .gui gui_page 2

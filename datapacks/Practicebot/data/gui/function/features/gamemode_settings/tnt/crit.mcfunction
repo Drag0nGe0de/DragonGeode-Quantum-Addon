@@ -1,6 +1,4 @@
-# GUI System - Click: tnt_gs/crit
 
-# Toggle the 'Crit' option (TNT Cart General Settings), then refresh.
 clear @s minecraft:fire_charge[minecraft:custom_data={gui_btn:"tnt_gs_crit"}]
 
 function quantum:options/crit

@@ -1,7 +1,6 @@
 function eval:stats/crystal/sf
 function eval:stats/hp
 function eval:stats/saturation
-# function eval:stats/crystal/totem
 function eval:stats/crystal/xlib
 function eval:stats/crystal/slib
 function eval:stats/crystal/factor

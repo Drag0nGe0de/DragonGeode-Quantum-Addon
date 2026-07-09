@@ -1,5 +1,3 @@
-# GUI System - Click: mace_gs/water
-# Toggle the 'Water' option (Mace General Settings), then refresh.
 clear @s minecraft:water_bucket[minecraft:custom_data={gui_btn:"mace_gs_water"}]
 
 function quantum:options/water

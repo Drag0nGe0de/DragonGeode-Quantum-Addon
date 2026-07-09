@@ -18,6 +18,4 @@ execute as @a[tag=xlib_target,scores={rk=1..}] run function quantum:miscellaneou
 
 
 #> ####################################> FINISH
-# execute if score .slow_death toggles matches 1 at @a[tag=xlib_target,scores={death=1},limit=1] run player @s look at ~ ~1 ~
-# execute if score .slow_death toggles matches 1 as @a[tag=xlib_target,scores={death=1},limit=1] unless items entity @s armor.head #enchantable/armor run return run function quantum:kits/loadkit
 execute if score .blocks_drop toggles matches 0 run kill @e[distance=0..,type=item]

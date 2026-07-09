@@ -22,20 +22,15 @@ execute if score .shield toggles matches 1 run scoreboard players set @a[tag=xli
 execute if score .shield toggles matches 0 run scoreboard players set @a[tag=xlib_bot] tempstap 0
 tag @s remove macing
 
-# Set scores
 execute if score @a[tag=xlib_target,limit=1] death matches 1.. in overworld run scoreboard players add bot score 1
 execute unless entity @a[tag=xlib_bot] if score .start start matches 1 run scoreboard players add player score 1
 
-# Display winner
 execute if score @a[tag=xlib_target,limit=1] death matches 1.. if score .start start matches 1 in overworld run title @a title {"text":"You lost!","color":"red"}
 execute if score @a[tag=xlib_bot,limit=1] death matches 1.. if score .start start matches 1 in overworld run title @a title {"text":"You won!","color":"green"}
 
-# Display scores
-# execute if score .start start matches 1 run execute in overworld run title @a subtitle {"text":"Score:","color": "yellow"}
 execute as @a[tag=xlib_bot,name=!quantumbot] run player @s disconnect
 function stats:calculate_stats
 
-# Reset
 kill @e[type=item]
 kill @e[tag=killable]
 execute as @a[tag=xlib_target] run function quantum:bin/40

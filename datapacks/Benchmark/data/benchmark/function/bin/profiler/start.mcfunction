@@ -1,5 +1,4 @@
 ### Send saved old data before rewriting it
-# tellraw @a [{"text":"","color":"gray"},{"text":"[","color":"red"},"Benchmark",{"text":"]","color":"red"},"Previous measurements: ",{"nbt":"Measurements","storage":"benchmark:main"}]
 ### Create new empty measurement table
 function benchmark:bin/measurement_table/create
 

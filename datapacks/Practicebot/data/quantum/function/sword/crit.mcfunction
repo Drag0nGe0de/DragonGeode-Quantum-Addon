@@ -1,4 +1,3 @@
-# function quantum:look
 function quantum:binomial_dist/reach/init
 function quantum:binomial_dist/aim/init
 scoreboard players set @s hitcd 11

@@ -1,4 +1,3 @@
-# MAKE THE CHOSEN MARKER TAG ITSELF AND KILL ALL OTHER MARKERS TO PREVENT REPLACING CARTS AND RAILS WHILE ARROWS STILL IN AIR
 execute unless score @s arrows_in_air matches 1.. unless score @s rail_timer matches 1.. run function quantum:carttest/speed/insta_main
 
 execute if score @s arrows_in_air matches 0 run return 0

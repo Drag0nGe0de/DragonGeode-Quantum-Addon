@@ -1,5 +1,4 @@
 scoreboard players set @s lava_cd 5
-# execute unless function quantum:miscellaneous/random run return 0
 
 player @s look at ~ ~ ~
 player @s hotbar 9

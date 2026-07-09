@@ -14,10 +14,5 @@ execute at @e[tag=crystal,type=marker] facing entity @s feet rotated ~ 0.0 run p
 execute at @s unless entity @a[tag=xlib_target,distance=..3] unless score @s pearlcd matches 1.. unless entity @e[tag=hardcode,type=marker] at @p[tag=xlib_target] unless block ~ ~-.2 ~ #xaniclelib:nonsolid run function quantum:g1gc/pearl
 execute at @s[scores={hitcd=..0}] if entity @a[tag=xlib_target,distance=..3,scores={OnGround=1}] unless entity @e[tag=hardcode,type=marker] run function quantum:crystal/hardcode/mech/hit
 execute at @s unless block ~ ~-.2 ~ #xaniclelib:nonsolid at @e[tag=crystal,type=marker,distance=..5] run function quantum:crystal/hardcode/mech/breakcrystal
-# execute at @s if score .random random matches ..49 at @p[tag=xlib_target] facing entity @s feet rotated ~ 0.0 positioned ^1 ^ ^-1 as @n[tag=anchor,type=marker] run tag @s add chosen
-# execute at @s if score .random random matches 50.. at @p[tag=xlib_target] facing entity @s feet rotated ~ 0.0 positioned ^-1 ^ ^-1 as @n[tag=anchor,type=marker] run tag @s add chosen
-# kill @e[tag=anchor,type=marker,tag=!chosen]
-# execute at @s at @p[tag=xlib_target] at @n[tag=anchor,type=marker] run function quantum:crystal/hardcode/mech/anchor2
-# execute at @s at @p[tag=xlib_target] at @e[tag=obby_anchor,type=marker] run function quantum:crystal/hardcode/mech/anchor
 execute at @e[tag=crystal,type=marker,scores={crystal=2..}] run function quantum:crystal/hardcode/mark/kill
 execute if score .difficulty difficulty matches ..2 at @e[tag=crystal,type=marker,scores={crystal=1..}] run function quantum:crystal/hardcode/mark/kill

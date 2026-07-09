@@ -8,7 +8,6 @@ execute if score @s Rot0 matches ..-1 run scoreboard players operation @s Rot0 +
 execute if score .marker Rot0 matches ..-1 run scoreboard players operation .marker Rot0 += .360 Math
 scoreboard players operation @s Rot0 -= .marker Rot0
 
-# # If score dir is 1, add to the bot's angle (left)
 execute if score @s Rot0 matches -180..180 if score @s Rot0 matches 0..180 run scoreboard players set @s strafe 0
 execute if score @s Rot0 matches -180..180 if score @s Rot0 matches -180..0 run scoreboard players set @s strafe 1
 execute unless score @s Rot0 matches -180..180 if score @s Rot0 matches ..-180 run scoreboard players set @s strafe 1

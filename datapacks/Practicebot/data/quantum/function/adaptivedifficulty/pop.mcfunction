@@ -2,7 +2,6 @@ advancement revoke @s only quantum:pop
 execute if score .difficulty difficulty matches 0 run function npc:give_effects
 scoreboard players set @s[tag=xlib_target] totem_timer 15
 execute unless entity @a[tag=xlib_bot,tag=adapt] run return 0
-# If the player pops more the combo will be positive
 execute if entity @s[tag=xlib_target] unless score .combo pops matches 4.. run scoreboard players add .combo pops 1
 
 execute if entity @s[tag=xlib_bot] unless score .combo pops matches ..-4 run scoreboard players remove .combo pops 1

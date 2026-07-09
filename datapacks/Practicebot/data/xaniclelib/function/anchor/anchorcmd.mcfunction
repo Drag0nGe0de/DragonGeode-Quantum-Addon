@@ -8,4 +8,3 @@ execute if score .terrain terrain matches 5 unless entity @e[tag=loc1,tag=!ancho
 fill ~-3 ~-2 ~-3 ~3 ~2 ~3 command_block{auto:1b,Command:"function xaniclelib:anchor/0"} replace respawn_anchor[charges=0]
 
 fill ~-3 ~-2 ~-3 ~3 ~2 ~3 command_block{auto:1b,Command:"function xaniclelib:anchor/1"} replace respawn_anchor[charges=1]
-# fill ~-3 ~-2 ~-3 ~3 ~2 ~3 command_block{auto:1b,Command:"function xaniclelib:anchor/2"} replace respawn_anchor[charges=2]

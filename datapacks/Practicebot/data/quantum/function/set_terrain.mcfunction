@@ -1,6 +1,5 @@
 title @a actionbar {"text":"Successfully set terrain","color": "green"}
 data remove entity @s interaction
-# Netherite = flat terrain (.terrain = 0). The original tag=flat below handles it.
 execute if entity @s[tag=cave] run scoreboard players set .terrain terrain 6
 execute if entity @s[tag=snow] run scoreboard players set .terrain terrain 5
 execute if entity @s[tag=mushroom] run scoreboard players set .terrain terrain 4

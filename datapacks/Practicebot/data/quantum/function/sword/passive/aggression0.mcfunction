@@ -1,4 +1,3 @@
-# function quantum:look
 execute unless entity @a[tag=xlib_target,distance=..8] run player @s move
 player @s sprint
 execute if entity @a[tag=xlib_target,distance=..8] run player @s jump once

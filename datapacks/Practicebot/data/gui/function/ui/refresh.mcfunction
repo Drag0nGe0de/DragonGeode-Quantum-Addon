@@ -1,6 +1,3 @@
-# UI — Refresh
-# Re-render the current page based on the .gui score.
-# Centralized so tick, return_filler and back all dispatch through here.
 execute if score .gui gui_page matches 1 run function gui:features/main/page
 execute if score .gui gui_page matches 2 run function gui:features/play/page
 execute if score .gui gui_page matches 3 run function gui:features/wip/page
@@ -32,5 +29,4 @@ execute if score .gui gui_page matches 28 run function gui:features/gamemode_set
 execute if score .gui gui_page matches 29 run function gui:features/gamemode_settings/pot/page
 execute if score .gui gui_page matches 30 run function gui:features/gamemode_settings/tnt/page
 
-# Safety: if state is unknown, fall back to main
 execute unless score .gui gui_page matches 1..30 run function gui:features/main/page

@@ -1,4 +1,3 @@
-# execute if score @s state matches 3 run return run function quantum:sword/tick
 function quantum:decisions/tick
 function eval:experiment/sword_tick
 execute if score @s state matches 1..2 run tag @s remove pot

@@ -1,4 +1,3 @@
-# execute if score @s pearlcd matches 1.. if score @n[distance=0..,type=ender_pearl] id = @s id run return 0
 execute if score .holding toggles matches 1 at @s as @p[tag=xlib_target] unless predicate quantum:distance5 run return 1
 scoreboard players set @s crystal 0
 execute if entity @p[tag=xlib_target,tag=checked] run return 0

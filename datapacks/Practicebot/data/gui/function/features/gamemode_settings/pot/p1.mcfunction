@@ -1,53 +1,16 @@
-# GUI System - Pot General Settings Page 1 (sub-page of page 29)
-# Reached from Play -> Settings -> General Settings when .gm = 2 (Pot).
-# Barrel layout: Toggles(0-16), Back(18), Current Page(22)
-# Each toggle shows 'Current: Enabled' (green, glinted) or 'Current: Disabled'
-# (red, no glint). State is read from the .<name> toggles scoreboard scores.
 #
-# Armor / weapon / tool icons are rendered on a gold_nugget base with an
-# item_model override, so the player can't actually equip or swing them if the
-# GUI item briefly lands in their inventory.
 #
-# All 17 Pot toggles fit on a single page (slots 0-16); no Next button needed.
 #
-# Toggle list (slot -> function / display name / icon):
-#   0  armor        / Armor            / netherite_helmet or diamond_helmet (gold_nugget+item_model, dynamic)
-#   1  shield       / Shield           / shield (gold_nugget+item_model)
-#   2  resistance   / Resistance       / turtle_helmet (gold_nugget+item_model, scoreboard .res)
-#   3  breakable    / Breakable Armor  / cracked_stone_bricks (gold_nugget+item_model)
-#   4  no_fall      / No Fall Damage   / hay_block
-#   5  stun         / Stunning         / netherite_axe (gold_nugget+item_model)
-#   6  pcrit        / Punish Crit      / cactus
-#   7  crit         / Crit             / fire_charge
-#   8  scrit        / S-crit           / seagrass
-#   9  strafe       / Strafe           / magenta_glazed_terracotta
-#  10  stap         / S-tap            / minecart
-#  11  jreset       / Jump Reset       / slime_block   (.jumpreset toggles)
-#  12  axe          / Axe              / diamond_axe (gold_nugget+item_model)
-#  13  refill       / Refill Items     / cauldron
-#  14  buffs        / Buffs            / splash_potion (gold_nugget+item_model, custom_name via item modify)
-#  15  small        / Small Bot        / turtle_egg
-#  16  random       / Random Playstyle / chorus_fruit
 
 execute in minecraft:overworld run data merge block -715 31 90 {Items:[{Slot:0b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:netherite_helmet","minecraft:item_name":{text:"Armor",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_armor"}}},{Slot:1b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:shield","minecraft:item_name":{text:"Shield",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_shield"}}},{Slot:2b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:turtle_helmet","minecraft:item_name":{text:"Resistance",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_resistance"}}},{Slot:3b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:cracked_stone_bricks","minecraft:item_name":{text:"Breakable Armor",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_breakable"}}},{Slot:4b,id:"minecraft:hay_block",count:1,components:{"minecraft:item_name":{text:"No Fall Damage",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_no_fall"}}},{Slot:5b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:netherite_axe","minecraft:item_name":{text:"Stunning",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_stun"}}},{Slot:6b,id:"minecraft:cactus",count:1,components:{"minecraft:item_name":{text:"Punish Crit",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_pcrit"}}},{Slot:7b,id:"minecraft:fire_charge",count:1,components:{"minecraft:item_name":{text:"Crit",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_crit"}}},{Slot:8b,id:"minecraft:seagrass",count:1,components:{"minecraft:item_name":{text:"S-crit",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_scrit"}}},{Slot:9b,id:"minecraft:magenta_glazed_terracotta",count:1,components:{"minecraft:item_name":{text:"Strafe",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_strafe"}}},{Slot:10b,id:"minecraft:minecart",count:1,components:{"minecraft:item_name":{text:"S-tap",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_stap"}}},{Slot:11b,id:"minecraft:slime_block",count:1,components:{"minecraft:item_name":{text:"Jump Reset",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_jreset"}}},{Slot:12b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:diamond_axe","minecraft:item_name":{text:"Axe",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_axe"}}},{Slot:13b,id:"minecraft:cauldron",count:1,components:{"minecraft:item_name":{text:"Refill Items",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_refill"}}},{Slot:14b,id:"minecraft:gold_nugget",count:1,components:{"minecraft:item_model":"minecraft:splash_potion","minecraft:tooltip_display":{"hidden_components":["minecraft:potion_contents"]},"minecraft:custom_data":{gui_btn:"pot_gs_buffs"},"minecraft:potion_contents":{"custom_color":6744063}}},{Slot:15b,id:"minecraft:turtle_egg",count:1,components:{"minecraft:item_name":{text:"Small Bot",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_small"}}},{Slot:16b,id:"minecraft:chorus_fruit",count:1,components:{"minecraft:item_name":{text:"Random Playstyle",color:"aqua",italic:false},"minecraft:custom_data":{gui_btn:"pot_gs_random"}}},{Slot:17b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:18b,id:"minecraft:feather",count:1,components:{"minecraft:item_name":{text:"Back",italic:false},"minecraft:tooltip_display":{"hidden_components":["minecraft:lore"]},"minecraft:custom_data":{gui_btn:"back"}}},{Slot:19b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:20b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:21b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:22b,id:"minecraft:nether_star",count:1,components:{"minecraft:item_name":{text:"Pot General Settings",color:"gold",italic:false},"minecraft:lore":[{text:"Page 1 of 1",color:"gray",italic:false}],"minecraft:custom_data":{gui_btn:"pot_gs_pageinfo"}}},{Slot:23b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:24b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:25b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}},{Slot:26b,id:"minecraft:gray_stained_glass_pane",count:1,components:{"minecraft:item_name":{text:"",italic:false},"minecraft:tooltip_display":{hide_tooltip:true},"minecraft:custom_data":{gui_btn:"filler"}}}]}
 
-# Buffs (slot 14) uses the splash_potion model on a gold_nugget base. splash_potion
-# has a default item_name that overrides the item_name component, so we set the
-# custom_name via item modify (same trick as the Mace/Crystal/Sword pages).
 execute in minecraft:overworld run item modify block -715 31 90 container.14 {"function":"minecraft:set_name","target":"custom_name","name":{"text":"Buffs","color":"aqua","italic":false}}
 
-# -- Armor (slot 0): dynamic icon + lore + glint based on .gear toggles --
-# .gear: 1 = Netherite (netherite_helmet icon, "Netherite Gear" green)
-#        2 = Diamond   (diamond_helmet icon,   "Diamond Gear"   green)
-# Uses gold_nugget+item_model so the player can't equip the helmet if it
-# briefly ends up in their inventory. Always glinted (one option is always
-# selected) — same treatment as the Playstyle toggle on the Crystal page.
 execute in minecraft:overworld if score .gear toggles matches 2 run data modify block -715 31 90 Items[{Slot:0b}].components."minecraft:item_model" set value "minecraft:diamond_helmet"
 execute in minecraft:overworld if score .gear toggles matches 2 run data modify block -715 31 90 Items[{Slot:0b}].components merge value {"minecraft:enchantment_glint_override":true,"minecraft:lore":[{text:"> Netherite Gear",color:"gray",italic:false},{text:"> Diamond Gear",color:"green",italic:false},{text:"Click to toggle armor.",color:"gray",italic:false}]}
 execute in minecraft:overworld unless score .gear toggles matches 2 run data modify block -715 31 90 Items[{Slot:0b}].components."minecraft:item_model" set value "minecraft:netherite_helmet"
 execute in minecraft:overworld unless score .gear toggles matches 2 run data modify block -715 31 90 Items[{Slot:0b}].components merge value {"minecraft:enchantment_glint_override":true,"minecraft:lore":[{text:"> Netherite Gear",color:"green",italic:false},{text:"> Diamond Gear",color:"gray",italic:false},{text:"Click to toggle armor.",color:"gray",italic:false}]}
 
-# -- Dynamic lore + enchantment glint per toggle --
 execute in minecraft:overworld if score .shield toggles matches 1 run data modify block -715 31 90 Items[{Slot:1b}].components merge value {"minecraft:enchantment_glint_override":true,"minecraft:lore":[{text:"Current: Enabled",color:"green",italic:false}]}
 execute in minecraft:overworld unless score .shield toggles matches 1 run data modify block -715 31 90 Items[{Slot:1b}].components merge value {"minecraft:enchantment_glint_override":false,"minecraft:lore":[{text:"Current: Disabled",color:"red",italic:false}]}
 execute in minecraft:overworld if score .res toggles matches 1 run data modify block -715 31 90 Items[{Slot:2b}].components merge value {"minecraft:enchantment_glint_override":true,"minecraft:lore":[{text:"Current: Enabled",color:"green",italic:false}]}

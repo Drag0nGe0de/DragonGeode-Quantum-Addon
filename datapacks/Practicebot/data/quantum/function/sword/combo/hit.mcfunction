@@ -1,9 +1,7 @@
 scoreboard players set @s hitcd 11
-# function quantum:look
 function quantum:binomial_dist/reach/init
 function quantum:binomial_dist/aim/init
 
-# Crit if critting, sprint hit if comboing
 player @s stop
 player @s move forward
 player @s sprint

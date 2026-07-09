@@ -9,7 +9,6 @@ execute unless score .mode mode matches 4..5 if score @s state matches 3 run ret
 
 function quantum:sword/bot_mech/logic
 
-# Scrit
 execute if score .mode mode matches 6 run function quantum:sword/scrit
 execute if score @s tempscrit matches 1 if score .gear toggles matches 2 unless score .mode mode matches 6 run function quantum:sword/scrit
 

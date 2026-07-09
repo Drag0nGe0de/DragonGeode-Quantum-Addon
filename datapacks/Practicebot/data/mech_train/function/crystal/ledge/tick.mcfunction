@@ -1,9 +1,6 @@
 function mech_train:crystal/common_actions
-# execute if predicate quantum:random50 run scoreboard players add @s[scores={pearlcd2=1..}] pearlcd2 1
 execute at @s if score @s pearlcd2 matches 20.. unless dimension overworld run scoreboard players set @s pearlcd2 20
 execute if score @s pearlcd2 matches 1 run function quantum:g1gc/pearl
-# execute if score @s pearlcd2 matches 1 if score .strafe toggles matches 1 if predicate quantum:random40 run player @s look ~5 ~7
-# execute if score @s pearlcd2 matches 1 if score .strafe toggles matches 1 if predicate quantum:random40 run player @s look ~5 ~-14
 execute as @e[type=ender_pearl] on origin run scoreboard players set @s[tag=xlib_bot] anchor_timer 7
 execute if score @s[scores={anchor_timer=0,reset_trigger=0}] pearlcd2 matches 0 run scoreboard players set @s reset_trigger 1
 execute if score .trigger2 reset_trigger matches 0 run scoreboard players set @s[scores={reset_trigger=1,hitcd=0}] hitcd 6

@@ -1,4 +1,3 @@
-# Strafe
 execute unless score @s pearlcd matches ..17 run return 0
 execute if score .strafe toggles matches 1 unless score @s pearlcd matches 1.. run function quantum:sword/bot_mech/strafe
 scoreboard players set @s[scores={strafecd=..0,OnGround=1}] strafecd 10

@@ -18,4 +18,3 @@ execute if score .move temp matches 1 run player @s move forward
 execute if score .move2 temp matches 0 run player @s move left
 execute if score .move2 temp matches 1 run player @s move right
 scoreboard players set @a shielding 0
-# Display bot armour dura

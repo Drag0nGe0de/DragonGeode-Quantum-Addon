@@ -15,7 +15,6 @@ scoreboard players operation #d benchmark.var *= #100 benchmark.var
 
 scoreboard players operation #calc1 benchmark.var = #x benchmark.var
 ### to mathematicly round the uncertainty:
-# scoreboard players operation #calc1 benchmark.var /= #2 benchmark.var
 ### to round up the uncertainty:
 scoreboard players remove #d benchmark.var 1
 

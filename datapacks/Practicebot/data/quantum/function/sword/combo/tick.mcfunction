@@ -14,4 +14,3 @@ execute if score @s hit_decision matches 1 at @s run function quantum:sword/comb
 execute unless score .mode mode matches 4..5 run function quantum:cobwebs/fluid_main
 execute unless score .mode mode matches 3 run scoreboard players set @a disable_shield_decision 0
 execute unless score .mode mode matches 6 unless score .mode mode matches 3 run function quantum:decisions/tick2
-# execute if score .uppercut toggles matches 1 unless score .random toggles matches 1 if score @s[scores={OnGround=1}] real_hitcd matches ..2 if score .random random matches 50.. run player @s jump once

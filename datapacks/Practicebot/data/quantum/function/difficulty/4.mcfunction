@@ -26,5 +26,4 @@ scoreboard players operation @a[tag=xlib_bot] break_crystal_cd = @p[tag=xlib_bot
 scoreboard players remove @a[tag=xlib_bot] break_crystal_cd 1
 function quantum:binomial_dist/reach/init
 function quantum:binomial_dist/aim/init
-# Refresh GUI barrel if a player is near it (updates difficulty icon + lore on play page)
 execute in minecraft:overworld positioned -715.5 31.5 90.5 if entity @a[distance=..8,limit=1] if score .gui gui_page matches 2 run function gui:features/play/page

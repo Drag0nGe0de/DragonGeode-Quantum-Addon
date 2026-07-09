@@ -1,4 +1,3 @@
-# kill @e[distance=0..,type=armor_stand]
 kill @e[tag=markwide,distance=0..,type=marker]
 summon marker ~ ~ ~ {Tags:["markleft","markwide"]}
 summon marker ~ ~ ~ {Tags:["markright","markwide"]}

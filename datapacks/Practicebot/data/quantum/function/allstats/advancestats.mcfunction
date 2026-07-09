@@ -1,5 +1,4 @@
 advancement revoke @s only quantum:hit
-# Player hitcd for pcrits
 execute if entity @s[tag=xlib_target] run scoreboard players add .num_of_player_hits stats 10
 execute at @s[tag=xlib_target] anchored eyes store result score @s distance_to_target run distance from ^ ^ ^ toHitbox @p[tag=xlib_bot] e 1
 execute if entity @s[tag=xlib_target] run function stats:sword/avg_distance
