@@ -3,6 +3,8 @@ scoreboard objectives remove gui_page
 scoreboard objectives add gui_page dummy
 scoreboard objectives remove gui_hold
 scoreboard objectives add gui_hold dummy
+scoreboard objectives remove has_item
+scoreboard objectives add has_item dummy
 
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1

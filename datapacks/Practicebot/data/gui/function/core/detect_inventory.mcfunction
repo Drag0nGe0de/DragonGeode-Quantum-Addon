@@ -1,315 +1,296 @@
 
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"play"}] run function gui:features/main/play
-execute if items entity @s inventory.* minecraft:writable_book[minecraft:custom_data~{gui_btn:"statistics"}] run function gui:features/main/statistics
-execute if items entity @s inventory.* minecraft:gold_ingot[minecraft:custom_data~{gui_btn:"credits_support"}] run function gui:features/main/credits_support
-execute if items entity @s inventory.* minecraft:redstone_torch[minecraft:custom_data~{gui_btn:"extra"}] run function gui:features/main/extra
+data remove storage gui:inv Inventory
+data modify storage gui:inv Inventory set from entity @s Inventory
+execute unless data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_item:1b}}}]} run return 0
 
-execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data~{gui_btn:"start"}] run function gui:features/play/start
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:features/gamemode/open
-execute if items entity @s inventory.* minecraft:tnt_minecart[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:features/gamemode/open
-execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"gamemode"}] run function gui:features/gamemode/open
-execute if items entity @s inventory.* minecraft:grass_block[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:sand[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:red_sand[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:mycelium[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:snow_block[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:stone[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:netherite_block[minecraft:custom_data~{gui_btn:"terrain"}] run function gui:features/terrain/open
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"difficulty"}] run function gui:features/difficulty/open
-execute if items entity @s inventory.* minecraft:command_block[minecraft:custom_data~{gui_btn:"difficulty"}] run function gui:features/difficulty/open
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"difficulty"}] run function gui:features/difficulty/open
-execute if items entity @s inventory.* minecraft:command_block[minecraft:custom_data~{gui_btn:"settings"}] run function gui:features/settings/open
-
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"settings_npc"}] run function gui:features/settings/npc
-execute if items entity @s inventory.* minecraft:repeating_command_block[minecraft:custom_data~{gui_btn:"settings_general"}] run function gui:features/settings/general
-execute if items entity @s inventory.* minecraft:chain_command_block[minecraft:custom_data~{gui_btn:"settings_advanced"}] run function gui:features/settings/advanced
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach"}] run function gui:features/advanced/reach/open
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset"}] run function gui:features/advanced/jreset/open
-execute if items entity @s inventory.* minecraft:blaze_powder[minecraft:custom_data~{gui_btn:"advanced_aggro"}] run function gui:features/advanced/aggro/open
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap"}] run function gui:features/advanced/tap/open
-execute if items entity @s inventory.* minecraft:comparator[minecraft:custom_data~{gui_btn:"advanced_ping"}] run function gui:features/advanced/ping/open
-
-execute if items entity @s inventory.* minecraft:stick[minecraft:custom_data~{gui_btn:"advanced_reach_0"}] run function gui:features/advanced/reach/0
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_1"}] run function gui:features/advanced/reach/1
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_2"}] run function gui:features/advanced/reach/2
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_3"}] run function gui:features/advanced/reach/3
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_4"}] run function gui:features/advanced/reach/4
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_5"}] run function gui:features/advanced/reach/5
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_6"}] run function gui:features/advanced/reach/6
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_7"}] run function gui:features/advanced/reach/7
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_reach_8"}] run function gui:features/advanced/reach/8
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_0"}] run function gui:features/advanced/jreset/0
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_1"}] run function gui:features/advanced/jreset/1
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_2"}] run function gui:features/advanced/jreset/2
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_3"}] run function gui:features/advanced/jreset/3
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_4"}] run function gui:features/advanced/jreset/4
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_5"}] run function gui:features/advanced/jreset/5
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_6"}] run function gui:features/advanced/jreset/6
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_7"}] run function gui:features/advanced/jreset/7
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_8"}] run function gui:features/advanced/jreset/8
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_jreset_9"}] run function gui:features/advanced/jreset/9
-
-execute if items entity @s inventory.* minecraft:snow_block[minecraft:custom_data~{gui_btn:"advanced_aggro_0"}] run function gui:features/advanced/aggro/0
-execute if items entity @s inventory.* minecraft:blue_ice[minecraft:custom_data~{gui_btn:"advanced_aggro_1"}] run function gui:features/advanced/aggro/1
-execute if items entity @s inventory.* minecraft:packed_ice[minecraft:custom_data~{gui_btn:"advanced_aggro_2"}] run function gui:features/advanced/aggro/2
-execute if items entity @s inventory.* minecraft:ice[minecraft:custom_data~{gui_btn:"advanced_aggro_3"}] run function gui:features/advanced/aggro/3
-execute if items entity @s inventory.* minecraft:grass_block[minecraft:custom_data~{gui_btn:"advanced_aggro_4"}] run function gui:features/advanced/aggro/4
-execute if items entity @s inventory.* minecraft:netherrack[minecraft:custom_data~{gui_btn:"advanced_aggro_5"}] run function gui:features/advanced/aggro/5
-execute if items entity @s inventory.* minecraft:red_nether_bricks[minecraft:custom_data~{gui_btn:"advanced_aggro_6"}] run function gui:features/advanced/aggro/6
-execute if items entity @s inventory.* minecraft:nether_bricks[minecraft:custom_data~{gui_btn:"advanced_aggro_7"}] run function gui:features/advanced/aggro/7
-execute if items entity @s inventory.* minecraft:netherite_block[minecraft:custom_data~{gui_btn:"advanced_aggro_8"}] run function gui:features/advanced/aggro/8
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_0"}] run function gui:features/advanced/tap/0
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_1"}] run function gui:features/advanced/tap/1
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_2"}] run function gui:features/advanced/tap/2
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_3"}] run function gui:features/advanced/tap/3
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_4"}] run function gui:features/advanced/tap/4
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_5"}] run function gui:features/advanced/tap/5
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_6"}] run function gui:features/advanced/tap/6
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_7"}] run function gui:features/advanced/tap/7
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_8"}] run function gui:features/advanced/tap/8
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"advanced_tap_9"}] run function gui:features/advanced/tap/9
-
-execute if items entity @s inventory.* minecraft:cut_copper[minecraft:custom_data~{gui_btn:"advanced_ping_0"}] run function gui:features/advanced/ping/0
-execute if items entity @s inventory.* minecraft:chiseled_copper[minecraft:custom_data~{gui_btn:"advanced_ping_1"}] run function gui:features/advanced/ping/1
-execute if items entity @s inventory.* minecraft:copper_block[minecraft:custom_data~{gui_btn:"advanced_ping_2"}] run function gui:features/advanced/ping/2
-execute if items entity @s inventory.* minecraft:exposed_copper[minecraft:custom_data~{gui_btn:"advanced_ping_3"}] run function gui:features/advanced/ping/3
-execute if items entity @s inventory.* minecraft:exposed_copper_grate[minecraft:custom_data~{gui_btn:"advanced_ping_4"}] run function gui:features/advanced/ping/4
-execute if items entity @s inventory.* minecraft:weathered_copper_grate[minecraft:custom_data~{gui_btn:"advanced_ping_5"}] run function gui:features/advanced/ping/5
-execute if items entity @s inventory.* minecraft:weathered_copper[minecraft:custom_data~{gui_btn:"advanced_ping_6"}] run function gui:features/advanced/ping/6
-execute if items entity @s inventory.* minecraft:oxidized_copper[minecraft:custom_data~{gui_btn:"advanced_ping_7"}] run function gui:features/advanced/ping/7
-execute if items entity @s inventory.* minecraft:oxidized_chiseled_copper[minecraft:custom_data~{gui_btn:"advanced_ping_8"}] run function gui:features/advanced/ping/8
-execute if items entity @s inventory.* minecraft:oxidized_cut_copper[minecraft:custom_data~{gui_btn:"advanced_ping_9"}] run function gui:features/advanced/ping/9
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_armor"}] run function gui:features/npc/settings/armor
-execute if items entity @s inventory.* minecraft:repeating_command_block[minecraft:custom_data~{gui_btn:"npc_general_settings"}] run function gui:features/npc/settings/general_settings
-execute if items entity @s inventory.* minecraft:beacon[minecraft:custom_data~{gui_btn:"npc_attributes"}] run function gui:features/npc/settings/attributes
-execute if items entity @s inventory.* minecraft:book[minecraft:custom_data~{gui_btn:"npc_presets"}] run function gui:features/npc/settings/presets
-execute if items entity @s inventory.* minecraft:writable_book[minecraft:custom_data~{gui_btn:"npc_tutorial"}] run function gui:features/npc/settings/tutorial
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_leather"}] run function gui:features/armor/leather
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_chainmail"}] run function gui:features/armor/chainmail
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_iron"}] run function gui:features/armor/iron
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_diamond"}] run function gui:features/armor/diamond
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_netherite"}] run function gui:features/armor/netherite
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_dbp"}] run function gui:features/armor/dbp
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"armor_sbp"}] run function gui:features/armor/sbp
-execute if items entity @s inventory.* minecraft:barrier[minecraft:custom_data~{gui_btn:"armor_prot"}] run function gui:features/armor/prot
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"preset_sword"}] run function gui:features/presets/sword
-execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"preset_crystal"}] run function gui:features/presets/crystal
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"preset_mace"}] run function gui:features/presets/mace
-
-execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{gui_btn:"back"}] run function gui:ui/back
-
-execute if items entity @s inventory.* minecraft:tnt_minecart[minecraft:custom_data~{gui_btn:"gamemode_tnt_cart"}] run function gui:features/gamemode/tnt_cart
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"gamemode_pot"}] run function gui:features/gamemode/pot
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"gamemode_mace"}] run function gui:features/gamemode/mace
-execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"gamemode_vanilla"}] run function gui:features/gamemode/vanilla
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"gamemode_op_sword"}] run function gui:features/gamemode/op_sword
-
-execute if items entity @s inventory.* minecraft:smooth_stone[minecraft:custom_data~{gui_btn:"terrain_flat"}] run function gui:features/terrain/flat
-execute if items entity @s inventory.* minecraft:red_sand[minecraft:custom_data~{gui_btn:"terrain_badlands"}] run function gui:features/terrain/badlands
-execute if items entity @s inventory.* minecraft:sand[minecraft:custom_data~{gui_btn:"terrain_desert"}] run function gui:features/terrain/desert
-execute if items entity @s inventory.* minecraft:stone[minecraft:custom_data~{gui_btn:"terrain_cave"}] run function gui:features/terrain/cave
-execute if items entity @s inventory.* minecraft:grass_block[minecraft:custom_data~{gui_btn:"terrain_plains"}] run function gui:features/terrain/plains
-execute if items entity @s inventory.* minecraft:snow_block[minecraft:custom_data~{gui_btn:"terrain_snowy_plains"}] run function gui:features/terrain/snowy_plains
-execute if items entity @s inventory.* minecraft:mycelium[minecraft:custom_data~{gui_btn:"terrain_mushroom"}] run function gui:features/terrain/mushroom
-execute if items entity @s inventory.* minecraft:netherite_block[minecraft:custom_data~{gui_btn:"terrain_netherite"}] run function gui:features/terrain/netherite
-
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"difficulty_npc"}] run function gui:features/difficulty/npc
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"difficulty_easy"}] run function gui:features/difficulty/easy
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"difficulty_medium"}] run function gui:features/difficulty/medium
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"difficulty_hard"}] run function gui:features/difficulty/hard
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"difficulty_crazy"}] run function gui:features/difficulty/crazy
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"difficulty_master"}] run function gui:features/difficulty/master
-
-execute if items entity @s inventory.* minecraft:diamond[minecraft:custom_data~{gui_btn:"mech_training"}] run function gui:features/mech/training
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_gs_shield"}] run function gui:features/npc/general_settings/shield
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_gs_better_shield"}] run function gui:features/npc/general_settings/better_shield
-execute if items entity @s inventory.* minecraft:firework_rocket[minecraft:custom_data~{gui_btn:"npc_gs_auto_wind"}] run function gui:features/npc/general_settings/auto_wind
-execute if items entity @s inventory.* minecraft:phantom_membrane[minecraft:custom_data~{gui_btn:"npc_gs_bot_sf"}] run function gui:features/npc/general_settings/bot_sf
-execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"npc_gs_sf"}] run function gui:features/npc/general_settings/sf
-execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"npc_gs_airborne_sf"}] run function gui:features/npc/general_settings/airborne_sf
-execute if items entity @s inventory.* minecraft:compass[minecraft:custom_data~{gui_btn:"npc_gs_display_shield_dura"}] run function gui:features/npc/general_settings/display_shield_dura
-execute if items entity @s inventory.* minecraft:honey_block[minecraft:custom_data~{gui_btn:"npc_gs_falldmg"}] run function gui:features/npc/general_settings/falldmg
-execute if items entity @s inventory.* minecraft:ender_pearl[minecraft:custom_data~{gui_btn:"npc_gs_far_pearl"}] run function gui:features/npc/general_settings/far_pearl
-execute if items entity @s inventory.* minecraft:clock[minecraft:custom_data~{gui_btn:"npc_gs_insta_shieldcd"}] run function gui:features/npc/general_settings/insta_shieldcd
-execute if items entity @s inventory.* minecraft:rabbit_foot[minecraft:custom_data~{gui_btn:"npc_gs_jreset"}] run function gui:features/npc/general_settings/jreset
-execute if items entity @s inventory.* minecraft:ender_eye[minecraft:custom_data~{gui_btn:"npc_gs_no_pearl_land"}] run function gui:features/npc/general_settings/no_pearl_land
-execute if items entity @s inventory.* minecraft:firework_star[minecraft:custom_data~{gui_btn:"npc_gs_pflash"}] run function gui:features/npc/general_settings/pflash
-execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"npc_gs_rain"}] run function gui:features/npc/general_settings/rain
-execute if items entity @s inventory.* minecraft:chest[minecraft:custom_data~{gui_btn:"npc_gs_refill"}] run function gui:features/npc/general_settings/refill
-execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"npc_gs_simfire"}] run function gui:features/npc/general_settings/simfire
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_gs_strafe"}] run function gui:features/npc/general_settings/strafe
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_gs_strafe_fb"}] run function gui:features/npc/general_settings/strafe_fb
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_gs_stun"}] run function gui:features/npc/general_settings/stun
-execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"npc_gs_uhc"}] run function gui:features/npc/general_settings/uhc
-execute if items entity @s inventory.* minecraft:wind_charge[minecraft:custom_data~{gui_btn:"npc_gs_wind_pearl"}] run function gui:features/npc/general_settings/wind_pearl
-execute if items entity @s inventory.* minecraft:breeze_rod[minecraft:custom_data~{gui_btn:"npc_gs_wind"}] run function gui:features/npc/general_settings/wind
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_gs_move_forward"}] run function gui:features/npc/general_settings/move_forward
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"npc_gs_prev"}] run function gui:features/npc/general_settings/prev
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"npc_gs_next"}] run function gui:features/npc/general_settings/next
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"npc_gs_pageinfo"}] run function gui:core/return_filler
-
-execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"mace_gs_no_fall"}] run function gui:features/gamemode_settings/mace/no_fall
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_stun"}] run function gui:features/gamemode_settings/mace/stun
-execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"mace_gs_refill"}] run function gui:features/gamemode_settings/mace/refill
-execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"mace_gs_pcrit"}] run function gui:features/gamemode_settings/mace/pcrit
-execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"mace_gs_cobweb"}] run function gui:features/gamemode_settings/mace/cobweb
-execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"mace_gs_small"}] run function gui:features/gamemode_settings/mace/small
-execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"mace_gs_crit"}] run function gui:features/gamemode_settings/mace/crit
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_buffs"}] run function gui:features/gamemode_settings/mace/buffs
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_shield"}] run function gui:features/gamemode_settings/mace/shield
-execute if items entity @s inventory.* minecraft:wind_charge[minecraft:custom_data~{gui_btn:"mace_gs_wind_pearl"}] run function gui:features/gamemode_settings/mace/wind_pearl
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_elytra"}] run function gui:features/gamemode_settings/mace/elytra
-execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"mace_gs_strafe"}] run function gui:features/gamemode_settings/mace/strafe
-execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"mace_gs_random"}] run function gui:features/gamemode_settings/mace/random
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_spear"}] run function gui:features/gamemode_settings/mace/spear
-execute if items entity @s inventory.* minecraft:ender_pearl[minecraft:custom_data~{gui_btn:"mace_gs_far_pearl"}] run function gui:features/gamemode_settings/mace/far_pearl
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_breakable"}] run function gui:features/gamemode_settings/mace/breakable
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_resistance"}] run function gui:features/gamemode_settings/mace/resistance
-execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"mace_gs_water"}] run function gui:features/gamemode_settings/mace/water
-execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"mace_gs_jreset"}] run function gui:features/gamemode_settings/mace/jreset
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_axe"}] run function gui:features/gamemode_settings/mace/axe
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_breach"}] run function gui:features/gamemode_settings/mace/breach
-execute if items entity @s inventory.* minecraft:ender_eye[minecraft:custom_data~{gui_btn:"mace_gs_no_pearl_land"}] run function gui:features/gamemode_settings/mace/no_pearl_land
-execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"mace_gs_stap"}] run function gui:features/gamemode_settings/mace/stap
-execute if items entity @s inventory.* minecraft:clock[minecraft:custom_data~{gui_btn:"mace_gs_shieldcd"}] run function gui:features/gamemode_settings/mace/shieldcd
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"mace_gs_armor"}] run function gui:features/gamemode_settings/mace/armor
-execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"mace_gs_healing"}] run function gui:features/gamemode_settings/mace/healing
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_prev"}] run function gui:features/gamemode_settings/mace/prev
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"mace_gs_next"}] run function gui:features/gamemode_settings/mace/next
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"mace_gs_pageinfo"}] run function gui:core/return_filler
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_stun"}] run function gui:features/gamemode_settings/crystal/stun
-execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"crystal_gs_strafe"}] run function gui:features/gamemode_settings/crystal/strafe
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_blocks_drop"}] run function gui:features/gamemode_settings/crystal/blocks_drop
-execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"crystal_gs_refill"}] run function gui:features/gamemode_settings/crystal/refill
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_axe"}] run function gui:features/gamemode_settings/crystal/axe
-execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"crystal_gs_small"}] run function gui:features/gamemode_settings/crystal/small
-execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"crystal_gs_cobweb"}] run function gui:features/gamemode_settings/crystal/cobweb
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_buffs"}] run function gui:features/gamemode_settings/crystal/buffs
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_shield"}] run function gui:features/gamemode_settings/crystal/shield
-execute if items entity @s inventory.* minecraft:iron_chain[minecraft:custom_data~{gui_btn:"crystal_gs_holding"}] run function gui:features/gamemode_settings/crystal/holding
-execute if items entity @s inventory.* minecraft:feather[minecraft:custom_data~{gui_btn:"crystal_gs_slowfall"}] run function gui:features/gamemode_settings/crystal/slowfall
-execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"crystal_gs_crystals"}] run function gui:features/gamemode_settings/crystal/crystals
-execute if items entity @s inventory.* minecraft:respawn_anchor[minecraft:custom_data~{gui_btn:"crystal_gs_anchors"}] run function gui:features/gamemode_settings/crystal/anchors
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_better_npc_shield"}] run function gui:features/gamemode_settings/crystal/better_npc_shield
-execute if items entity @s inventory.* minecraft:end_crystal[minecraft:custom_data~{gui_btn:"crystal_gs_playstyle"}] run function gui:features/gamemode_settings/crystal/playstyle
-execute if items entity @s inventory.* minecraft:respawn_anchor[minecraft:custom_data~{gui_btn:"crystal_gs_playstyle"}] run function gui:features/gamemode_settings/crystal/playstyle
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_dbp"}] run function gui:features/gamemode_settings/crystal/dbp
-execute if items entity @s inventory.* minecraft:totem_of_undying[minecraft:custom_data~{gui_btn:"crystal_gs_inf_tot"}] run function gui:features/gamemode_settings/crystal/inf_tot
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_oldkb"}] run function gui:features/gamemode_settings/crystal/oldkb
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_breakable"}] run function gui:features/gamemode_settings/crystal/breakable
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_resistance"}] run function gui:features/gamemode_settings/crystal/resistance
-execute if items entity @s inventory.* minecraft:egg[minecraft:custom_data~{gui_btn:"crystal_gs_prompt_start"}] run function gui:features/gamemode_settings/crystal/prompt_start
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_triple_tap"}] run function gui:features/gamemode_settings/crystal/triple_tap
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"crystal_gs_armor"}] run function gui:features/gamemode_settings/crystal/armor
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"crystal_gs_prev"}] run function gui:features/gamemode_settings/crystal/prev
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"crystal_gs_next"}] run function gui:features/gamemode_settings/crystal/next
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"crystal_gs_pageinfo"}] run function gui:core/return_filler
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_armor"}] run function gui:features/gamemode_settings/sword/armor
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_shield"}] run function gui:features/gamemode_settings/sword/shield
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_resistance"}] run function gui:features/gamemode_settings/sword/resistance
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_breakable"}] run function gui:features/gamemode_settings/sword/breakable
-execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"sword_gs_no_fall"}] run function gui:features/gamemode_settings/sword/no_fall
-execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"sword_gs_cobweb"}] run function gui:features/gamemode_settings/sword/cobweb
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_stun"}] run function gui:features/gamemode_settings/sword/stun
-execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"sword_gs_pcrit"}] run function gui:features/gamemode_settings/sword/pcrit
-execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"sword_gs_crit"}] run function gui:features/gamemode_settings/sword/crit
-execute if items entity @s inventory.* minecraft:seagrass[minecraft:custom_data~{gui_btn:"sword_gs_scrit"}] run function gui:features/gamemode_settings/sword/scrit
-execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"sword_gs_strafe"}] run function gui:features/gamemode_settings/sword/strafe
-execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"sword_gs_stap"}] run function gui:features/gamemode_settings/sword/stap
-execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"sword_gs_jreset"}] run function gui:features/gamemode_settings/sword/jreset
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_axe"}] run function gui:features/gamemode_settings/sword/axe
-execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"sword_gs_refill"}] run function gui:features/gamemode_settings/sword/refill
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"sword_gs_buffs"}] run function gui:features/gamemode_settings/sword/buffs
-execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"sword_gs_water"}] run function gui:features/gamemode_settings/sword/water
-execute if items entity @s inventory.* minecraft:lava_bucket[minecraft:custom_data~{gui_btn:"sword_gs_lava"}] run function gui:features/gamemode_settings/sword/lava
-execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"sword_gs_healing"}] run function gui:features/gamemode_settings/sword/healing
-execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"sword_gs_small"}] run function gui:features/gamemode_settings/sword/small
-execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"sword_gs_random"}] run function gui:features/gamemode_settings/sword/random
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"sword_gs_prev"}] run function gui:features/gamemode_settings/sword/prev
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"sword_gs_next"}] run function gui:features/gamemode_settings/sword/next
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"sword_gs_pageinfo"}] run function gui:core/return_filler
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_armor"}] run function gui:features/gamemode_settings/pot/armor
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_shield"}] run function gui:features/gamemode_settings/pot/shield
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_resistance"}] run function gui:features/gamemode_settings/pot/resistance
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_breakable"}] run function gui:features/gamemode_settings/pot/breakable
-execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"pot_gs_no_fall"}] run function gui:features/gamemode_settings/pot/no_fall
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_stun"}] run function gui:features/gamemode_settings/pot/stun
-execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"pot_gs_pcrit"}] run function gui:features/gamemode_settings/pot/pcrit
-execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"pot_gs_crit"}] run function gui:features/gamemode_settings/pot/crit
-execute if items entity @s inventory.* minecraft:seagrass[minecraft:custom_data~{gui_btn:"pot_gs_scrit"}] run function gui:features/gamemode_settings/pot/scrit
-execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"pot_gs_strafe"}] run function gui:features/gamemode_settings/pot/strafe
-execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"pot_gs_stap"}] run function gui:features/gamemode_settings/pot/stap
-execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"pot_gs_jreset"}] run function gui:features/gamemode_settings/pot/jreset
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_axe"}] run function gui:features/gamemode_settings/pot/axe
-execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"pot_gs_refill"}] run function gui:features/gamemode_settings/pot/refill
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"pot_gs_buffs"}] run function gui:features/gamemode_settings/pot/buffs
-execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"pot_gs_small"}] run function gui:features/gamemode_settings/pot/small
-execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"pot_gs_random"}] run function gui:features/gamemode_settings/pot/random
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"pot_gs_pageinfo"}] run function gui:core/return_filler
-
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_armor"}] run function gui:features/gamemode_settings/tnt/armor
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_shield"}] run function gui:features/gamemode_settings/tnt/shield
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_resistance"}] run function gui:features/gamemode_settings/tnt/resistance
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_breakable"}] run function gui:features/gamemode_settings/tnt/breakable
-execute if items entity @s inventory.* minecraft:hay_block[minecraft:custom_data~{gui_btn:"tnt_gs_no_fall"}] run function gui:features/gamemode_settings/tnt/no_fall
-execute if items entity @s inventory.* minecraft:cobweb[minecraft:custom_data~{gui_btn:"tnt_gs_cobweb"}] run function gui:features/gamemode_settings/tnt/cobweb
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_stun"}] run function gui:features/gamemode_settings/tnt/stun
-execute if items entity @s inventory.* minecraft:cactus[minecraft:custom_data~{gui_btn:"tnt_gs_pcrit"}] run function gui:features/gamemode_settings/tnt/pcrit
-execute if items entity @s inventory.* minecraft:fire_charge[minecraft:custom_data~{gui_btn:"tnt_gs_crit"}] run function gui:features/gamemode_settings/tnt/crit
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_blocks_drop"}] run function gui:features/gamemode_settings/tnt/blocks_drop
-execute if items entity @s inventory.* minecraft:magenta_glazed_terracotta[minecraft:custom_data~{gui_btn:"tnt_gs_strafe"}] run function gui:features/gamemode_settings/tnt/strafe
-execute if items entity @s inventory.* minecraft:minecart[minecraft:custom_data~{gui_btn:"tnt_gs_stap"}] run function gui:features/gamemode_settings/tnt/stap
-execute if items entity @s inventory.* minecraft:slime_block[minecraft:custom_data~{gui_btn:"tnt_gs_jreset"}] run function gui:features/gamemode_settings/tnt/jreset
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_axe"}] run function gui:features/gamemode_settings/tnt/axe
-execute if items entity @s inventory.* minecraft:cauldron[minecraft:custom_data~{gui_btn:"tnt_gs_refill"}] run function gui:features/gamemode_settings/tnt/refill
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"tnt_gs_buffs"}] run function gui:features/gamemode_settings/tnt/buffs
-execute if items entity @s inventory.* minecraft:water_bucket[minecraft:custom_data~{gui_btn:"tnt_gs_water"}] run function gui:features/gamemode_settings/tnt/water
-execute if items entity @s inventory.* minecraft:golden_apple[minecraft:custom_data~{gui_btn:"tnt_gs_healing"}] run function gui:features/gamemode_settings/tnt/healing
-execute if items entity @s inventory.* minecraft:egg[minecraft:custom_data~{gui_btn:"tnt_gs_prompt_start"}] run function gui:features/gamemode_settings/tnt/prompt_start
-execute if items entity @s inventory.* minecraft:turtle_egg[minecraft:custom_data~{gui_btn:"tnt_gs_small"}] run function gui:features/gamemode_settings/tnt/small
-execute if items entity @s inventory.* minecraft:chorus_fruit[minecraft:custom_data~{gui_btn:"tnt_gs_random"}] run function gui:features/gamemode_settings/tnt/random
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"tnt_gs_prev"}] run function gui:features/gamemode_settings/tnt/prev
-execute if items entity @s inventory.* minecraft:arrow[minecraft:custom_data~{gui_btn:"tnt_gs_next"}] run function gui:features/gamemode_settings/tnt/next
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"tnt_gs_pageinfo"}] run function gui:core/return_filler
-
-execute if items entity @s inventory.* minecraft:skeleton_skull[minecraft:custom_data~{gui_btn:"npc_attr_bot_scale"}] run function gui:features/npc/attributes/bot_scale
-execute if items entity @s inventory.* minecraft:fermented_spider_eye[minecraft:custom_data~{gui_btn:"npc_attr_bot_slowness"}] run function gui:features/npc/attributes/bot_slowness
-execute if items entity @s inventory.* minecraft:sugar[minecraft:custom_data~{gui_btn:"npc_attr_bot_speed"}] run function gui:features/npc/attributes/bot_speed
-execute if items entity @s inventory.* minecraft:slime_ball[minecraft:custom_data~{gui_btn:"npc_attr_jump_boost"}] run function gui:features/npc/attributes/jump_boost
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_attr_reach"}] run function gui:features/npc/attributes/reach
-execute if items entity @s inventory.* minecraft:repeater[minecraft:custom_data~{gui_btn:"npc_attr_react"}] run function gui:features/npc/attributes/react
-execute if items entity @s inventory.* minecraft:armor_stand[minecraft:custom_data~{gui_btn:"npc_attr_scale"}] run function gui:features/npc/attributes/scale
-execute if items entity @s inventory.* minecraft:soul_sand[minecraft:custom_data~{gui_btn:"npc_attr_slowness"}] run function gui:features/npc/attributes/slowness
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"npc_attr_speed"}] run function gui:features/npc/attributes/speed
-execute if items entity @s inventory.* minecraft:blaze_powder[minecraft:custom_data~{gui_btn:"npc_attr_strength"}] run function gui:features/npc/attributes/strength
-execute if items entity @s inventory.* minecraft:lime_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:features/npc/attributes/mode
-execute if items entity @s inventory.* minecraft:red_wool[minecraft:custom_data~{gui_btn:"npc_attr_mode"}] run function gui:features/npc/attributes/mode
-execute if items entity @s inventory.* minecraft:red_stained_glass[minecraft:custom_data~{gui_btn:"npc_attr_reset"}] run function gui:features/npc/attributes/reset
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"extra_ai"}] run function gui:features/extra/ai
-execute if items entity @s inventory.* minecraft:gold_nugget[minecraft:custom_data~{gui_btn:"extra_optimize"}] run function gui:features/extra/optimize
-execute if items entity @s inventory.* minecraft:end_portal_frame[minecraft:custom_data~{gui_btn:"extra_teleports"}] run function gui:features/extra/teleports
-execute if items entity @s inventory.* minecraft:jukebox[minecraft:custom_data~{gui_btn:"extra_music"}] run function gui:features/extra/music
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"extra_bots"}] run function gui:features/extra/bots
-execute if items entity @s inventory.* minecraft:music_disc_13[minecraft:custom_data~{gui_btn:"music_undertale"}] run function gui:features/music/undertale
-execute if items entity @s inventory.* minecraft:music_disc_otherside[minecraft:custom_data~{gui_btn:"music_otherside"}] run function gui:features/music/otherside
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_quantum"}] run function gui:features/bots/quantum
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_herobrine"}] run function gui:features/bots/herobrine
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"bots_notch"}] run function gui:features/bots/notch
-execute if items entity @s inventory.* minecraft:compass[minecraft:custom_data~{gui_btn:"tp_hub"}] run function gui:features/teleports/hub
-execute if items entity @s inventory.* minecraft:nether_star[minecraft:custom_data~{gui_btn:"tp_advanced"}] run function gui:features/teleports/advanced
-execute if items entity @s inventory.* minecraft:chest[minecraft:custom_data~{gui_btn:"tp_kitroom"}] run function gui:features/teleports/kitroom
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"credits_discord"}] run function gui:features/credits/discord
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"credits_people"}] run function gui:features/credits/open_people
-execute if items entity @s inventory.* minecraft:player_head[minecraft:custom_data~{gui_btn:"credits_person"}] run function gui:core/return_filler
-execute if items entity @s inventory.* minecraft:gray_stained_glass_pane[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler
-execute if items entity @s inventory.* minecraft:red_stained_glass[minecraft:custom_data~{gui_btn:"filler"}] run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"play"}}}]} run function gui:features/main/play
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"statistics"}}}]} run function gui:features/main/statistics
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_support"}}}]} run function gui:features/main/credits_support
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra"}}}]} run function gui:features/main/extra
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"start"}}}]} run function gui:features/play/start
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode"}}}]} run function gui:features/gamemode/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode"}}}]} run function gui:features/gamemode/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode"}}}]} run function gui:features/gamemode/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty"}}}]} run function gui:features/difficulty/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty"}}}]} run function gui:features/difficulty/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty"}}}]} run function gui:features/difficulty/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"settings"}}}]} run function gui:features/settings/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"settings_npc"}}}]} run function gui:features/settings/npc
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"settings_general"}}}]} run function gui:features/settings/general
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"settings_advanced"}}}]} run function gui:features/settings/advanced
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach"}}}]} run function gui:features/advanced/reach/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset"}}}]} run function gui:features/advanced/jreset/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro"}}}]} run function gui:features/advanced/aggro/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap"}}}]} run function gui:features/advanced/tap/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping"}}}]} run function gui:features/advanced/ping/open
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_0"}}}]} run function gui:features/advanced/reach/0
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_1"}}}]} run function gui:features/advanced/reach/1
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_2"}}}]} run function gui:features/advanced/reach/2
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_3"}}}]} run function gui:features/advanced/reach/3
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_4"}}}]} run function gui:features/advanced/reach/4
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_5"}}}]} run function gui:features/advanced/reach/5
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_6"}}}]} run function gui:features/advanced/reach/6
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_7"}}}]} run function gui:features/advanced/reach/7
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_reach_8"}}}]} run function gui:features/advanced/reach/8
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_0"}}}]} run function gui:features/advanced/jreset/0
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_1"}}}]} run function gui:features/advanced/jreset/1
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_2"}}}]} run function gui:features/advanced/jreset/2
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_3"}}}]} run function gui:features/advanced/jreset/3
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_4"}}}]} run function gui:features/advanced/jreset/4
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_5"}}}]} run function gui:features/advanced/jreset/5
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_6"}}}]} run function gui:features/advanced/jreset/6
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_7"}}}]} run function gui:features/advanced/jreset/7
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_8"}}}]} run function gui:features/advanced/jreset/8
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_jreset_9"}}}]} run function gui:features/advanced/jreset/9
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_0"}}}]} run function gui:features/advanced/aggro/0
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_1"}}}]} run function gui:features/advanced/aggro/1
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_2"}}}]} run function gui:features/advanced/aggro/2
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_3"}}}]} run function gui:features/advanced/aggro/3
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_4"}}}]} run function gui:features/advanced/aggro/4
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_5"}}}]} run function gui:features/advanced/aggro/5
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_6"}}}]} run function gui:features/advanced/aggro/6
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_7"}}}]} run function gui:features/advanced/aggro/7
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_aggro_8"}}}]} run function gui:features/advanced/aggro/8
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_0"}}}]} run function gui:features/advanced/tap/0
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_1"}}}]} run function gui:features/advanced/tap/1
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_2"}}}]} run function gui:features/advanced/tap/2
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_3"}}}]} run function gui:features/advanced/tap/3
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_4"}}}]} run function gui:features/advanced/tap/4
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_5"}}}]} run function gui:features/advanced/tap/5
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_6"}}}]} run function gui:features/advanced/tap/6
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_7"}}}]} run function gui:features/advanced/tap/7
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_8"}}}]} run function gui:features/advanced/tap/8
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_tap_9"}}}]} run function gui:features/advanced/tap/9
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_0"}}}]} run function gui:features/advanced/ping/0
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_1"}}}]} run function gui:features/advanced/ping/1
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_2"}}}]} run function gui:features/advanced/ping/2
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_3"}}}]} run function gui:features/advanced/ping/3
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_4"}}}]} run function gui:features/advanced/ping/4
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_5"}}}]} run function gui:features/advanced/ping/5
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_6"}}}]} run function gui:features/advanced/ping/6
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_7"}}}]} run function gui:features/advanced/ping/7
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_8"}}}]} run function gui:features/advanced/ping/8
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"advanced_ping_9"}}}]} run function gui:features/advanced/ping/9
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_armor"}}}]} run function gui:features/npc/settings/armor
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_general_settings"}}}]} run function gui:features/npc/settings/general_settings
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attributes"}}}]} run function gui:features/npc/settings/attributes
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_presets"}}}]} run function gui:features/npc/settings/presets
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_tutorial"}}}]} run function gui:features/npc/settings/tutorial
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_leather"}}}]} run function gui:features/armor/leather
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_chainmail"}}}]} run function gui:features/armor/chainmail
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_iron"}}}]} run function gui:features/armor/iron
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_diamond"}}}]} run function gui:features/armor/diamond
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_netherite"}}}]} run function gui:features/armor/netherite
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_dbp"}}}]} run function gui:features/armor/dbp
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_sbp"}}}]} run function gui:features/armor/sbp
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"armor_prot"}}}]} run function gui:features/armor/prot
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"preset_sword"}}}]} run function gui:features/presets/sword
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"preset_crystal"}}}]} run function gui:features/presets/crystal
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"preset_mace"}}}]} run function gui:features/presets/mace
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"back"}}}]} run function gui:ui/back
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode_tnt_cart"}}}]} run function gui:features/gamemode/tnt_cart
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode_pot"}}}]} run function gui:features/gamemode/pot
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode_mace"}}}]} run function gui:features/gamemode/mace
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode_vanilla"}}}]} run function gui:features/gamemode/vanilla
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode_op_sword"}}}]} run function gui:features/gamemode/op_sword
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_flat"}}}]} run function gui:features/terrain/flat
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_badlands"}}}]} run function gui:features/terrain/badlands
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_desert"}}}]} run function gui:features/terrain/desert
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_cave"}}}]} run function gui:features/terrain/cave
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_plains"}}}]} run function gui:features/terrain/plains
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_snowy_plains"}}}]} run function gui:features/terrain/snowy_plains
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_mushroom"}}}]} run function gui:features/terrain/mushroom
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain_netherite"}}}]} run function gui:features/terrain/netherite
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty_npc"}}}]} run function gui:features/difficulty/npc
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty_easy"}}}]} run function gui:features/difficulty/easy
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty_medium"}}}]} run function gui:features/difficulty/medium
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty_hard"}}}]} run function gui:features/difficulty/hard
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty_crazy"}}}]} run function gui:features/difficulty/crazy
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty_master"}}}]} run function gui:features/difficulty/master
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mech_training"}}}]} run function gui:features/mech/training
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_shield"}}}]} run function gui:features/npc/general_settings/shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_better_shield"}}}]} run function gui:features/npc/general_settings/better_shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_auto_wind"}}}]} run function gui:features/npc/general_settings/auto_wind
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_bot_sf"}}}]} run function gui:features/npc/general_settings/bot_sf
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_sf"}}}]} run function gui:features/npc/general_settings/sf
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_airborne_sf"}}}]} run function gui:features/npc/general_settings/airborne_sf
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_display_shield_dura"}}}]} run function gui:features/npc/general_settings/display_shield_dura
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_falldmg"}}}]} run function gui:features/npc/general_settings/falldmg
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_far_pearl"}}}]} run function gui:features/npc/general_settings/far_pearl
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_insta_shieldcd"}}}]} run function gui:features/npc/general_settings/insta_shieldcd
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_jreset"}}}]} run function gui:features/npc/general_settings/jreset
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_no_pearl_land"}}}]} run function gui:features/npc/general_settings/no_pearl_land
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_pflash"}}}]} run function gui:features/npc/general_settings/pflash
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_rain"}}}]} run function gui:features/npc/general_settings/rain
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_refill"}}}]} run function gui:features/npc/general_settings/refill
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_simfire"}}}]} run function gui:features/npc/general_settings/simfire
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_strafe"}}}]} run function gui:features/npc/general_settings/strafe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_strafe_fb"}}}]} run function gui:features/npc/general_settings/strafe_fb
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_stun"}}}]} run function gui:features/npc/general_settings/stun
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_uhc"}}}]} run function gui:features/npc/general_settings/uhc
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_wind_pearl"}}}]} run function gui:features/npc/general_settings/wind_pearl
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_wind"}}}]} run function gui:features/npc/general_settings/wind
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_move_forward"}}}]} run function gui:features/npc/general_settings/move_forward
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_prev"}}}]} run function gui:features/npc/general_settings/prev
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_next"}}}]} run function gui:features/npc/general_settings/next
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_gs_pageinfo"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_no_fall"}}}]} run function gui:features/gamemode_settings/mace/no_fall
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_stun"}}}]} run function gui:features/gamemode_settings/mace/stun
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_refill"}}}]} run function gui:features/gamemode_settings/mace/refill
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_pcrit"}}}]} run function gui:features/gamemode_settings/mace/pcrit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_cobweb"}}}]} run function gui:features/gamemode_settings/mace/cobweb
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_small"}}}]} run function gui:features/gamemode_settings/mace/small
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_crit"}}}]} run function gui:features/gamemode_settings/mace/crit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_buffs"}}}]} run function gui:features/gamemode_settings/mace/buffs
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_shield"}}}]} run function gui:features/gamemode_settings/mace/shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_wind_pearl"}}}]} run function gui:features/gamemode_settings/mace/wind_pearl
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_elytra"}}}]} run function gui:features/gamemode_settings/mace/elytra
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_strafe"}}}]} run function gui:features/gamemode_settings/mace/strafe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_random"}}}]} run function gui:features/gamemode_settings/mace/random
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_spear"}}}]} run function gui:features/gamemode_settings/mace/spear
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_far_pearl"}}}]} run function gui:features/gamemode_settings/mace/far_pearl
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_breakable"}}}]} run function gui:features/gamemode_settings/mace/breakable
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_resistance"}}}]} run function gui:features/gamemode_settings/mace/resistance
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_water"}}}]} run function gui:features/gamemode_settings/mace/water
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_jreset"}}}]} run function gui:features/gamemode_settings/mace/jreset
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_axe"}}}]} run function gui:features/gamemode_settings/mace/axe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_breach"}}}]} run function gui:features/gamemode_settings/mace/breach
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_no_pearl_land"}}}]} run function gui:features/gamemode_settings/mace/no_pearl_land
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_stap"}}}]} run function gui:features/gamemode_settings/mace/stap
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_shieldcd"}}}]} run function gui:features/gamemode_settings/mace/shieldcd
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_armor"}}}]} run function gui:features/gamemode_settings/mace/armor
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_healing"}}}]} run function gui:features/gamemode_settings/mace/healing
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_prev"}}}]} run function gui:features/gamemode_settings/mace/prev
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_next"}}}]} run function gui:features/gamemode_settings/mace/next
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"mace_gs_pageinfo"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_stun"}}}]} run function gui:features/gamemode_settings/crystal/stun
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_strafe"}}}]} run function gui:features/gamemode_settings/crystal/strafe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_blocks_drop"}}}]} run function gui:features/gamemode_settings/crystal/blocks_drop
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_refill"}}}]} run function gui:features/gamemode_settings/crystal/refill
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_axe"}}}]} run function gui:features/gamemode_settings/crystal/axe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_small"}}}]} run function gui:features/gamemode_settings/crystal/small
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_cobweb"}}}]} run function gui:features/gamemode_settings/crystal/cobweb
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_buffs"}}}]} run function gui:features/gamemode_settings/crystal/buffs
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_shield"}}}]} run function gui:features/gamemode_settings/crystal/shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_holding"}}}]} run function gui:features/gamemode_settings/crystal/holding
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_slowfall"}}}]} run function gui:features/gamemode_settings/crystal/slowfall
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_crystals"}}}]} run function gui:features/gamemode_settings/crystal/crystals
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_anchors"}}}]} run function gui:features/gamemode_settings/crystal/anchors
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_better_npc_shield"}}}]} run function gui:features/gamemode_settings/crystal/better_npc_shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_playstyle"}}}]} run function gui:features/gamemode_settings/crystal/playstyle
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_playstyle"}}}]} run function gui:features/gamemode_settings/crystal/playstyle
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_dbp"}}}]} run function gui:features/gamemode_settings/crystal/dbp
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_inf_tot"}}}]} run function gui:features/gamemode_settings/crystal/inf_tot
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_oldkb"}}}]} run function gui:features/gamemode_settings/crystal/oldkb
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_breakable"}}}]} run function gui:features/gamemode_settings/crystal/breakable
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_resistance"}}}]} run function gui:features/gamemode_settings/crystal/resistance
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_prompt_start"}}}]} run function gui:features/gamemode_settings/crystal/prompt_start
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_triple_tap"}}}]} run function gui:features/gamemode_settings/crystal/triple_tap
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_armor"}}}]} run function gui:features/gamemode_settings/crystal/armor
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_prev"}}}]} run function gui:features/gamemode_settings/crystal/prev
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_next"}}}]} run function gui:features/gamemode_settings/crystal/next
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"crystal_gs_pageinfo"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_armor"}}}]} run function gui:features/gamemode_settings/sword/armor
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_shield"}}}]} run function gui:features/gamemode_settings/sword/shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_resistance"}}}]} run function gui:features/gamemode_settings/sword/resistance
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_breakable"}}}]} run function gui:features/gamemode_settings/sword/breakable
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_no_fall"}}}]} run function gui:features/gamemode_settings/sword/no_fall
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_cobweb"}}}]} run function gui:features/gamemode_settings/sword/cobweb
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_stun"}}}]} run function gui:features/gamemode_settings/sword/stun
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_pcrit"}}}]} run function gui:features/gamemode_settings/sword/pcrit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_crit"}}}]} run function gui:features/gamemode_settings/sword/crit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_scrit"}}}]} run function gui:features/gamemode_settings/sword/scrit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_strafe"}}}]} run function gui:features/gamemode_settings/sword/strafe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_stap"}}}]} run function gui:features/gamemode_settings/sword/stap
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_jreset"}}}]} run function gui:features/gamemode_settings/sword/jreset
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_axe"}}}]} run function gui:features/gamemode_settings/sword/axe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_refill"}}}]} run function gui:features/gamemode_settings/sword/refill
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_buffs"}}}]} run function gui:features/gamemode_settings/sword/buffs
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_water"}}}]} run function gui:features/gamemode_settings/sword/water
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_lava"}}}]} run function gui:features/gamemode_settings/sword/lava
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_healing"}}}]} run function gui:features/gamemode_settings/sword/healing
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_small"}}}]} run function gui:features/gamemode_settings/sword/small
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_random"}}}]} run function gui:features/gamemode_settings/sword/random
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_prev"}}}]} run function gui:features/gamemode_settings/sword/prev
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_next"}}}]} run function gui:features/gamemode_settings/sword/next
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"sword_gs_pageinfo"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_armor"}}}]} run function gui:features/gamemode_settings/pot/armor
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_shield"}}}]} run function gui:features/gamemode_settings/pot/shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_resistance"}}}]} run function gui:features/gamemode_settings/pot/resistance
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_breakable"}}}]} run function gui:features/gamemode_settings/pot/breakable
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_no_fall"}}}]} run function gui:features/gamemode_settings/pot/no_fall
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_stun"}}}]} run function gui:features/gamemode_settings/pot/stun
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_pcrit"}}}]} run function gui:features/gamemode_settings/pot/pcrit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_crit"}}}]} run function gui:features/gamemode_settings/pot/crit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_scrit"}}}]} run function gui:features/gamemode_settings/pot/scrit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_strafe"}}}]} run function gui:features/gamemode_settings/pot/strafe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_stap"}}}]} run function gui:features/gamemode_settings/pot/stap
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_jreset"}}}]} run function gui:features/gamemode_settings/pot/jreset
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_axe"}}}]} run function gui:features/gamemode_settings/pot/axe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_refill"}}}]} run function gui:features/gamemode_settings/pot/refill
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_buffs"}}}]} run function gui:features/gamemode_settings/pot/buffs
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_small"}}}]} run function gui:features/gamemode_settings/pot/small
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_random"}}}]} run function gui:features/gamemode_settings/pot/random
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"pot_gs_pageinfo"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_armor"}}}]} run function gui:features/gamemode_settings/tnt/armor
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_shield"}}}]} run function gui:features/gamemode_settings/tnt/shield
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_resistance"}}}]} run function gui:features/gamemode_settings/tnt/resistance
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_breakable"}}}]} run function gui:features/gamemode_settings/tnt/breakable
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_no_fall"}}}]} run function gui:features/gamemode_settings/tnt/no_fall
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_cobweb"}}}]} run function gui:features/gamemode_settings/tnt/cobweb
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_stun"}}}]} run function gui:features/gamemode_settings/tnt/stun
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_pcrit"}}}]} run function gui:features/gamemode_settings/tnt/pcrit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_crit"}}}]} run function gui:features/gamemode_settings/tnt/crit
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_blocks_drop"}}}]} run function gui:features/gamemode_settings/tnt/blocks_drop
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_strafe"}}}]} run function gui:features/gamemode_settings/tnt/strafe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_stap"}}}]} run function gui:features/gamemode_settings/tnt/stap
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_jreset"}}}]} run function gui:features/gamemode_settings/tnt/jreset
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_axe"}}}]} run function gui:features/gamemode_settings/tnt/axe
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_refill"}}}]} run function gui:features/gamemode_settings/tnt/refill
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_buffs"}}}]} run function gui:features/gamemode_settings/tnt/buffs
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_water"}}}]} run function gui:features/gamemode_settings/tnt/water
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_healing"}}}]} run function gui:features/gamemode_settings/tnt/healing
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_prompt_start"}}}]} run function gui:features/gamemode_settings/tnt/prompt_start
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_small"}}}]} run function gui:features/gamemode_settings/tnt/small
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_random"}}}]} run function gui:features/gamemode_settings/tnt/random
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_prev"}}}]} run function gui:features/gamemode_settings/tnt/prev
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_next"}}}]} run function gui:features/gamemode_settings/tnt/next
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tnt_gs_pageinfo"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_bot_scale"}}}]} run function gui:features/npc/attributes/bot_scale
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_bot_slowness"}}}]} run function gui:features/npc/attributes/bot_slowness
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_bot_speed"}}}]} run function gui:features/npc/attributes/bot_speed
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_jump_boost"}}}]} run function gui:features/npc/attributes/jump_boost
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_reach"}}}]} run function gui:features/npc/attributes/reach
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_react"}}}]} run function gui:features/npc/attributes/react
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_scale"}}}]} run function gui:features/npc/attributes/scale
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_slowness"}}}]} run function gui:features/npc/attributes/slowness
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_speed"}}}]} run function gui:features/npc/attributes/speed
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_strength"}}}]} run function gui:features/npc/attributes/strength
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_mode"}}}]} run function gui:features/npc/attributes/mode
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_mode"}}}]} run function gui:features/npc/attributes/mode
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"npc_attr_reset"}}}]} run function gui:features/npc/attributes/reset
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra_ai"}}}]} run function gui:features/extra/ai
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra_optimize"}}}]} run function gui:features/extra/optimize
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra_teleports"}}}]} run function gui:features/extra/teleports
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra_music"}}}]} run function gui:features/extra/music
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra_bots"}}}]} run function gui:features/extra/bots
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"music_undertale"}}}]} run function gui:features/music/undertale
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"music_otherside"}}}]} run function gui:features/music/otherside
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"bots_quantum"}}}]} run function gui:features/bots/quantum
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"bots_herobrine"}}}]} run function gui:features/bots/herobrine
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"bots_notch"}}}]} run function gui:features/bots/notch
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tp_hub"}}}]} run function gui:features/teleports/hub
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tp_advanced"}}}]} run function gui:features/teleports/advanced
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"tp_kitroom"}}}]} run function gui:features/teleports/kitroom
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_discord"}}}]} run function gui:features/credits/discord
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_people"}}}]} run function gui:features/credits/open_people
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_person"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"filler"}}}]} run function gui:core/return_filler
+execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"filler"}}}]} run function gui:core/return_filler
