@@ -9,17 +9,7 @@ execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data"
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"extra"}}}]} run function gui:features/main/extra
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"start"}}}]} run function gui:features/play/start
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode"}}}]} run function gui:features/gamemode/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode"}}}]} run function gui:features/gamemode/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"gamemode"}}}]} run function gui:features/gamemode/open
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"terrain"}}}]} run function gui:features/terrain/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty"}}}]} run function gui:features/difficulty/open
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty"}}}]} run function gui:features/difficulty/open
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"difficulty"}}}]} run function gui:features/difficulty/open
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"settings"}}}]} run function gui:features/settings/open
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"settings_npc"}}}]} run function gui:features/settings/npc
@@ -292,5 +282,4 @@ execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data"
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_discord"}}}]} run function gui:features/credits/discord
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_people"}}}]} run function gui:features/credits/open_people
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"credits_person"}}}]} run function gui:core/return_filler
-execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"filler"}}}]} run function gui:core/return_filler
 execute if data storage gui:inv {Inventory:[{components:{"minecraft:custom_data":{gui_btn:"filler"}}}]} run function gui:core/return_filler

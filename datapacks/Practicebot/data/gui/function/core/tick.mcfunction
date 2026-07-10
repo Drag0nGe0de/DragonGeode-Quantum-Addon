@@ -8,6 +8,6 @@ execute as @a if items entity @s weapon.mainhand minecraft:nether_star[minecraft
 
 execute as @e[type=item] if data entity @s Item.components."minecraft:custom_data".gui_item run kill @s
 
-execute if entity @a[scores={gui_hold=1}] run function gui:core/clear_items
+execute if entity @a[scores={gui_hold=1}] run clear @a #gui:gui_items[minecraft:custom_data~{gui_item:1b}]
 
 function gui:chest/tick
