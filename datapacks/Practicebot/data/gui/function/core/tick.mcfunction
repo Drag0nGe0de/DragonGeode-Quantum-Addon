@@ -8,6 +8,9 @@ execute as @a if items entity @s weapon.mainhand minecraft:nether_star[minecraft
 
 execute as @e[type=item] if data entity @s Item.components."minecraft:custom_data".gui_item run kill @s
 
-execute if entity @a[scores={gui_hold=1}] run clear @a #gui:gui_items[minecraft:custom_data~{gui_item:1b}]
+scoreboard players set .gui_cleared var 0
+execute if entity @a[scores={gui_hold=1}] store result score .gui_cleared var run clear @a #gui:gui_items[minecraft:custom_data~{gui_item:1b}]
 
 function gui:chest/tick
+
+execute if score .gui_cleared var matches 1.. as @a[scores={gui_hold=1}] run function gui:ui/refresh
