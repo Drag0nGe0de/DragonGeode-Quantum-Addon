@@ -1,15 +1,15 @@
 
-execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -683 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -651 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -619 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -619 31 134 minecraft:barrel[facing=east] replace
+setblock -715 31 90 minecraft:barrel[facing=east] replace
+setblock -683 31 90 minecraft:barrel[facing=east] replace
+setblock -651 31 90 minecraft:barrel[facing=east] replace
+setblock -619 31 90 minecraft:barrel[facing=east] replace
+setblock -619 31 134 minecraft:barrel[facing=east] replace
 
-execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -715 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -683 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -651 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -619 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
 
 scoreboard players set .gui_prev gui_page 1
 scoreboard players set .gui_prev2 gui_page 1

@@ -1,9 +1,9 @@
 
-execute in minecraft:overworld run forceload add -715 90
-execute in minecraft:overworld run forceload add -683 90
-execute in minecraft:overworld run forceload add -651 90
-execute in minecraft:overworld run forceload add -619 90
-execute in minecraft:overworld run forceload add -619 134
+forceload add -715 90
+forceload add -683 90
+forceload add -651 90
+forceload add -619 90
+forceload add -619 134
 
 scoreboard objectives remove gui_page
 scoreboard objectives add gui_page dummy
@@ -39,17 +39,17 @@ execute unless score .tap chance matches 1..100 run scoreboard players set .tap 
 execute unless score .ping toggles matches 0..180 run scoreboard players set .ping toggles 100
 execute unless score .factor eval matches ..999999999 run scoreboard players set .factor eval 999999999
 
-execute in minecraft:overworld run setblock -715 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -683 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -651 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -619 31 90 minecraft:barrel[facing=east] replace
-execute in minecraft:overworld run setblock -619 31 134 minecraft:barrel[facing=east] replace
+setblock -715 31 90 minecraft:barrel[facing=east] replace
+setblock -683 31 90 minecraft:barrel[facing=east] replace
+setblock -651 31 90 minecraft:barrel[facing=east] replace
+setblock -619 31 90 minecraft:barrel[facing=east] replace
+setblock -619 31 134 minecraft:barrel[facing=east] replace
 
-execute in minecraft:overworld run data modify block -715 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -683 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -651 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -619 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute in minecraft:overworld run data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -715 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -683 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -651 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -619 31 90 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
+data modify block -619 31 134 CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
 
 scoreboard players set .gc_lk var 2000
 scoreboard players set .gc_1k var 1000
