@@ -25,4 +25,4 @@ execute as @a[tag=gui_chest_holding] run function gui:core/detect_chest
 execute as @a[tag=gui_chest_holding] run function gui:core/detect_inventory
 
 execute as @e[type=minecraft:chest_minecart,tag=gui_chest] run data modify entity @s CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
-execute as @e[type=minecraft:chest_minecart,tag=gui_chest] run data merge entity @s {Fire:0s}
+execute as @e[type=minecraft:chest_minecart,tag=gui_chest] run data merge entity @s {Fire:1s}

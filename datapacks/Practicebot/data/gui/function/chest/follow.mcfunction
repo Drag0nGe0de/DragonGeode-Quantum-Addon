@@ -1,4 +1,4 @@
-execute unless entity @e[type=minecraft:chest_minecart,tag=gui_chest,distance=..5] run summon minecraft:chest_minecart ~ ~1 ~ {Invulnerable:1b,NoGravity:1b,Silent:1b,Fire:0s,Tags:["gui_chest","gui_chest_new"]}
+execute unless entity @e[type=minecraft:chest_minecart,tag=gui_chest,distance=..5] run summon minecraft:chest_minecart ~ ~1 ~ {Invulnerable:1b,NoGravity:1b,Silent:1b,Fire:1s,Tags:["gui_chest","gui_chest_new"],Invisible:1b,CustomNameVisible:0b}
 
 execute store result score .gc_ppx var run data get entity @s Pos[0] 1000
 execute store result score .gc_ppy var run data get entity @s Pos[1] 1000
@@ -41,6 +41,6 @@ execute as @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] 
 execute as @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] store result entity @s Pos[1] double 0.001 run scoreboard players get .gc_mcy var
 execute as @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] store result entity @s Pos[2] double 0.001 run scoreboard players get .gc_mcz var
 
-execute at @s run data merge entity @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] {Invulnerable:1b,NoGravity:1b,Silent:1b,Fire:0s}
+execute at @s run data merge entity @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] {Invulnerable:1b,NoGravity:1b,Silent:1b,Fire:1s,Invisible:1b}
 execute at @s run effect give @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] fire_resistance infinite 0 true
 execute at @s run data modify entity @e[type=minecraft:chest_minecart,tag=gui_chest,sort=nearest,limit=1] CustomName set value {"text":"Quantum AI","color":"aqua","italic":false}
